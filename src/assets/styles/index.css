@@ -1,0 +1,37 @@
+/* purgecss start ignore */
+@import '~remixicon/fonts/remixicon.css';
+/* purgecss end ignore */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 13px;
+}
+
+@screen lg {
+  html {
+    font-size: 16px;
+  }
+}
+
+h1 {
+  @apply text-headline-1 font-bold;
+}
+
+h2 {
+  @apply text-headline-2 font-bold;
+}
+
+h3 {
+  @apply text-headline-3 font-bold;
+}
+
+h4 {
+  @apply text-headline-4 font-bold;
+}
+
+h5 {
+  @apply text-headline-5 font-bold;
+}
