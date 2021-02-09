@@ -1,7 +1,7 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/SVWS-NRW/SVWS-UI-Framework/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Das Komponenten-Frameword kann unter dieser Adresse aufgerufen werden.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+https://svws-nrw.github.io/SVWS-UI-Framework/?path=/story/
 
 
