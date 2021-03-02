@@ -15,8 +15,11 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiIcon },
+  setup() {
+    return { args };
+  },
   props: Object.keys(argTypes),
-  template: '<svws-ui-icon v-bind="$props" />',
+  template: '<svws-ui-icon v-bind="args" />',
 });
 
 export const Line = Template.bind({});

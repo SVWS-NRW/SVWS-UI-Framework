@@ -23,9 +23,12 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiProgressBar },
+  setup() {
+    return { args };
+  },
   props: Object.keys(argTypes),
   template:
-    '<svws-ui-progress-bar v-bind="$props">Progress Bar</svws-ui-progress-bar>',
+    '<svws-ui-progress-bar v-bind="args">Progress Bar</svws-ui-progress-bar>',
 });
 
 export const Default = Template.bind({});

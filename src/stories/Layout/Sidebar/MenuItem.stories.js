@@ -15,10 +15,13 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiSidebarMenuItem },
+  setup() {
+    return { args };
+  },
   props: Object.keys(argTypes),
   methods: { onClick: action('click') },
   template:
-    '<svws-ui-sidebar-menu-item v-bind="$props" @click="onClick">Menu Item</svws-ui-sidebar-menu-item>',
+    '<svws-ui-sidebar-menu-item v-bind="args" @click="onClick">Menu Item</svws-ui-sidebar-menu-item>',
 });
 
 export const Default = Template.bind({});

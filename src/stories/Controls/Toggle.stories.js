@@ -9,10 +9,13 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiToggle },
+  setup() {
+    return { args };
+  },
   props: Object.keys(argTypes),
   methods: { onInput: action('input') },
   template:
-    '<svws-ui-toggle v-bind="$props" @input="onInput">Toggle</svws-ui-toggle>',
+    '<svws-ui-toggle v-bind="args" @input="onInput">Toggle</svws-ui-toggle>',
 });
 
 export const Checked = Template.bind({});

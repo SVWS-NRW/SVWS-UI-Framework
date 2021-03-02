@@ -17,10 +17,13 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiButton },
+  setup() {
+    return { args };
+  },
   props: Object.keys(argTypes),
   methods: { onClick: action('click') },
   template:
-    '<svws-ui-button v-bind="$props" @click="onClick">Button</svws-ui-button>',
+    '<svws-ui-button v-bind="args" @click="onClick">Button</svws-ui-button>',
 });
 
 export const Disabled = Template.bind({});

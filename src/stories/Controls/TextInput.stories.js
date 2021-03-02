@@ -9,9 +9,12 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiTextInput },
+  setup() {
+    return { args };
+  },
   props: Object.keys(argTypes),
   methods: { onInput: action('input') },
-  template: '<svws-ui-text-input v-bind="$props" @input="onInput"/>',
+  template: '<svws-ui-text-input v-bind="args" @input="onInput"/>',
 });
 
 export const Empty = Template.bind({});
