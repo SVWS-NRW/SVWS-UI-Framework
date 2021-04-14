@@ -16,8 +16,11 @@ pnpm-debug.log*
 # Editor directories and files
 .idea
 .vscode
+.gradle
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+/.project
+/.settings

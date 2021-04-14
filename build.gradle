@@ -1,0 +1,93 @@
+plugins {
+	id 'base'
+	id 'maven-publish'
+	id "com.github.node-gradle.node" version "3.0.1"
+}
+
+version = '0.0.1'
+group = 'de.nrw.schule.svws.ui'
+
+wrapper {
+    description "Regenerates the Gradle Wrapper files"
+    gradleVersion = '6.6.1'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
+}
+
+node {
+  download = false
+  version = '15.14.0'
+}
+
+
+ext.getGithubActor = { ->
+  if (properties.containsKey('github_actor'))
+		return github_actor;
+	def username = System.getenv("GITHUB_ACTOR")
+	if (username != null)
+		return username;
+	throw new GradleException('Fehler: Der Github benutzer wurde weder in USERHOME/.gradle/gradle.properties als github_actor, noch als Umgebungsvariable GITHUB_ACTOR festgelegt!')
+}
+
+ext.getGithubToken = { ->
+  if (properties.containsKey('github_token'))
+		return github_token;
+	def token = System.getenv("GITHUB_TOKEN")
+	if (token != null)
+		return token;
+	throw new GradleException('Fehler: Der Github-Token wurde weder in USERHOME/.gradle/gradle.properties als github_token, noch als Umgebungsvariable GITHUB_TOKEN festgelegt!')
+}
+
+
+// Installiert die node.js-Pakete, die zum Bauen des NPM-Packages benötigt werden
+task npmInstallDev(type: NpmTask) {
+  args = ['install']
+}
+
+task buildVueLib(type: NpmTask, dependsOn: npmInstallDev) {
+	args = ['run', 'build']
+}
+
+task doZip(type: Zip) {
+    archiveFileName = "SVWS-UI.zip"
+    destinationDirectory = file("$buildDir")
+    from "$buildDir/output"
+}
+
+
+doZip.dependsOn buildVueLib
+assemble.dependsOn doZip
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackagesSVWSClient"
+            url = "https://maven.pkg.github.com/SVWS-NRW/SVWS-Packages"
+            credentials {
+                username = getGithubActor()
+                password = getGithubToken()
+            }
+        }
+    }
+    publications {
+        mavenZip(MavenPublication) {
+            artifact  'build/SVWS-UI.zip'
+            artifactId = 'svws-ui'
+            pom {
+                name = 'SVWS-UI'
+                description = 'Stellt das SVWS-UI-Framework zur Verfügung.'
+                url = 'http://www.svws.nrw.de'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                    }
+                }
+                scm {
+                    connection = 'scm:git@github.com/SVWS-NRW/SVWS-Packages'
+                    developerConnection = 'scm:git@github.com/SVWS-NRW/SVWS-Packages.git'
+                    url = 'https://github.com/SVWS-NRW/SVWS-Packages.git'
+                }
+            }
+        }
+    }
+}
