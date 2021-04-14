@@ -3,10 +3,10 @@ import './assets/styles/index.css';
 import * as components from './components';
 
 export default {
-  install: (app) => {
-    for (let component of components) {
-      app.use(component);
-    }
+  install: (Vue) => {
+    Object.keys(components).forEach((key) => {
+      Vue.component(key, components[key]);
+    });
   },
 };
 

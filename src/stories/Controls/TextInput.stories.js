@@ -19,12 +19,40 @@ const Template = (args, { argTypes }) => ({
 
 export const Empty = Template.bind({});
 Empty.args = {
+  type: 'text',
   value: '',
   placeholder: 'Text Input Placeholder',
+  icon: null,
+  valid: true,
+  disabled: false,
 };
 
 export const Filled = Template.bind({});
 Filled.args = {
+  type: 'text',
   value: 'Text Input Value',
   placeholder: 'Text Input Placeholder',
+  icon: null,
+  valid: true,
+  disabled: false,
+};
+
+export const Invalid = Template.bind({});
+Invalid.args = {
+  type: 'text',
+  value: 'Text Input Value',
+  placeholder: 'Text Input Placeholder',
+  icon: null,
+  valid: false,
+  disabled: false,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  type: 'text',
+  value: '',
+  placeholder: 'Text Input Placeholder',
+  icon: null,
+  valid: true,
+  disabled: true,
 };

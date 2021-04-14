@@ -3,19 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "./node_modules/.bin/vue-cli-service build --target lib --name svws-ui ./src/index.js",
     "lint": "./node_modules/.bin/vue-cli-service lint",
-    "start-storybook": "./node_modules/.bin/start-storybook -p 6006",
-    "build-storybook": "./node_modules/.bin/build-storybook",
-    "deploy-storybook": "./node_modules/.bin/storybook-to-ghpages",
-    "format": "./node_modules/.bin/prettier --write ./.storybook ./src ./*.config.js"
+    "format": "./node_modules/.bin/prettier --write ./.storybook ./src ./*.config.js",
+    "build": "./node_modules/.bin/vue-cli-service build --target lib --name svws-ui ./src/index.js",
+    "storybook:start": "./node_modules/.bin/start-storybook -p 6006",
+    "storybook:build": "./node_modules/.bin/build-storybook",
+    "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages"
   },
-  "main": "dist/svws-ui.common.js",
+  "main": "./dist/svws-ui.common.js",
+  "module": "./dist/svws-ui.umd.js",
   "files": [
     "dist/*"
   ],
   "dependencies": {
-    "vue": "^3.0.7"
+    "vue": "^3.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -41,12 +42,11 @@
     "prettier": "^2.2.1",
     "remixicon": "^2.5.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "vue": "^3.0.7",
-    "vue-cli-plugin-vue-next": "~0.1.4",
+    "vue": "^3.0.11",
     "vue-loader": "^16.1.2"
   },
   "peerDependencies": {
-    "vue": "^3.0.7"
+    "vue": "^3.0.11"
   },
   "eslintConfig": {
     "root": true,
