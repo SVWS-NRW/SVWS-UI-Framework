@@ -47,6 +47,12 @@ task buildVueLib(type: NpmTask, dependsOn: npmInstallDev) {
 	args = ['run', 'build']
 }
 
+// Erstelle einen NPM-Link, so dass die UI-Bib im globalen npm-Repo zur Verfügung steht
+task npmGlobalLink(type: NpmTask) {
+	dependsOn buildVueLib
+    args = ["link"]
+}
+
 task doZip(type: Zip) {
     archiveFileName = "SVWS-UI.zip"
     destinationDirectory = file("$buildDir")
@@ -54,7 +60,7 @@ task doZip(type: Zip) {
 }
 
 
-doZip.dependsOn buildVueLib
+doZip.dependsOn npmGlobalLink
 assemble.dependsOn doZip
 
 publishing {
