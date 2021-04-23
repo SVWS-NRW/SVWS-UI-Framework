@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import SvwsUiIcon from '../Icon';
+import SvwsUiIcon from '../Icon.vue';
 
 export default {
   name: 'SvwsUiSidebarMenuItem',

@@ -26,7 +26,7 @@
 <script>
 // import Nrw from '../../../assets/img/nrw.svg';
 
-import SvwsUiIcon from '../Icon';
+import SvwsUiIcon from '../Icon.vue';
 
 export default {
   name: 'SvwsUiSidebarMenu',

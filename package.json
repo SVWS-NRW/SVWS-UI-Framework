@@ -5,16 +5,16 @@
   "scripts": {
     "lint": "./node_modules/.bin/vue-cli-service lint",
     "format": "./node_modules/.bin/prettier --write ./.storybook ./src ./*.config.js",
-    "build": "./node_modules/.bin/vue-cli-service build --target lib --name svws-ui ./src/index.js",
+    "build": "./node_modules/.bin/vite build",
     "storybook:start": "./node_modules/.bin/start-storybook -p 6006",
     "storybook:build": "./node_modules/.bin/build-storybook",
     "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages"
   },
-  "main": "./dist/svws-ui.common.js",
-  "module": "./dist/svws-ui.umd.js",
   "files": [
-    "dist/*"
+    "dist"
   ],
+  "main": "./dist/svws-ui.umd.js",
+  "module": "./dist/svws-ui.es.js",
   "dependencies": {
     "vue": "^3.0.11"
   },
@@ -27,6 +27,7 @@
     "@storybook/storybook-deployer": "^2.8.7",
     "@storybook/vue3": "^6.2.0-beta.5",
     "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@vitejs/plugin-vue": "^1.2.1",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -42,6 +43,7 @@
     "prettier": "^2.2.1",
     "remixicon": "^2.5.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "vite": "^2.2.1",
     "vue": "^3.0.11",
     "vue-loader": "^16.1.2"
   },

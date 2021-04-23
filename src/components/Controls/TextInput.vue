@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import SvwsUiIcon from '../Layout/Icon';
+import SvwsUiIcon from '../Layout/Icon.vue';
 
 export default {
   name: 'SvwsUiTextInput',
