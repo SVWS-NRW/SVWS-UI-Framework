@@ -23,12 +23,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // import Nrw from '../../../assets/img/nrw.svg';
 
+import { defineComponent } from 'vue';
 import SvwsUiIcon from '../Icon.vue';
 
-export default {
+export default defineComponent({
   name: 'SvwsUiSidebarMenu',
   components: { SvwsUiIcon },
   props: {
@@ -42,7 +43,7 @@ export default {
       this.$emit('toggle', !this.collapsed);
     },
   },
-};
+});
 </script>
 
 <style>

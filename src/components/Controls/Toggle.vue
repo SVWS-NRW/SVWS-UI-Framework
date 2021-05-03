@@ -11,8 +11,10 @@
   </label>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'SvwsUiToggle',
   props: {
     value: {
@@ -25,7 +27,7 @@ export default {
       this.$emit('input', event.target.checked);
     },
   },
-};
+});
 </script>
 
 <style>

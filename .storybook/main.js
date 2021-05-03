@@ -5,4 +5,13 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-postcss',
   ],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+    },
+  },
 };

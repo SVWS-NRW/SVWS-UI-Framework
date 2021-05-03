@@ -16,6 +16,7 @@
   "main": "./dist/svws-ui.umd.js",
   "module": "./dist/svws-ui.es.js",
   "dependencies": {
+    "typescript": "^4.2.4",
     "vue": "^3.0.11"
   },
   "devDependencies": {

@@ -30,8 +30,10 @@
   </a>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'SvwsUiSidebarMenuHeader',
   components: {},
   props: {
@@ -45,7 +47,7 @@ export default {
       this.$emit('click', event);
     },
   },
-};
+});
 </script>
 
 <style>

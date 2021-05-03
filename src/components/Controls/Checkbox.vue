@@ -13,10 +13,11 @@
   </label>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import SvwsUiIcon from '../Layout/Icon.vue';
 
-export default {
+export default defineComponent({
   name: 'SvwsUiCheckbox',
   components: { SvwsUiIcon },
   props: {
@@ -30,7 +31,7 @@ export default {
       this.$emit('input', event.target.checked);
     },
   },
-};
+});
 </script>
 
 <style>
