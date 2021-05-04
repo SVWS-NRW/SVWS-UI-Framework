@@ -1,23 +1,12 @@
-import SvwsUiButton from './Controls/Button.vue';
-import SvwsUiCheckbox from './Controls/Checkbox.vue';
-import SvwsUiProgressBar from './Controls/ProgressBar.vue';
-import SvwsUiTextInput from './Controls/TextInput.vue';
-import SvwsUiToggle from './Controls/Toggle.vue';
+export { default as SvwsUiButton } from './Controls/Button.vue';
+export { default as SvwsUiCheckbox } from './Controls/Checkbox.vue';
+export { default as SvwsUiProgressBar } from './Controls/ProgressBar.vue';
+export { default as SvwsUiTextInput } from './Controls/TextInput.vue';
+export { default as SvwsUiToggle } from './Controls/Toggle.vue';
 
-import SvwsUiIcon from './Layout/Icon.vue';
+export { default as SvwsUiIcon } from './Layout/Icon.vue';
 
-import SvwsUiSidebarMenu from './Layout/Sidebar/Menu.vue';
-import SvwsUiSidebarMenuHeader from './Layout/Sidebar/MenuHeader.vue';
-import SvwsUiSidebarMenuItem from './Layout/Sidebar/MenuItem.vue';
+export { default as SvwsUiSidebarMenu } from './Layout/Sidebar/Menu.vue';
+export { default as SvwsUiSidebarMenuHeader } from './Layout/Sidebar/MenuHeader.vue';
+export { default as SvwsUiSidebarMenuItem } from './Layout/Sidebar/MenuItem.vue';
 
-export {
-  SvwsUiButton,
-  SvwsUiCheckbox,
-  SvwsUiProgressBar,
-  SvwsUiTextInput,
-  SvwsUiToggle,
-  SvwsUiIcon,
-  SvwsUiSidebarMenu,
-  SvwsUiSidebarMenuHeader,
-  SvwsUiSidebarMenuItem,
-};

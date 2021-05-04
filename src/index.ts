@@ -1,14 +1,16 @@
-import SvwsUiButton from './components/Controls/Button.vue';
-import SvwsUiCheckbox from './components/Controls/Checkbox.vue';
-import SvwsUiProgressBar from './components/Controls/ProgressBar.vue';
-import SvwsUiTextInput from './components/Controls/TextInput.vue';
-import SvwsUiToggle from './components/Controls/Toggle.vue';
+import {
+  SvwsUiButton,
+  SvwsUiCheckbox,
+  SvwsUiProgressBar,
+  SvwsUiTextInput,
+  SvwsUiToggle,
 
-import SvwsUiIcon from './components/Layout/Icon.vue';
+  SvwsUiIcon,
 
-import SvwsUiSidebarMenu from './components/Layout/Sidebar/Menu.vue';
-import SvwsUiSidebarMenuHeader from './components/Layout/Sidebar/MenuHeader.vue';
-import SvwsUiSidebarMenuItem from './components/Layout/Sidebar/MenuItem.vue';
+  SvwsUiSidebarMenu,
+  SvwsUiSidebarMenuHeader,
+  SvwsUiSidebarMenuItem
+} from './components'
 
 import './assets/styles/index.css';
 
