@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "strict": true,
-    "module": "es2015",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "esnext"],
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

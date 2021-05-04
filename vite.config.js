@@ -14,7 +14,7 @@ module.exports = {
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'SVWS UI',
+      name: 'SvwsUI',
     },
     rollupOptions: {
       external: ['vue'],
