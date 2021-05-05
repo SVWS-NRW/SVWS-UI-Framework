@@ -30,13 +30,13 @@ export default defineComponent({
     size: {
       type: String,
       default: 'default',
-      validator: function (value) {
+      validator: function (value: string) {
         return ['default', 'small'].includes(value);
       },
     },
     progress: {
       type: Number,
-      validator: function (value) {
+      validator: function (value: number) {
         return 0 <= value && value <= 100;
       },
     },

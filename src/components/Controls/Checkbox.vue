@@ -27,7 +27,7 @@ export default defineComponent({
     },
   },
   methods: {
-    onInput: function (event) {
+    onInput(event: { target: HTMLInputElement }) {
       this.$emit('input', event.target.checked);
     },
   },

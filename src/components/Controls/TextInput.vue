@@ -23,7 +23,7 @@
     <span v-if="placeholder" class="svws-ui--text-input--placeholder">{{
       placeholder
     }}</span>
-    <svws-ui-icon v-if="icon" :icon="icon" />
+    <svws-ui-icon v-if="icon" :icon="icon"/>
   </label>
 </template>
 
@@ -71,26 +71,24 @@ export default defineComponent({
     hasFocus() {
       return this.focused;
     },
-    onInput(event) {
-      this.$emit('update:value', event.target.value);
+    onInput(event: { target: HTMLInputElement }) {
+      this.$emit('update:value', event.target.checked);
     },
-    onFocus(event) {
+    onFocus(event: Event) {
       this.focused = true;
-
       this.$emit('focus', event);
     },
-    onBlur(event) {
+    onBlur(event: Event) {
       this.focused = false;
-
       this.$emit('blur', event);
     },
     onClick(event) {
       this.$emit('click', event);
     },
-    onMouseDown(event) {
+    onMouseDown(event: MouseEvent) {
       this.$emit('mousedown', event);
     },
-    onKeyDown(event) {
+    onKeyDown(event: InputEvent) {
       this.$emit('keydown', event);
     },
   },

@@ -23,7 +23,7 @@ export default defineComponent({
     type: {
       type: String,
       default: 'primary',
-      validator: function (value) {
+      validator: function (value: string) {
         return ['primary', 'secondary', 'danger', 'transparent'].includes(
           value
         );
@@ -35,7 +35,7 @@ export default defineComponent({
     },
   },
   methods: {
-    onClick: function (event) {
+    onClick: function (event: MouseEvent) {
       if (!this.disabled) {
         this.$emit('click', event);
       }

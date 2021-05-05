@@ -43,7 +43,7 @@ export default defineComponent({
     },
   },
   methods: {
-    onClick: function (event) {
+    onClick: function (event: MouseEvent) {
       this.$emit('click', event);
     },
   },

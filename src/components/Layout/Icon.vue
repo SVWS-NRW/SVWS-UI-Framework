@@ -14,7 +14,7 @@ export default defineComponent({
     variant: {
       type: String,
       default: 'line',
-      validator: function (value) {
+      validator: function (value: string) {
         return ['line', 'fill'].includes(value);
       },
     },
