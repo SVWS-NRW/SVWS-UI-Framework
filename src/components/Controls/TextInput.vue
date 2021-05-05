@@ -29,11 +29,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import SvwsUiIcon from '../Layout/Icon.vue';
 
 export default defineComponent({
   name: 'SvwsUiTextInput',
-  components: { SvwsUiIcon },
   props: {
     type: {
       type: String,
@@ -82,7 +80,7 @@ export default defineComponent({
       this.focused = false;
       this.$emit('blur', event);
     },
-    onClick(event) {
+    onClick(event: MouseEvent) {
       this.$emit('click', event);
     },
     onMouseDown(event: MouseEvent) {
