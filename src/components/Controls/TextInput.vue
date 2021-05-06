@@ -70,7 +70,7 @@ export default defineComponent({
       return this.focused;
     },
     onInput(event: { target: HTMLInputElement }) {
-      this.$emit('update:value', event.target.checked);
+      this.$emit('update:value', event.target.value);
     },
     onFocus(event: Event) {
       this.focused = true;
