@@ -1,11 +1,13 @@
-import '../src/assets/styles/index.css';
-import ui from '../../SVWS-UI-Framework'
+import SvwsUi from '../.'
 import { app } from '@storybook/vue3'
-app.use(ui)
+
+import '../src/assets/styles/index.css';
+
+app.use(SvwsUi)
 
 export const decorators = [
   (story) => ({
-    components: { story, ui },
+    components: { story, SvwsUi },
     template: '<story/>'
   })
 ];
