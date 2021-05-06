@@ -4,13 +4,11 @@ import {
   SvwsUiProgressBar,
   SvwsUiTextInput,
   SvwsUiToggle,
-
   SvwsUiIcon,
-
   SvwsUiSidebarMenu,
   SvwsUiSidebarMenuHeader,
-  SvwsUiSidebarMenuItem
-} from './components'
+  SvwsUiSidebarMenuItem,
+} from './components';
 
 import './assets/styles/index.css';
 

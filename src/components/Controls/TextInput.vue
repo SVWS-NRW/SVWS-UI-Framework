@@ -23,7 +23,7 @@
     <span v-if="placeholder" class="svws-ui--text-input--placeholder">{{
       placeholder
     }}</span>
-    <svws-ui-icon v-if="icon" :icon="icon"/>
+    <svws-ui-icon v-if="icon" :icon="icon" />
   </label>
 </template>
 
