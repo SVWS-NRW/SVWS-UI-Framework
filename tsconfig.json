@@ -10,7 +10,7 @@
     "noUnusedParameters": true,
     "experimentalDecorators": true,
     "lib": ["dom", "esnext"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["**/node_modules/**", "**/dist/**"]
 }
