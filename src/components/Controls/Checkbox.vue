@@ -37,7 +37,7 @@ export default defineComponent({
 <style>
 .svws-ui--checkbox {
   @apply inline-flex;
-  @apply justify-center items-center;
+  @apply items-center justify-center;
   @apply text-input;
   @apply cursor-pointer;
   @apply select-none;
@@ -49,9 +49,9 @@ export default defineComponent({
 
 .svws-ui--checkbox--indicator {
   @apply inline-flex;
-  @apply justify-center items-center;
-  @apply w-4;
-  @apply h-4;
+  @apply items-center justify-center;
+  @apply w-5;
+  @apply h-5;
   @apply mr-2;
   @apply border-2 border-black;
   @apply bg-white;
@@ -60,7 +60,7 @@ export default defineComponent({
 .svws-ui--checkbox--indicator .svws-ui--icon {
   @apply opacity-0;
 
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .svws-ui--checkbox:focus .svws-ui--checkbox--indicator,
