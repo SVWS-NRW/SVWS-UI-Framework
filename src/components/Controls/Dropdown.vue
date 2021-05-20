@@ -36,7 +36,7 @@
   import SvwsUiIcon from '../Layout/Icon.vue';
 
   export default defineComponent({
-    name: 'SvwsUiButton',
+    name: 'SvwsUiDropdown',
     components: { Menu, MenuButton, MenuItems, MenuItem, SvwsUiIcon },
     props: {
       variant: {
@@ -126,6 +126,3 @@
     @apply border-error;
   }
 </style>
-
-
-@apply text-button focus:outline-none focus:ring ring-opacity-50 ring-primary relative z-10 flex flex-row items-center px-5 py-2 font-bold border-2 rounded-full;

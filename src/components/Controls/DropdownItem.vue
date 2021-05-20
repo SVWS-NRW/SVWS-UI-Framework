@@ -24,7 +24,7 @@
   import SvwsUiIcon from '../Layout/Icon.vue';
 
   export default defineComponent({
-    name: 'SvwsUiButton',
+    name: 'SvwsUiDropdownItem',
     components: { MenuItem, SvwsUiIcon },
     props: {
       variant: {
