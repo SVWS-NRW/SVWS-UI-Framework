@@ -30,8 +30,7 @@ const Template = (args, { argTypes }) => ({
   },
   props: Object.keys(argTypes),
   methods: { onClick: action('click') },
-  template:
-    `
+  template: `
     <svws-ui-dropdown-with-action v-bind="args">
       <template v-slot:actionButton><svws-ui-button v-bind="args" @click="onClick" dropdownAction>Button und Dropdown</svws-ui-button></template>
       <template v-slot:dropdownItems>

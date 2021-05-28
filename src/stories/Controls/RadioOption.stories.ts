@@ -15,8 +15,7 @@ const Template = (args, { argTypes }) => ({
   },
   props: Object.keys(argTypes),
   methods: { onClick: action('click') },
-  template:
-    '<svws-ui-radio-option v-bind="args" @input="onInput" />'
+  template: '<svws-ui-radio-option v-bind="args" @input="onInput" />',
 });
 
 export const Default = Template.bind({});

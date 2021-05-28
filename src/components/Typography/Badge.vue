@@ -27,7 +27,9 @@ export default defineComponent({
       type: String,
       default: 'light',
       validator: function (value: string) {
-        return ['primary', 'success', 'error', 'highlight', 'light'].includes(value);
+        return ['primary', 'success', 'error', 'highlight', 'light'].includes(
+          value
+        );
       },
     },
     size: {
@@ -42,43 +44,43 @@ export default defineComponent({
 </script>
 
 <style>
-  .svws-ui--badge {
-    @apply font-bold border rounded;
-  }
+.svws-ui--badge {
+  @apply font-bold border rounded;
+}
 
-  .svws-ui--badge--normal {
-    @apply text-button px-2 py-1;
-  }
+.svws-ui--badge--normal {
+  @apply text-button px-2 py-1;
+}
 
-  .svws-ui--badge--small {
-    @apply text-caption px-2 py-1;
-  }
+.svws-ui--badge--small {
+  @apply text-caption px-2 py-1;
+}
 
-  .svws-ui--badge--medium {
-    @apply px-2.5 py-1.5 text-body;
-  }
+.svws-ui--badge--medium {
+  @apply px-2.5 py-1.5 text-body;
+}
 
-  .svws-ui--badge--big {
-    @apply text-headline-5 px-3 py-2;
-  }
+.svws-ui--badge--big {
+  @apply text-headline-5 px-3 py-2;
+}
 
-  .svws-ui--badge--error {
-    @apply bg-error border-error text-white;
-  }
+.svws-ui--badge--error {
+  @apply bg-error border-error text-white;
+}
 
-  .svws-ui--badge--primary {
-    @apply bg-primary border-primary text-white;
-  }
+.svws-ui--badge--primary {
+  @apply bg-primary border-primary text-white;
+}
 
-  .svws-ui--badge--light {
-    @apply bg-light text-dark border-light;
-  }
+.svws-ui--badge--light {
+  @apply bg-light text-dark border-light;
+}
 
-  .svws-ui--badge--success {
-    @apply bg-success text-dark border-success;
-  }
+.svws-ui--badge--success {
+  @apply bg-success text-dark border-success;
+}
 
-  .svws-ui--badge--highlight {
-    @apply bg-highlight text-dark border-highlight;
-  }
+.svws-ui--badge--highlight {
+  @apply bg-highlight text-dark border-highlight;
+}
 </style>

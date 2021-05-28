@@ -10,9 +10,9 @@ export default {
       control: {
         type: 'select',
         options: ['both', 'horizontal', 'vertical', 'none'],
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 const Template = (args, { argTypes }) => ({

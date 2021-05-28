@@ -14,8 +14,7 @@ const Template = (args, { argTypes }) => ({
   },
   props: Object.keys(argTypes),
   methods: { onInput: action('input') },
-  template:
-    '<div class="h-screen w-screen"><svws-ui-overlay /></div>',
+  template: '<div class="h-screen w-screen"><svws-ui-overlay /></div>',
 });
 
 export const Default = Template.bind({});

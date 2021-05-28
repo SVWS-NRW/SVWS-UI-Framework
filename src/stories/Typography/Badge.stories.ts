@@ -24,8 +24,7 @@ const Template = (args, { argTypes }) => ({
   setup() {
     return { args };
   },
-  template:
-    '<svws-ui-badge v-bind="args">Badge</svws-ui-badge>',
+  template: '<svws-ui-badge v-bind="args">Badge</svws-ui-badge>',
 });
 
 export const Primary = Template.bind({});
