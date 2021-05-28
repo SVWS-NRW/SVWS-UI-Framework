@@ -1,43 +1,54 @@
 <template>
-  <label class="svws-ui--radio--label" :class="[ disabled ? 'svws-ui--radio--label--disabled' : '' ]">
-    <input @input="onInput" type="radio" :name="name" :value="value" :disabled="disabled" :checked="checked" class="svws-ui--radio--indicator">
+  <label
+    class="svws-ui--radio--label"
+    :class="[disabled ? 'svws-ui--radio--label--disabled' : '']"
+  >
+    <input
+      @input="onInput"
+      type="radio"
+      :name="name"
+      :value="value"
+      :disabled="disabled"
+      :checked="checked"
+      class="svws-ui--radio--indicator"
+    />
     <span>{{ label }}</span>
   </label>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    name: 'SvwsUiRadioOption',
-    components: {},
-    props: {
-      name: {
-        type: String,
-      },
-      label: {
-        type: String,
-      },
-      value: {
-        type: String,
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      checked: {
-        type: Boolean,
-        default: false
-      },
+export default defineComponent({
+  name: 'SvwsUiRadioOption',
+  components: {},
+  props: {
+    name: {
+      type: String,
     },
-    methods: {
-      onInput: function(event: { target: HTMLInputElement }) {
-        if (!this.disabled) {
-          this.$emit('input', event.target.value);
-        }
-      },
+    label: {
+      type: String,
     },
-  });
+    value: {
+      type: String,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    onInput: function (event: { target: HTMLInputElement }) {
+      if (!this.disabled) {
+        this.$emit('input', event.target.value);
+      }
+    },
+  },
+});
 </script>
 
 <style>
@@ -56,7 +67,7 @@
 
 .svws-ui--radio--indicator:checked::before {
   @apply block w-3 h-3 bg-black rounded-full;
-  content: "";
+  content: '';
 }
 
 .svws-ui--radio--indicator:disabled {
@@ -70,5 +81,4 @@
   @apply text-disabled-dark;
   @apply cursor-not-allowed;
 }
-
 </style>
