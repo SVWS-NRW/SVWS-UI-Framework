@@ -12,7 +12,7 @@ export default defineComponent({
 </script>
 
 <style>
-  .svws-ui--overlay {
-    @apply bg-light backdrop-filter backdrop-blur-sm fixed inset-0 bg-opacity-50;
-  }
+.svws-ui--overlay {
+  @apply bg-light backdrop-filter backdrop-blur-sm fixed inset-0 bg-opacity-50;
+}
 </style>
