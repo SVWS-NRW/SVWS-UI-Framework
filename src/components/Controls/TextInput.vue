@@ -96,7 +96,7 @@ export default defineComponent({
 <style>
 .svws-ui--text-input {
   @apply relative;
-  @apply inline-flex;
+  @apply flex;
 }
 
 .svws-ui--text-input .svws-ui--icon {
@@ -124,7 +124,7 @@ export default defineComponent({
 }
 
 .svws-ui--text-input--control {
-  @apply h-9;
+  @apply h-9 w-full;
   @apply px-4 py-2;
   @apply border border-black border-opacity-20 rounded;
   @apply bg-white;

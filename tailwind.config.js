@@ -74,15 +74,22 @@ module.exports = {
       bold: '700',
     },
     extend: {
+      opacity: {
+        92: '0.92',
+      },
+      zIndex: {
+        '-10': '-10',
+        '-20': '-20',
+      },
       maxWidth: {
-        '116': '29rem',
+        116: '29rem',
         'modal-sm': '28rem',
         'modal-md': '76rem',
         'modal-lg': '116rem',
       },
       minWidth: {
-        '84': '21rem',
-      }
+        84: '21rem',
+      },
     },
   },
   variants: {

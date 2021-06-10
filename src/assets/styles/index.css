@@ -16,22 +16,22 @@ html {
   }
 }
 
-h1 {
+.svws-ui-headline-1 {
   @apply text-headline-1 font-bold;
 }
 
-h2 {
+.svws-ui-headline-2 {
   @apply text-headline-2 font-bold;
 }
 
-h3 {
+.svws-ui-headline-3 {
   @apply text-headline-3 font-bold;
 }
 
-h4 {
+.svws-ui-headline-4 {
   @apply text-headline-4 font-bold;
 }
 
-h5 {
+.svws-ui-headline-5 {
   @apply text-headline-5 font-bold;
 }
