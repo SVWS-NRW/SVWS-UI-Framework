@@ -8,7 +8,7 @@
       'svws-ui--select-input-disabled': disabled,
     }"
   >
-    <select class="svws-ui--select-input--control" @change="onInput">
+    <select class="svws-ui--select-input--control" @change="onInput" :disabled="disabled">
       <option v-if="!value" disabled selected>{{ placeholder }}</option>
       <option
         v-for="option in options"
@@ -62,7 +62,7 @@ export default defineComponent({
   },
   methods: {
     focus() {
-      // this.$refs.input.focus();
+      //this.$refs.input.focus();
     },
     blur() {
       // this.$refs.input.blur();
@@ -144,20 +144,6 @@ export default defineComponent({
 .svws-ui--select-input-filled .svws-ui--select-input--control {
   @apply border-gray border-opacity-100;
   @apply outline-none;
-}
-
-.svws-ui--select-input--control[type='date']::-webkit-inner-spin-button,
-.svws-ui--select-input--control[type='date']::-webkit-calendar-picker-indicator {
-  @apply opacity-0;
-}
-
-.svws-ui--select-input--control[type='date'] {
-  color: transparent;
-}
-
-.svws-ui--select-input-focus .svws-ui--select-input--control[type='date'],
-.svws-ui--select-input-filled .svws-ui--select-input--control[type='date'] {
-  @apply text-black;
 }
 
 .svws-ui--select-input-disabled .svws-ui--select-input--control {
