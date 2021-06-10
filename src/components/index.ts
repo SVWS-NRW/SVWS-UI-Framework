@@ -18,3 +18,8 @@ export { default as SvwsUiSecondaryMenu } from './Layout/Sidebar/SecondaryMenu.v
 export { default as SvwsUiModal } from './Layout/Modal/Modal.vue';
 export { default as SvwsUiOverlay } from './Layout/Modal/Overlay.vue';
 export { default as SvwsUiAppLayout } from './Layout/Pages/AppLayout.vue';
+export { default as SvwsUiTab } from './Controls/Tab.vue';
+export { default as SvwsUiTabBar } from './Controls/TabBar.vue';
+export { default as SvwsUiSelectInput } from './Controls/SelectInput.vue';
+export { default as SvwsUiTabButton } from './Controls/TabButton.vue';
+export { default as SvwsUiContentCard } from './Layout/ContentCard.vue';

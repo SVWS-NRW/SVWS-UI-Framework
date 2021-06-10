@@ -19,6 +19,11 @@ import {
   SvwsUiSidebarMenuHeader,
   SvwsUiSidebarMenuItem,
   SvwsUiSecondaryMenu,
+  SvwsUiTab,
+  SvwsUiTabBar,
+  SvwsUiSelectInput,
+  SvwsUiTabButton,
+  SvwsUiContentCard,
 } from './components';
 
 import './assets/styles/index.css';
@@ -45,5 +50,10 @@ export default {
     Vue.component('svws-ui-sidebar-menu-header', SvwsUiSidebarMenuHeader);
     Vue.component('svws-ui-sidebar-menu-item', SvwsUiSidebarMenuItem);
     Vue.component('svws-ui-secondary-menu', SvwsUiSecondaryMenu);
+    Vue.component('svws-ui-tab', SvwsUiTab);
+    Vue.component('svws-ui-tab-bar', SvwsUiTabBar);
+    Vue.component('svws-ui-select-input', SvwsUiSelectInput);
+    Vue.component('svws-ui-tab-button', SvwsUiTabButton);
+    Vue.component('svws-ui-content-card', SvwsUiContentCard);
   },
 };
