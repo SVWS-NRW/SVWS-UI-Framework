@@ -20,10 +20,9 @@ const Template = (args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Select Input Placeholder',
-  icon: null,
   options: [
     { index: 'option1', label: 'Option 1' },
-    { index: 'option2', label: 'Option 2' },
+    { index: 'option2', label: 'Option 2', selected: true },
     { index: 'option3', label: 'Option 3' },
   ],
   valid: true,

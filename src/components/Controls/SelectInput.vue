@@ -8,7 +8,16 @@
       'svws-ui--select-input-disabled': disabled,
     }"
   >
-    <select class="svws-ui--select-input--control" @change="onInput" :disabled="disabled">
+    <select
+      class="svws-ui--select-input--control"
+      @change="onChange"
+      @focus="onFocus"
+      @blur="onBlur"
+      @click="onClick"
+      @mousedown="onMouseDown"
+      @onkeydown="onKeyDown"
+      :disabled="disabled"
+    >
       <option v-if="!value" disabled selected>{{ placeholder }}</option>
       <option
         v-for="option in options"
@@ -20,11 +29,9 @@
         {{ option.label }}
       </option>
     </select>
-    <span
-      v-if="placeholder"
-      class="svws-ui--select-input--placeholder"
-      >{{ placeholder }}</span
-    >
+    <span v-if="placeholder" class="svws-ui--select-input--placeholder">{{
+      placeholder
+    }}</span>
     <svws-ui-icon
       :icon="this.focused ? 'arrow-up-s' : 'arrow-down-s'"
       class="svws-ui--dropdown--icon"
@@ -43,6 +50,7 @@ export default defineComponent({
     },
     options: {
       type: Array,
+      default: []
     },
     valid: {
       type: Boolean,
@@ -70,7 +78,7 @@ export default defineComponent({
     hasFocus() {
       return this.focused;
     },
-    onInput(event: { target: HTMLInputElement }) {
+    onChange(event: { target: HTMLInputElement }) {
       this.value = event.target.value;
       this.$emit('update:value', event.target.value);
     },
