@@ -97,6 +97,7 @@ export default defineComponent({
 .svws-ui--text-input {
   @apply relative;
   @apply flex;
+  @apply whitespace-nowrap overflow-hidden;
 }
 
 .svws-ui--text-input .svws-ui--icon {
@@ -129,6 +130,7 @@ export default defineComponent({
   @apply border border-black border-opacity-20 rounded;
   @apply bg-white;
   @apply text-input text-black;
+  @apply whitespace-nowrap;
 }
 
 .svws-ui--text-input-focus .svws-ui--text-input--control,
@@ -186,5 +188,10 @@ export default defineComponent({
 
 .svws-ui--text-input-disabled {
   @apply opacity-50;
+}
+
+.svws-ui--text-input-focus,
+.svws-ui--text-input-filled {
+  @apply overflow-visible;
 }
 </style>

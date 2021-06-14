@@ -37,7 +37,7 @@ export default defineComponent({
 <style>
 .svws-ui--checkbox {
   @apply inline-flex;
-  @apply items-center justify-center;
+  @apply items-center justify-start;
   @apply text-input;
   @apply cursor-pointer;
   @apply select-none;
