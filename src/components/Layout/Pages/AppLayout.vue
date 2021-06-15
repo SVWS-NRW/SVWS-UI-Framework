@@ -33,7 +33,7 @@ export default defineComponent({
 }
 
 .svws-ui--app-layout--pattern {
-  background-image: url('/images/pattern.png');
+  background-image: url('/img/pattern.png');
   background-size: 12.5rem;
 
   @apply bg-repeat absolute inset-0 -z-20;
