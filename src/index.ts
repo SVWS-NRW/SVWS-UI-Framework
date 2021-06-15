@@ -24,6 +24,7 @@ import {
   SvwsUiSelectInput,
   SvwsUiTabButton,
   SvwsUiContentCard,
+  SvwsUiHeader,
 } from './components';
 
 import './assets/styles/index.css';
@@ -55,5 +56,6 @@ export default {
     Vue.component('svws-ui-select-input', SvwsUiSelectInput);
     Vue.component('svws-ui-tab-button', SvwsUiTabButton);
     Vue.component('svws-ui-content-card', SvwsUiContentCard);
+    Vue.component('svws-ui-header', SvwsUiHeader);
   },
 };

@@ -23,3 +23,4 @@ export { default as SvwsUiTabBar } from './Controls/TabBar.vue';
 export { default as SvwsUiSelectInput } from './Controls/SelectInput.vue';
 export { default as SvwsUiTabButton } from './Controls/TabButton.vue';
 export { default as SvwsUiContentCard } from './Layout/ContentCard.vue';
+export { default as SvwsUiHeader } from './Layout/Header.vue';
