@@ -1,6 +1,6 @@
 <template>
   <div class="svws-ui--header--wrapper">
-    <h5 class="svws-ui-headline-3"><slot /></h5>
+    <h5 class="svws-ui-headline-2"><slot /></h5>
     <svws-ui-badge v-if="badge" variant="highlight" size="normal">{{
       badge
     }}</svws-ui-badge>
