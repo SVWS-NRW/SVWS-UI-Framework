@@ -1,7 +1,7 @@
 <template>
-  <div class="border-b-2 border-dark-20 pb-8 pt-4">
-    <h5 class="svws-ui-headline-5">TITLE: {{ title }}</h5>
-    <div class="block w-full mt-2">
+  <div class="svws-ui--content-card--wrapper">
+    <h5 class="svws-ui-headline-5">{{ title }}</h5>
+    <div class="mt-4">
       <slot />
     </div>
   </div>
@@ -19,3 +19,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.svws-ui--content-card--wrapper {
+  @apply border-b-2 border-dark-20 pb-8 pt-4;
+}
+</style>
