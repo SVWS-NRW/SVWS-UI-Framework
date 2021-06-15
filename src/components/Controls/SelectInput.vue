@@ -50,7 +50,9 @@ export default defineComponent({
     },
     options: {
       type: Array,
-      default: []
+      default: function () {
+        return [];
+      },
     },
     valid: {
       type: Boolean,
