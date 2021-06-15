@@ -15,6 +15,7 @@
     <textarea
       class="svws-ui--textarea-input--control"
       :value="value"
+      :required="required"
       :disabled="disabled"
       @input="onInput"
       @focus="onFocus"
@@ -44,6 +45,10 @@ export default defineComponent({
     valid: {
       type: Boolean,
       default: true,
+    },
+    required: {
+      type: Boolean,
+      default: false,
     },
     disabled: {
       type: Boolean,

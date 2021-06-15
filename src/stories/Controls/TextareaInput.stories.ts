@@ -31,6 +31,7 @@ Empty.args = {
   placeholder: 'Textarea Input Placeholder',
   valid: true,
   disabled: false,
+  required: false,
   resizeable: 'both',
 };
 
@@ -40,6 +41,7 @@ Filled.args = {
   placeholder: 'Textarea Input Placeholder',
   valid: true,
   disabled: false,
+  required: false,
   resizeable: 'both',
 };
 
@@ -49,6 +51,7 @@ Invalid.args = {
   placeholder: 'Textarea Input Placeholder',
   valid: false,
   disabled: false,
+  required: false,
   resizeable: 'both',
 };
 
@@ -57,6 +60,7 @@ Disabled.args = {
   value: '',
   placeholder: 'Textarea Input Placeholder',
   valid: true,
+  required: false,
   disabled: true,
   resizeable: 'both',
 };
