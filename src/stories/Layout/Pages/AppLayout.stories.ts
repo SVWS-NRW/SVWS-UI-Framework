@@ -86,7 +86,6 @@ const Template = (args, { argTypes }) => ({
     </template>
 
     <template v-slot:main>
-
     </template>
   </svws-ui-app-layout>
   `,
