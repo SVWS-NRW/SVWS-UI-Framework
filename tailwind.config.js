@@ -17,6 +17,13 @@ module.exports = {
       success: '#B6E65C',
       highlight: '#FFF693',
 
+      disabled: {
+        light: '#F3F3F3',
+        DEFAULT: '#D9D9D9',
+        medium: '#C0C0C0',
+        dark: '#959595',
+      },
+
       brown: '#9B8458',
       'brown-light': '#D6CDBC',
       'brown-dark': '#625337',
@@ -66,7 +73,24 @@ module.exports = {
       normal: '400',
       bold: '700',
     },
-    extend: {},
+    extend: {
+      opacity: {
+        92: '0.92',
+      },
+      zIndex: {
+        '-10': '-10',
+        '-20': '-20',
+      },
+      maxWidth: {
+        116: '29rem',
+        'modal-sm': '28rem',
+        'modal-md': '76rem',
+        'modal-lg': '116rem',
+      },
+      minWidth: {
+        84: '21rem',
+      },
+    },
   },
   variants: {
     extend: {},

@@ -6,6 +6,7 @@
       'svws-ui--button--secondary': type === 'secondary',
       'svws-ui--button--danger': type === 'danger',
       'svws-ui--button--transparent': type === 'transparent',
+      'svws-ui--button--dropdown-action': dropdownAction === true,
     }"
     @click="onClick"
     :disabled="disabled"
@@ -14,14 +15,16 @@
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'SvwsUiButton',
   props: {
     type: {
       type: String,
       default: 'primary',
-      validator: function (value) {
+      validator: function (value: string) {
         return ['primary', 'secondary', 'danger', 'transparent'].includes(
           value
         );
@@ -31,28 +34,31 @@ export default {
       type: Boolean,
       default: false,
     },
+    dropdownAction: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
-    onClick: function (event) {
+    onClick: function (event: MouseEvent) {
       if (!this.disabled) {
         this.$emit('click', event);
       }
     },
   },
-};
+});
 </script>
 
 <style>
 .svws-ui--button {
-  @apply px-5 py-2;
   @apply border-2 rounded-full;
+  @apply px-5 py-2;
+  @apply select-none;
   @apply text-button font-bold;
 }
 
 .svws-ui--button:focus {
-  @apply ring;
-
-  outline: none;
+  @apply ring outline-none;
 }
 
 .svws-ui--button--primary {
@@ -72,7 +78,7 @@ export default {
 }
 
 .svws-ui--button--secondary:focus {
-  @apply ring-primary;
+  @apply ring-primary ring-opacity-50;
 }
 
 .svws-ui--button--danger {
@@ -83,8 +89,8 @@ export default {
 
 .svws-ui--button--danger:focus {
   @apply bg-error;
-  @apply text-white;
   @apply ring-error ring-opacity-50;
+  @apply text-white;
 }
 
 .svws-ui--button--transparent {
@@ -102,10 +108,15 @@ export default {
 }
 
 .svws-ui--button:disabled {
-  @apply opacity-25;
-  @apply bg-gray;
-  @apply border-gray;
-  @apply text-dark-20;
+  @apply bg-disabled;
+  @apply border-disabled-medium;
   @apply cursor-not-allowed;
+  @apply text-disabled-dark;
+}
+
+.svws-ui--button--dropdown-action {
+  @apply pr-3;
+  @apply relative z-20;
+  @apply rounded-r-none;
 }
 </style>

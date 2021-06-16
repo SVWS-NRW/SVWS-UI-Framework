@@ -13,6 +13,7 @@
       :type="type"
       :value="value"
       :disabled="disabled"
+      :required="required"
       @input="onInput"
       @focus="onFocus"
       @blur="onBlur"
@@ -20,19 +21,23 @@
       @mousedown="onMouseDown"
       @keydown="onKeyDown"
     />
-    <span v-if="placeholder" class="svws-ui--text-input--placeholder">{{
-      placeholder
-    }}</span>
+    <span
+      v-if="placeholder"
+      class="svws-ui--text-input--placeholder"
+      :class="{
+        'svws-ui--text-input--placeholder--required': required,
+      }"
+      >{{ placeholder }}</span
+    >
     <svws-ui-icon v-if="icon" :icon="icon" />
   </label>
 </template>
 
-<script>
-import SvwsUiIcon from '../Layout/Icon.vue';
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'SvwsUiTextInput',
-  components: { SvwsUiIcon },
   props: {
     type: {
       type: String,
@@ -55,6 +60,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    required: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['update:value', 'focus', 'blur', 'click', 'mousedown', 'keydown'],
   data() {
@@ -70,51 +79,50 @@ export default {
     hasFocus() {
       return this.focused;
     },
-    onInput(event) {
+    onInput(event: { target: HTMLInputElement }) {
       this.$emit('update:value', event.target.value);
     },
-    onFocus(event) {
+    onFocus(event: Event) {
       this.focused = true;
-
       this.$emit('focus', event);
     },
-    onBlur(event) {
+    onBlur(event: Event) {
       this.focused = false;
-
       this.$emit('blur', event);
     },
-    onClick(event) {
+    onClick(event: MouseEvent) {
       this.$emit('click', event);
     },
-    onMouseDown(event) {
+    onMouseDown(event: MouseEvent) {
       this.$emit('mousedown', event);
     },
-    onKeyDown(event) {
+    onKeyDown(event: InputEvent) {
       this.$emit('keydown', event);
     },
   },
-};
+});
 </script>
 
 <style>
 .svws-ui--text-input {
+  @apply flex;
   @apply relative;
-  @apply inline-flex;
+  @apply whitespace-nowrap overflow-hidden;
 }
 
 .svws-ui--text-input .svws-ui--icon {
-  @apply opacity-20;
   @apply absolute;
-  @apply inset-y-0 right-0;
   @apply flex;
+  @apply inset-y-0 right-0;
   @apply justify-center items-center;
-  @apply w-8;
-  @apply rounded;
+  @apply opacity-20;
   @apply pointer-events-none;
+  @apply rounded;
+  @apply w-8;
 
-  margin-top: 1px;
-  margin-right: 1px;
   margin-bottom: 1px;
+  margin-right: 1px;
+  margin-top: 1px;
 }
 
 .svws-ui--text-input-focus .svws-ui--icon,
@@ -127,11 +135,12 @@ export default {
 }
 
 .svws-ui--text-input--control {
-  @apply h-9;
-  @apply px-4 py-2;
-  @apply border border-black border-opacity-20 rounded;
   @apply bg-white;
+  @apply border border-black border-opacity-20 rounded;
+  @apply h-9 w-full;
+  @apply px-4 py-2;
   @apply text-input text-black;
+  @apply whitespace-nowrap;
 }
 
 .svws-ui--text-input-focus .svws-ui--text-input--control,
@@ -164,9 +173,9 @@ export default {
 
 .svws-ui--text-input--placeholder {
   @apply absolute;
+  @apply pointer-events-none;
   @apply text-input text-gray;
   @apply transform;
-  @apply pointer-events-none;
 
   top: theme('spacing.2');
   left: theme('spacing.4');
@@ -174,10 +183,10 @@ export default {
 
 .svws-ui--text-input-focus .svws-ui--text-input--placeholder,
 .svws-ui--text-input-filled .svws-ui--text-input--placeholder {
-  @apply px-1;
-  @apply bg-white;
-  @apply text-caption;
   @apply -translate-y-1/2;
+  @apply bg-white;
+  @apply px-1;
+  @apply text-caption;
 
   top: 0;
   left: theme('spacing.1');
@@ -189,5 +198,15 @@ export default {
 
 .svws-ui--text-input-disabled {
   @apply opacity-50;
+}
+
+.svws-ui--text-input-focus,
+.svws-ui--text-input-filled {
+  @apply overflow-visible;
+}
+
+.svws-ui--text-input--placeholder--required:after {
+  @apply text-error;
+  content: ' *';
 }
 </style>

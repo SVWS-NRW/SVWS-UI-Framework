@@ -20,10 +20,11 @@
   </a>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import SvwsUiIcon from '../Icon.vue';
 
-export default {
+export default defineComponent({
   name: 'SvwsUiSidebarMenuItem',
   components: {
     SvwsUiIcon,
@@ -45,11 +46,11 @@ export default {
     },
   },
   methods: {
-    onClick: function (event) {
+    onClick: function (event: MouseEvent) {
       this.$emit('click', event);
     },
   },
-};
+});
 </script>
 
 <style>

@@ -21,25 +21,27 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'SvwsUiProgressBar',
   props: {
     size: {
       type: String,
       default: 'default',
-      validator: function (value) {
+      validator: function (value: string) {
         return ['default', 'small'].includes(value);
       },
     },
     progress: {
       type: Number,
-      validator: function (value) {
+      validator: function (value: number) {
         return 0 <= value && value <= 100;
       },
     },
   },
-};
+});
 </script>
 
 <style>
@@ -56,10 +58,10 @@ export default {
 }
 
 .svws-ui--progress-bar--bar {
-  @apply w-full;
-  @apply rounded-full;
   @apply bg-light;
   @apply overflow-hidden;
+  @apply rounded-full;
+  @apply w-full;
 }
 
 .svws-ui--progress-bar--default .svws-ui--progress-bar--bar {

@@ -13,10 +13,11 @@
   </label>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import SvwsUiIcon from '../Layout/Icon.vue';
 
-export default {
+export default defineComponent({
   name: 'SvwsUiCheckbox',
   components: { SvwsUiIcon },
   props: {
@@ -26,20 +27,20 @@ export default {
     },
   },
   methods: {
-    onInput: function (event) {
+    onInput(event: { target: HTMLInputElement }) {
       this.$emit('input', event.target.checked);
     },
   },
-};
+});
 </script>
 
 <style>
 .svws-ui--checkbox {
-  @apply inline-flex;
-  @apply justify-center items-center;
-  @apply text-input;
   @apply cursor-pointer;
+  @apply inline-flex;
+  @apply items-center justify-start;
   @apply select-none;
+  @apply text-input;
 }
 
 .svws-ui--checkbox--control {
@@ -47,19 +48,17 @@ export default {
 }
 
 .svws-ui--checkbox--indicator {
-  @apply inline-flex;
-  @apply justify-center items-center;
-  @apply w-4;
-  @apply h-4;
-  @apply mr-2;
-  @apply border-2 border-black;
   @apply bg-white;
+  @apply border-2 border-black;
+  @apply inline-flex items-center justify-center;
+  @apply mr-2;
+  @apply w-5 h-5;
 }
 
 .svws-ui--checkbox--indicator .svws-ui--icon {
   @apply opacity-0;
 
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .svws-ui--checkbox:focus .svws-ui--checkbox--indicator,

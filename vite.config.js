@@ -1,12 +1,20 @@
-const path = require('path');
+import { resolve } from 'path';
 const vue = require('@vitejs/plugin-vue');
 
 module.exports = {
   plugins: [vue()],
+  resolve: {
+    alias: {
+      '~remixicon/fonts/remixicon.css': resolve(
+        __dirname,
+        'node_modules/remixicon/fonts/remixicon.css'
+      ),
+    },
+  },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.js'),
-      name: 'SVWS UI',
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'SvwsUI',
     },
     rollupOptions: {
       external: ['vue'],

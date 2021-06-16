@@ -14,7 +14,7 @@ const Template = (args, { argTypes }) => ({
   },
   props: Object.keys(argTypes),
   methods: { onInput: action('input') },
-  template: '<svws-ui-text-input v-bind="args" @input="onInput"/>',
+  template: '<svws-ui-text-input v-bind="args" @input="onInput" />',
 });
 
 export const Empty = Template.bind({});
@@ -24,6 +24,7 @@ Empty.args = {
   placeholder: 'Text Input Placeholder',
   icon: null,
   valid: true,
+  required: false,
   disabled: false,
 };
 
@@ -34,6 +35,7 @@ Filled.args = {
   placeholder: 'Text Input Placeholder',
   icon: null,
   valid: true,
+  required: false,
   disabled: false,
 };
 
@@ -44,6 +46,7 @@ Invalid.args = {
   placeholder: 'Text Input Placeholder',
   icon: null,
   valid: false,
+  required: false,
   disabled: false,
 };
 
@@ -54,5 +57,6 @@ Disabled.args = {
   placeholder: 'Text Input Placeholder',
   icon: null,
   valid: true,
+  required: false,
   disabled: true,
 };

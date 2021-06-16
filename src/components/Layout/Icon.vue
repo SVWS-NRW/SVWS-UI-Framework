@@ -2,8 +2,10 @@
   <i class="svws-ui--icon" :class="`ri-${icon}-${variant}`" />
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'SvwsUiIcon',
   props: {
     icon: {
@@ -12,12 +14,12 @@ export default {
     variant: {
       type: String,
       default: 'line',
-      validator: function (value) {
+      validator: function (value: string) {
         return ['line', 'fill'].includes(value);
       },
     },
   },
-};
+});
 </script>
 
 <style>

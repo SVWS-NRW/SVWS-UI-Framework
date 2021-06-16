@@ -6,8 +6,8 @@
     "lint": "./node_modules/.bin/vue-cli-service lint",
     "format": "./node_modules/.bin/prettier --write ./.storybook ./src ./*.config.js",
     "build": "./node_modules/.bin/vite build",
-    "storybook:start": "./node_modules/.bin/start-storybook -p 6006",
-    "storybook:build": "./node_modules/.bin/build-storybook",
+    "storybook:start": "./node_modules/.bin/start-storybook -s ./src/assets -p 6006",
+    "storybook:build": "./node_modules/.bin/build-storybook -s ./src/assets",
     "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages"
   },
   "files": [
@@ -16,7 +16,7 @@
   "main": "./dist/svws-ui.umd.js",
   "module": "./dist/svws-ui.es.js",
   "dependencies": {
-    "vue": "^3.0.11"
+    "@headlessui/vue": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -43,6 +43,7 @@
     "prettier": "^2.2.1",
     "remixicon": "^2.5.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "typescript": "^4.3.2",
     "vite": "^2.2.1",
     "vue": "^3.0.11",
     "vue-loader": "^16.1.2"
