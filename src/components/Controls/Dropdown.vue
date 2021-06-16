@@ -70,7 +70,7 @@ export default defineComponent({
 .svws-ui--dropdown--button {
   @apply border-2;
   @apply flex items-center;
-  @apply px-5 py-2 ;
+  @apply px-5 py-2;
   @apply relative z-10;
   @apply rounded-full;
   @apply text-button font-bold;

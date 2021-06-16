@@ -82,7 +82,7 @@ export default defineComponent({
 }
 
 .svws-ui--dropdown-with-action--button {
-  @apply  ml-1;
+  @apply ml-1;
   @apply border-2;
   @apply flex items-center;
   @apply py-2 pl-2 pr-3;
@@ -108,7 +108,7 @@ export default defineComponent({
 .svws-ui--dropdown-with-action--button--secondary {
   @apply bg-transparent;
   @apply border-black;
-  @apply text-black
+  @apply text-black;
 }
 
 .svws-ui--dropdown-with-action--button--secondary:focus {
