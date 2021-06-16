@@ -7,7 +7,7 @@
     "format": "./node_modules/.bin/prettier --write ./.storybook ./src ./*.config.js",
     "build": "./node_modules/.bin/vite build",
     "storybook:start": "./node_modules/.bin/start-storybook -s ./src/assets -p 6006",
-    "storybook:build": "./node_modules/.bin/build-storybook",
+    "storybook:build": "./node_modules/.bin/build-storybook -s ./src/assets",
     "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages"
   },
   "files": [
