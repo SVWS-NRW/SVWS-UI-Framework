@@ -15,9 +15,9 @@ const Template = (args, { argTypes }) => ({
       <svws-ui-content-card v-bind="args">
         <div class="flex flex-row items-start space-x-4">
           <div class="flex-shrink-0">
-            <img src="http://placehold.it/256x256" class="md:h-20 md:w-20 lg:h-24 lg:w-24 h-32 w-32 rounded-full">
+            <img src="http://placehold.it/256x256" class="w-32 h-32 rounded-full md:h-20 md:w-20 lg:h-24 lg:w-24">
           </div>
-          <div class="grid gap-4 grid-cols-1 md:grid-cols-2 flex-grow">
+          <div class="flex-grow grid gap-4 grid-cols-1 md:grid-cols-2">
             <svws-ui-text-input type="text" placeholder="Vorname" />
             <svws-ui-text-input type="text" placeholder="Alle Vornamen" />
             <svws-ui-text-input type="text" placeholder="Nachname" />
