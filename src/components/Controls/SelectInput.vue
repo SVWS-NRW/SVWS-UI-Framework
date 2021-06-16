@@ -111,19 +111,19 @@ export default defineComponent({
 
 <style>
 .svws-ui--select-input {
-  @apply relative;
   @apply flex;
+  @apply relative;
 }
 
 .svws-ui--select-input .svws-ui--icon {
-  @apply opacity-20;
   @apply absolute;
-  @apply inset-y-0 right-0;
   @apply flex;
+  @apply inset-y-0 right-0;
   @apply justify-center items-center;
-  @apply w-8;
-  @apply rounded;
+  @apply opacity-20;
   @apply pointer-events-none;
+  @apply rounded;
+  @apply w-8;
 
   margin-top: 1px;
   margin-right: 1px;
@@ -140,10 +140,10 @@ export default defineComponent({
 }
 
 .svws-ui--select-input--control {
+  @apply bg-white;
+  @apply border border-black border-opacity-20 rounded;
   @apply h-9 w-full;
   @apply px-4 py-2;
-  @apply border border-black border-opacity-20 rounded;
-  @apply bg-white;
   @apply text-input text-black;
 
   -webkit-appearance: none;
@@ -165,11 +165,14 @@ export default defineComponent({
 }
 
 .svws-ui--select-input--placeholder {
+  @apply -translate-y-1/2;
   @apply absolute;
-  @apply text-gray;
-  @apply transform;
+  @apply bg-white;
   @apply pointer-events-none;
-  @apply px-1 bg-white text-caption -translate-y-1/2;
+  @apply px-1;
+  @apply text-gray text-caption;
+  @apply transform;
+
   top: 0;
   left: theme('spacing.1');
 }

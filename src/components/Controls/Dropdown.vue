@@ -63,11 +63,17 @@ export default defineComponent({
 
 <style>
 .svws-ui--dropdown--wrapper {
-  @apply relative inline-block;
+  @apply inline-block;
+  @apply relative;
 }
 
 .svws-ui--dropdown--button {
-  @apply text-button relative z-10 flex items-center px-5 py-2 font-bold border-2 rounded-full;
+  @apply border-2;
+  @apply flex items-center;
+  @apply px-5 py-2 ;
+  @apply relative z-10;
+  @apply rounded-full;
+  @apply text-button font-bold;
 }
 
 .svws-ui--dropdown--button:focus {
@@ -75,7 +81,9 @@ export default defineComponent({
 }
 
 .svws-ui--dropdown--button--primary {
-  @apply bg-primary border-primary text-white;
+  @apply bg-primary;
+  @apply border-primary;
+  @apply text-white;
 }
 
 .svws-ui--dropdown--button--primary:focus {
@@ -83,7 +91,9 @@ export default defineComponent({
 }
 
 .svws-ui--dropdown--button--secondary {
-  @apply text-black bg-transparent border-black;
+  @apply bg-transparent;
+  @apply border-black;
+  @apply text-black;
 }
 
 .svws-ui--dropdown--button--secondary:focus {
@@ -91,23 +101,37 @@ export default defineComponent({
 }
 
 .svws-ui--dropdown--button--danger {
-  @apply border-error text-error bg-transparent;
+  @apply bg-transparent;
+  @apply border-error;
+  @apply text-error;
 }
 
 .svws-ui--dropdown--button--danger:focus {
-  @apply bg-error ring-error ring-opacity-50 text-white;
+  @apply bg-error;
+  @apply ring-error ring-opacity-50;
+  @apply text-white;
 }
 
 .svws-ui--dropdown--button:disabled {
-  @apply bg-disabled border-disabled-medium text-disabled-dark cursor-not-allowed;
+  @apply bg-disabled;
+  @apply border-disabled-medium;
+  @apply cursor-not-allowed;
+  @apply text-disabled-dark;
 }
 
 .svws-ui--dropdown--icon {
-  @apply inline-block ml-1;
+  @apply inline-block;
+  @apply ml-1;
 }
 
 .svws-ui--dropdown--items {
-  @apply top-4 rounded-b-3xl absolute z-0 w-full pt-6 pb-2 overflow-hidden bg-white border-2 border-t-0;
+  @apply absolute z-0 top-4;
+  @apply bg-white;
+  @apply border-2 border-t-0;
+  @apply overflow-hidden;
+  @apply pt-6 pb-2;
+  @apply rounded-b-3xl;
+  @apply w-full;
 }
 
 .svws-ui--dropdown--items:focus {

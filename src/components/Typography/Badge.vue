@@ -45,42 +45,58 @@ export default defineComponent({
 
 <style>
 .svws-ui--badge {
-  @apply font-bold border rounded;
+  @apply border;
+  @apply font-bold;
+  @apply rounded;
 }
 
 .svws-ui--badge--normal {
-  @apply text-button px-2 py-1;
+  @apply px-2 py-1;
+  @apply text-body;
 }
 
 .svws-ui--badge--small {
-  @apply text-caption px-2 py-1;
+  @apply px-2 py-1;
+  @apply text-button;
 }
 
 .svws-ui--badge--medium {
-  @apply px-2.5 py-1.5 text-body;
+  @apply px-2.5 py-1.5;
+  @apply text-headline-4;
 }
 
 .svws-ui--badge--big {
-  @apply text-headline-5 px-3 py-2;
+  @apply px-3 py-2;
+  @apply text-headline-3;
 }
 
 .svws-ui--badge--error {
-  @apply bg-error border-error text-white;
+  @apply bg-error;
+  @apply border-error;
+  @apply text-white;
 }
 
 .svws-ui--badge--primary {
-  @apply bg-primary border-primary text-white;
+  @apply bg-primary;
+  @apply border-primary;
+  @apply text-white;
 }
 
 .svws-ui--badge--light {
-  @apply bg-light text-dark border-light;
+  @apply bg-light;
+  @apply border-light;
+  @apply text-dark;
 }
 
 .svws-ui--badge--success {
-  @apply bg-success text-dark border-success;
+  @apply bg-success;
+  @apply border-success;
+  @apply text-dark;
 }
 
 .svws-ui--badge--highlight {
-  @apply bg-highlight text-dark border-highlight;
+  @apply bg-highlight;
+  @apply border-highlight;
+  @apply text-dark;
 }
 </style>

@@ -51,16 +51,14 @@ export default defineComponent({
 
 <style>
 .svws-ui--button {
-  @apply px-5 py-2;
   @apply border-2 rounded-full;
-  @apply text-button font-bold;
+  @apply px-5 py-2;
   @apply select-none;
+  @apply text-button font-bold;
 }
 
 .svws-ui--button:focus {
-  @apply ring;
-
-  outline: none;
+  @apply ring outline-none;
 }
 
 .svws-ui--button--primary {
@@ -91,8 +89,8 @@ export default defineComponent({
 
 .svws-ui--button--danger:focus {
   @apply bg-error;
-  @apply text-white;
   @apply ring-error ring-opacity-50;
+  @apply text-white;
 }
 
 .svws-ui--button--transparent {
@@ -112,11 +110,13 @@ export default defineComponent({
 .svws-ui--button:disabled {
   @apply bg-disabled;
   @apply border-disabled-medium;
-  @apply text-disabled-dark;
   @apply cursor-not-allowed;
+  @apply text-disabled-dark;
 }
 
 .svws-ui--button--dropdown-action {
-  @apply relative z-20 pr-3 rounded-r-none;
+  @apply pr-3;
+  @apply relative z-20;
+  @apply rounded-r-none;
 }
 </style>

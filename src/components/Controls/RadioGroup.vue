@@ -15,6 +15,8 @@ export default defineComponent({
 
 <style>
 .svws-ui--radio {
-  @apply inline-flex flex-col py-1 space-y-2;
+  @apply inline-flex flex-col;
+  @apply py-1;
+  @apply space-y-2;
 }
 </style>

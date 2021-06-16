@@ -29,7 +29,13 @@ export default defineComponent({
 
 <style>
 .svws-ui--tab {
-  @apply py-2.5 px-5 rounded-full inline-flex items-center justify-center text-dark bg-light text-button font-bold whitespace-nowrap select-none;
+  @apply bg-light;
+  @apply inline-flex items-center justify-center;
+  @apply py-2.5 px-5;
+  @apply rounded-full;
+  @apply select-none;
+  @apply text-dark text-button font-bold;
+  @apply whitespace-nowrap;
 }
 
 .svws-ui--tab:focus {
@@ -37,10 +43,12 @@ export default defineComponent({
 }
 
 .svws-ui--tab--active {
-  @apply bg-dark text-light;
+  @apply bg-dark;
+  @apply text-light;
 }
 
 .svws-ui--tab:disabled {
-  @apply text-disabled-dark cursor-not-allowed;
+  @apply cursor-not-allowed;
+  @apply text-disabled-dark;
 }
 </style>

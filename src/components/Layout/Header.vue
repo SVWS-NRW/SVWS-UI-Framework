@@ -22,6 +22,8 @@ export default defineComponent({
 
 <style>
 .svws-ui--header--wrapper {
-  @apply flex flex-row items-center space-x-2 flex-grow py-4;
+  @apply flex flex-row items-center flex-grow;
+  @apply py-4;
+  @apply space-x-2;
 }
 </style>

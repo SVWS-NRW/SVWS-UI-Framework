@@ -91,11 +91,21 @@ export default defineComponent({
 
 <style>
 .svws-ui--tab-bar--wrapper {
-  @apply relative flex items-center w-full overflow-hidden rounded-full;
+  @apply flex items-center;
+  @apply overflow-hidden;
+  @apply relative;
+  @apply rounded-full;
+  @apply w-full;
 }
 
 .svws-ui--tab-bar {
-  @apply bg-light relative flex flex-row items-center w-full space-x-2 overflow-x-scroll rounded-full;
+  @apply bg-light;
+  @apply flex flex-row items-center;
+  @apply overflow-x-scroll;
+  @apply relative;
+  @apply rounded-full;
+  @apply space-x-2;
+  @apply w-full;
 
   -ms-overflow-style: none; /* Remove Scrollbar in IE and Edge */
   scrollbar-width: none; /* Remove Scrollbar in Firefox */
@@ -106,19 +116,32 @@ export default defineComponent({
 }
 
 .svws-ui--tab-bar--scroll-button-background {
-  @apply to-light via-light from-transparent absolute z-20 h-full pointer-events-none;
+  @apply absolute z-20;
+  @apply h-full;
+  @apply pointer-events-none;
+  @apply to-light via-light from-transparent;
 }
 
 .svws-ui--tab-bar--scroll-button-background-right {
-  @apply bg-gradient-to-r right-0 pl-8 rounded-r-full;
+  @apply bg-gradient-to-r;
+  @apply pl-8;
+  @apply right-0;
+  @apply rounded-r-full;
 }
 
 .svws-ui--tab-bar--scroll-button-background-left {
-  @apply bg-gradient-to-l left-0 pr-8 rounded-l-full;
+  @apply bg-gradient-to-l;
+  @apply left-0;
+  @apply pr-8;
+  @apply rounded-l-full;
 }
 
 .svws-ui--tab-bar--scroll-button {
-  @apply inline-flex items-center justify-center h-full px-3.5 rounded-full pointer-events-auto;
+  @apply h-full;
+  @apply inline-flex items-center justify-center;
+  @apply pointer-events-auto;
+  @apply px-3.5;
+  @apply rounded-full;
 }
 
 .svws-ui--tab-bar--scroll-button:focus {

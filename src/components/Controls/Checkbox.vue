@@ -36,11 +36,11 @@ export default defineComponent({
 
 <style>
 .svws-ui--checkbox {
+  @apply cursor-pointer;
   @apply inline-flex;
   @apply items-center justify-start;
-  @apply text-input;
-  @apply cursor-pointer;
   @apply select-none;
+  @apply text-input;
 }
 
 .svws-ui--checkbox--control {
@@ -48,13 +48,11 @@ export default defineComponent({
 }
 
 .svws-ui--checkbox--indicator {
-  @apply inline-flex;
-  @apply items-center justify-center;
-  @apply w-5;
-  @apply h-5;
-  @apply mr-2;
-  @apply border-2 border-black;
   @apply bg-white;
+  @apply border-2 border-black;
+  @apply inline-flex items-center justify-center;
+  @apply mr-2;
+  @apply w-5 h-5;
 }
 
 .svws-ui--checkbox--indicator .svws-ui--icon {

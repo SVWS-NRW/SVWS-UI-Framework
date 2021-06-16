@@ -1,11 +1,11 @@
 <template>
   <div class="svws-ui--secondary-menu">
-    <div class="pb-8">
-      <h3 class="font-bold text-black text-headline-3">
-        <slot name="header" />
-      </h3>
+    <h3 class="font-bold text-black text-headline-3">
+      <slot name="header" />
+    </h3>
+    <div class="svws-ui--secondary-menu--content">
+      <slot name="content" />
     </div>
-    <slot name="content" />
   </div>
 </template>
 
@@ -19,6 +19,10 @@ export default defineComponent({
 
 <style>
 .svws-ui--secondary-menu {
-  @apply max-w-116 h-screen w-1/4 min-w-84 flex-shrink-0 bg-light border-r-2 border-dark-20 shadow px-6 pt-8 overflow-y-auto;
+  @apply max-w-116 h-screen flex flex-col w-1/4 min-w-84 flex-shrink-0 bg-light border-r-2 border-dark-20 shadow px-6 pt-8 overflow-y-auto;
+}
+
+.svws-ui--secondary-menu--content {
+  @apply flex-grow mt-4;
 }
 </style>

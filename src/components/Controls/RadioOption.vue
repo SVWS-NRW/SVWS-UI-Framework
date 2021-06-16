@@ -53,12 +53,19 @@ export default defineComponent({
 
 <style>
 .svws-ui--radio--label {
-  @apply text-input flex flex-row items-center space-x-2 cursor-pointer select-none;
+  @apply cursor-pointer;
+  @apply flex flex-row items-center;
+  @apply select-none;
+  @apply space-x-2;
+  @apply text-input;
 }
 
 .svws-ui--radio--indicator {
   @apply appearance-none;
-  @apply flex items-center justify-center flex-shrink-0 w-5 h-5 border-2 border-black rounded-full cursor-pointer;
+  @apply border-2 border-black rounded-full;
+  @apply cursor-pointer;
+  @apply flex items-center justify-center flex-shrink-0;
+  @apply w-5 h-5;
 }
 
 .svws-ui--radio--indicator:focus {
@@ -66,19 +73,22 @@ export default defineComponent({
 }
 
 .svws-ui--radio--indicator:checked::before {
-  @apply block w-3 h-3 bg-black rounded-full;
+  @apply bg-black;
+  @apply block;
+  @apply rounded-full;
+  @apply w-3 h-3;
   content: '';
 }
 
 .svws-ui--radio--indicator:disabled {
   @apply bg-disabled;
   @apply border-disabled-medium;
-  @apply text-disabled-dark;
   @apply cursor-not-allowed;
+  @apply text-disabled-dark;
 }
 
 .svws-ui--radio--label--disabled {
-  @apply text-disabled-dark;
   @apply cursor-not-allowed;
+  @apply text-disabled-dark;
 }
 </style>

@@ -32,10 +32,10 @@ export default defineComponent({
 
 <style>
 .svws-ui--toggle {
-  @apply inline-flex;
-  @apply text-input;
   @apply cursor-pointer;
+  @apply inline-flex;
   @apply select-none;
+  @apply text-input;
 }
 
 .svws-ui--toggle--control {
@@ -43,36 +43,34 @@ export default defineComponent({
 }
 
 .svws-ui--toggle--indicator {
-  @apply relative;
-  @apply w-9;
-  @apply h-5;
-  @apply mr-3;
-  @apply border-2 border-black rounded-full;
   @apply bg-white;
+  @apply border-2 border-black rounded-full;
+  @apply mr-3;
+  @apply relative;
+  @apply w-9 h-5;
 }
 
 .svws-ui--toggle--indicator:before {
   @apply absolute;
-  @apply block;
-  @apply w-3;
-  @apply h-3;
-  @apply rounded-full;
   @apply bg-black;
+  @apply block;
+  @apply rounded-full;
+  @apply w-3 h-3;
 
   content: '';
-  top: 0.125rem;
   left: 0.125rem;
+  top: 0.125rem;
 }
 
 .svws-ui--toggle input:checked + .svws-ui--toggle--indicator {
-  @apply border-primary;
   @apply bg-primary;
+  @apply border-primary;
 }
 
 .svws-ui--toggle input:checked + .svws-ui--toggle--indicator:before {
   @apply bg-white;
 
-  right: 0.125rem;
   left: auto;
+  right: 0.125rem;
 }
 </style>

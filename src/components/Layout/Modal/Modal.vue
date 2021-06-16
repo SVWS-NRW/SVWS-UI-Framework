@@ -74,22 +74,45 @@ export default defineComponent({
 
 <style>
 .svws-ui--modal--closeButton {
-  @apply hover:bg-light focus:bg-light focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50 flex items-center justify-center w-8 h-8 -mr-3 bg-transparent rounded-full;
+  @apply -mr-3;
+  @apply flex items-center justify-center;
+  @apply rounded-full;
+  @apply w-8 h-8;
+}
+
+.svws-ui--modal--closeButton:hover {
+  @apply bg-light;
+}
+
+.svws-ui--modal--closeButton:focus {
+  @apply bg-light;
+  @apply ring ring-primary ring-opacity-50 outline-none;
 }
 
 .svws-ui--modal--closeIcon {
-  @apply inline-block ml-0;
+  @apply inline-block;
+  @apply ml-0;
 }
 
 .svws-ui--modal--pageWrapper {
-  @apply flex items-center justify-center min-h-screen p-8;
+  @apply flex items-center justify-center;
+  @apply min-h-screen;
+  @apply p-8;
 }
 .svws-ui--modal--titlebar {
-  @apply flex flex-row items-center justify-between w-full;
+  @apply flex flex-row items-center justify-between;
+  @apply w-full;
 }
 
 .svws-ui--modal {
-  @apply relative z-10 flex flex-col items-center px-6 py-4 mx-auto space-y-8 bg-white rounded-md shadow-lg;
+  @apply bg-white;
+  @apply flex flex-col items-center;
+  @apply mx-auto;
+  @apply px-6 py-4;
+  @apply relative z-10;
+  @apply rounded-md;
+  @apply shadow-lg;
+  @apply space-y-8;
 }
 
 .svws-ui--modal--sm {
@@ -105,7 +128,8 @@ export default defineComponent({
 }
 
 .svws-ui--modal--title {
-  @apply text-caption flex-grow text-black uppercase;
+  @apply flex-grow;
+  @apply text-caption text-black uppercase;
 }
 
 .svws-ui--modal--description {
@@ -113,10 +137,12 @@ export default defineComponent({
 }
 
 .svws-ui--modal--wrapper {
-  @apply fixed inset-0 z-10 overflow-y-auto;
+  @apply fixed inset-0 z-10;
+  @apply overflow-y-auto;
 }
 
 .svws-ui--modal--actions {
-  @apply flex items-center justify-center space-x-4;
+  @apply flex items-center justify-center;
+  @apply space-x-4;
 }
 </style>

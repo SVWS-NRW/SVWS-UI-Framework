@@ -22,6 +22,7 @@ export default defineComponent({
 
 <style>
 .svws-ui--content-card--wrapper {
-  @apply border-b-2 border-dark-20 pb-8 pt-4;
+  @apply border-dark-20 border-b-2;
+  @apply pt-4 pb-8;
 }
 </style>

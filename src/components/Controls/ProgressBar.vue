@@ -58,10 +58,10 @@ export default defineComponent({
 }
 
 .svws-ui--progress-bar--bar {
-  @apply w-full;
-  @apply rounded-full;
   @apply bg-light;
   @apply overflow-hidden;
+  @apply rounded-full;
+  @apply w-full;
 }
 
 .svws-ui--progress-bar--default .svws-ui--progress-bar--bar {

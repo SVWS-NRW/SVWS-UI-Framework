@@ -54,11 +54,17 @@ export default defineComponent({
 
 <style>
 .svws-ui--dropdown--item {
-  @apply text-button flex items-start w-full px-5 py-2 font-bold text-left text-black border-t-2 border-b-2 border-transparent;
+  @apply text-button font-bold text-left text-black;
+  @apply flex items-start;
+  @apply w-full;
+  @apply px-5 py-2;
+  @apply border-t-2 border-b-2 border-transparent;
 }
 
 .svws-ui--dropdown--item:disabled {
-  @apply text-disabled-dark bg-transparent cursor-not-allowed;
+  @apply text-disabled-dark;
+  @apply bg-transparent;
+  @apply cursor-not-allowed;
 }
 
 .svws-ui--dropdown--item:focus {
@@ -70,15 +76,18 @@ export default defineComponent({
 }
 
 .svws-ui--dropdown--items--primary .svws-ui--dropdown--item:focus {
-  @apply ring-primary ring-opacity-50 border-primary;
+  @apply ring-primary ring-opacity-50;
+  @apply border-primary;
 }
 
 .svws-ui--dropdown--items--secondary .svws-ui--dropdown--item:focus {
-  @apply ring-primary ring-opacity-50 border-black;
+  @apply ring-primary ring-opacity-50;
+  @apply border-black;
 }
 
 .svws-ui--dropdown--items--danger .svws-ui--dropdown--item:focus {
-  @apply ring-error ring-opacity-50 border-error;
+  @apply ring-error ring-opacity-50;
+  @apply border-error;
 }
 
 .svws-ui--dropdown--item--icon {

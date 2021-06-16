@@ -107,15 +107,15 @@ export default defineComponent({
 
 <style>
 .svws-ui--textarea-input {
-  @apply relative;
   @apply flex;
+  @apply relative;
 }
 
 .svws-ui--textarea-input--control {
+  @apply bg-white;
+  @apply border-opacity-20 border border-black rounded;
   @apply h-24 w-full;
   @apply px-4 py-2;
-  @apply border-opacity-20 border border-black rounded;
-  @apply bg-white;
   @apply text-input text-black;
 }
 
@@ -151,9 +151,9 @@ export default defineComponent({
 
 .svws-ui--textarea-input--placeholder {
   @apply absolute;
+  @apply pointer-events-none;
   @apply text-input text-gray;
   @apply transform;
-  @apply pointer-events-none;
 
   top: theme('spacing.2');
   left: theme('spacing.4');
@@ -161,10 +161,10 @@ export default defineComponent({
 
 .svws-ui--textarea-input-focus .svws-ui--textarea-input--placeholder,
 .svws-ui--textarea-input-filled .svws-ui--textarea-input--placeholder {
-  @apply px-1;
-  @apply bg-white;
-  @apply text-caption;
   @apply -translate-y-1/2;
+  @apply bg-white;
+  @apply px-1;
+  @apply text-caption;
 
   top: 0;
   left: theme('spacing.1');
