@@ -24,9 +24,14 @@
       @mousedown="onMouseDown"
       @keydown="onKeyDown"
     ></textarea>
-    <span v-if="placeholder" class="svws-ui--textarea-input--placeholder">{{
-      placeholder
-    }}</span>
+    <span
+      v-if="placeholder"
+      class="svws-ui--textarea-input--placeholder"
+      :class="{
+        'svws-ui--textarea-input--placeholder--required': required,
+      }"
+      >{{ placeholder }}</span
+    >
   </label>
 </template>
 
@@ -171,5 +176,10 @@ export default defineComponent({
 
 .svws-ui--textarea-input-disabled {
   @apply opacity-50;
+}
+
+.svws-ui--textarea-input--placeholder--required:after {
+  @apply text-error;
+  content: ' *';
 }
 </style>

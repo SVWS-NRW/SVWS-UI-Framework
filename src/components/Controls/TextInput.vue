@@ -21,9 +21,14 @@
       @mousedown="onMouseDown"
       @keydown="onKeyDown"
     />
-    <span v-if="placeholder" class="svws-ui--text-input--placeholder">{{
-      placeholder
-    }}</span>
+    <span
+      v-if="placeholder"
+      class="svws-ui--text-input--placeholder"
+      :class="{
+        'svws-ui--text-input--placeholder--required': required,
+      }"
+      >{{ placeholder }}</span
+    >
     <svws-ui-icon v-if="icon" :icon="icon" />
   </label>
 </template>
@@ -198,5 +203,10 @@ export default defineComponent({
 .svws-ui--text-input-focus,
 .svws-ui--text-input-filled {
   @apply overflow-visible;
+}
+
+.svws-ui--text-input--placeholder--required:after {
+  @apply text-error;
+  content: ' *';
 }
 </style>
