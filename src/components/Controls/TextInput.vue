@@ -7,6 +7,7 @@
       'svws-ui--text-input-invalid': !valid,
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,
+      'svws-ui--text-input--icon': icon,
     }"
   >
     <input
@@ -219,5 +220,9 @@ export default defineComponent({
 .svws-ui--text-input--placeholder--required:after {
   @apply text-error;
   content: ' *';
+}
+
+.svws-ui--text-input--icon .svws-ui--text-input--control {
+  @apply pr-8;
 }
 </style>
