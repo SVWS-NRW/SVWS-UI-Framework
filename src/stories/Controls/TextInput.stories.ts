@@ -25,6 +25,7 @@ Empty.args = {
   icon: null,
   valid: true,
   required: false,
+  readonly: false,
   disabled: false,
 };
 
@@ -36,6 +37,7 @@ Filled.args = {
   icon: null,
   valid: true,
   required: false,
+  readonly: false,
   disabled: false,
 };
 
@@ -47,6 +49,7 @@ Invalid.args = {
   icon: null,
   valid: false,
   required: false,
+  readonly: false,
   disabled: false,
 };
 
@@ -58,5 +61,6 @@ Disabled.args = {
   icon: null,
   valid: true,
   required: false,
+  readonly: false,
   disabled: true,
 };

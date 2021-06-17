@@ -6,6 +6,7 @@
       'svws-ui--text-input-filled': !!value,
       'svws-ui--text-input-invalid': !valid,
       'svws-ui--text-input-disabled': disabled,
+      'svws-ui--text-input-readonly': readonly,
     }"
   >
     <input
@@ -14,6 +15,7 @@
       :value="value"
       :disabled="disabled"
       :required="required"
+      :readonly="readonly"
       @input="onInput"
       @focus="onFocus"
       @blur="onBlur"
@@ -64,6 +66,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    readonly: {
+      type: Boolean,
+      default: false,
+    },
   },
   emits: ['update:value', 'focus', 'blur', 'click', 'mousedown', 'keydown'],
   data() {
@@ -107,6 +113,7 @@ export default defineComponent({
 .svws-ui--text-input {
   @apply flex;
   @apply relative;
+  @apply w-full;
   @apply whitespace-nowrap overflow-hidden;
 }
 
@@ -165,6 +172,10 @@ export default defineComponent({
 
 .svws-ui--text-input-disabled .svws-ui--text-input--control {
   @apply cursor-not-allowed;
+}
+
+.svws-ui--text-input-readonly .svws-ui--text-input--control {
+  @apply cursor-default;
 }
 
 .svws-ui--text-input-invalid .svws-ui--text-input--control {
