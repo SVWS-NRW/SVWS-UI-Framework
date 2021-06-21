@@ -19,10 +19,17 @@ export default defineComponent({
 
 <style>
 .svws-ui--secondary-menu {
-  @apply max-w-116 h-screen flex flex-col w-1/4 min-w-84 flex-shrink-0 bg-light border-r-2 border-dark-20 shadow px-6 pt-8 overflow-y-auto;
+  @apply bg-light;
+  @apply border-r-2 border-dark-20;
+  @apply flex flex-col flex-shrink-0;
+  @apply max-w-116 min-w-84 w-1/4 h-screen;
+  @apply overflow-y-auto;
+  @apply px-6 pt-8;
+  @apply shadow;
 }
 
 .svws-ui--secondary-menu--content {
-  @apply flex-grow mt-4;
+  @apply flex-grow;
+  @apply mt-4;
 }
 </style>
