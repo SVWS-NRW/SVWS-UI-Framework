@@ -10,7 +10,7 @@
       <slot />
     </div>
     <div class="svws-ui--progress-bar--percentage">
-      {{ `${progress} %` }}
+      {{ `${Number(progress.toFixed(2))} %` }}
     </div>
     <div class="svws-ui--progress-bar--bar">
       <div
