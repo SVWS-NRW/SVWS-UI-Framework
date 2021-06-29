@@ -9,7 +9,9 @@
     <span class="svws-ui--checkbox--indicator">
       <svws-ui-icon icon="check" />
     </span>
-    <slot />
+    <span class="svws-ui--checkbox--label">
+      <slot />
+    </span>
   </label>
 </template>
 
@@ -51,7 +53,6 @@ export default defineComponent({
   @apply bg-white;
   @apply border-2 border-black;
   @apply inline-flex items-center justify-center;
-  @apply mr-2;
   @apply w-5 h-5;
 }
 
@@ -71,5 +72,9 @@ export default defineComponent({
   + .svws-ui--checkbox--indicator
   .svws-ui--icon {
   @apply opacity-100;
+}
+
+.svws-ui--checkbox--label {
+  @apply ml-2;
 }
 </style>
