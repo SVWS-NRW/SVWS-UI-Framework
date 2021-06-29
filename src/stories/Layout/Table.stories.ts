@@ -19,9 +19,9 @@ export const Default = Template.bind({});
 Default.args = {
   multiSelect: false,
   cols: [
-    { id: 'kuerzel', title: 'Kuerzel', width: '10%' },
-    { id: 'nachname', title: 'Nachname', width: '45%' },
-    { id: 'vorname', title: 'Vorname', width: '45%' },
+    { id: 'kuerzel', title: 'Kuerzel', width: '10%', sortable: true },
+    { id: 'nachname', title: 'Nachname', width: '45%', sortable: false },
+    { id: 'vorname', title: 'Vorname', width: '45%', sortable: true },
   ],
   rows: [
     { id: 1, kuerzel: 'ALBE', nachname: 'Albers', vorname: 'Mike' },
@@ -37,9 +37,9 @@ export const MultiSelect = Template.bind({});
 MultiSelect.args = {
   multiSelect: true,
   cols: [
-    { id: 'kuerzel', title: 'Kuerzel', width: '10%' },
-    { id: 'nachname', title: 'Nachname', width: '45%' },
-    { id: 'vorname', title: 'Vorname', width: '45%' },
+    { id: 'kuerzel', title: 'Kuerzel', width: '10%', sortable: true },
+    { id: 'nachname', title: 'Nachname', width: '45%', sortable: false },
+    { id: 'vorname', title: 'Vorname', width: '45%', sortable: true },
   ],
   rows: [
     { id: 1, kuerzel: 'ALBE', nachname: 'Albers', vorname: 'Mike' },

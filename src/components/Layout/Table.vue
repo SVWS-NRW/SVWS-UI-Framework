@@ -13,22 +13,24 @@
           v-for="col in cols"
           :key="col.id"
           :width="col.width"
-          @click="changeSort(col.id)"
+          @click="changeSort(col)"
         >
           <div class="svws-ui--table--header">
             <span class="svws-ui--table--header--text">{{ col.title }}</span>
-            <svws-ui-icon
-              v-show="col.id !== sorting.column"
-              icon="arrow-up-down"
-            />
-            <svws-ui-icon
-              v-show="sorting.asc && col.id === sorting.column"
-              icon="sort-asc "
-            />
-            <svws-ui-icon
-              v-show="!sorting.asc && col.id === sorting.column"
-              icon="sort-desc "
-            />
+            <span v-if="col.sortable">
+              <svws-ui-icon
+                v-show="col.id !== sorting.column"
+                icon="arrow-up-down"
+              />
+              <svws-ui-icon
+                v-show="sorting.asc && col.id === sorting.column"
+                icon="sort-asc "
+              />
+              <svws-ui-icon
+                v-show="!sorting.asc && col.id === sorting.column"
+                icon="sort-desc "
+              />
+            </span>
           </div>
         </td>
       </tr>
@@ -103,15 +105,17 @@ export default defineComponent({
     };
   },
   methods: {
-    changeSort(column: string) {
-      if (this.sorting.column === column) {
-        this.sorting.asc = !this.sorting.asc;
-        this.$emit('update:asc', this.sorting.asc);
-      } else {
-        this.sorting.column = column;
-        this.sorting.asc = true;
-        this.$emit('update:sort', this.sorting.column);
-        this.$emit('update:asc', this.sorting.asc);
+    changeSort(column) {
+      if (column.sortable) {
+        if (this.sorting.column === column.id) {
+          this.sorting.asc = !this.sorting.asc;
+          this.$emit('update:asc', this.sorting.asc);
+        } else {
+          this.sorting.column = column.id;
+          this.sorting.asc = true;
+          this.$emit('update:sort', this.sorting.column);
+          this.$emit('update:asc', this.sorting.asc);
+        }
       }
     },
     doSort() {
@@ -150,7 +154,6 @@ export default defineComponent({
     },
     toggleSelect(item) {
       item.selected = !item.selected;
-      console.log(item);
       if (item.selected) {
         this.selectedCounter++;
       } else {
@@ -174,7 +177,7 @@ export default defineComponent({
   },
   watch: {
     current() {
-      console.log(this.current);
+      //console.log(this.current);
     },
     sort() {
       this.sorting.column = this.sort;
