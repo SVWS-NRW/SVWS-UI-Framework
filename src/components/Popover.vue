@@ -1,5 +1,5 @@
 <template>
-  <Popper :hover="hover" :placement="placement" :disableClickAway	="disableClickAway" :offsetX="offsetX" :offsetY="offsetY" :arrow="arrow" :arrowPadding="arrowPadding">
+  <Popper :hover="hover" :placement="placement" :disableClickAway	="disableClickAway" :offsetX="offsetX" :offsetY="offsetY">
     <slot name="trigger" />
     <template #content>
       <slot name="content" />
@@ -70,20 +70,6 @@
       hover: {
         type: Boolean,
         default: true,
-      },
-      /**
-       * Display an arrow on the popper
-       */
-      arrow: {
-        type: Boolean,
-        default: false,
-      },
-      /**
-       * Stop arrow from reaching the edge of the popper
-       */
-      arrowPadding: {
-        type: String,
-        default: "0",
       },
     },
   });

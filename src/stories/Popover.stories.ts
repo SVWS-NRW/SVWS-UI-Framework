@@ -37,22 +37,22 @@ const Template = (args, { argTypes }) => ({
   },
   props: Object.keys(argTypes),
   template: `
-  <svws-ui-popover>
-    <template #trigger>
-      <span class="svws-ui-underline">Hier versteckt sich ein Tooltip</span>
-    </template>
-    <template #content>
-      <svws-ui-tooltip>
-        Das ist ein Tooltip
-      </svws-ui-tooltip>
-    </template>
-  </svws-ui-popover>
+  <div class="svws-ui-h-screen svws-ui-w-screen svws-ui-flex svws-ui-items-center svws-ui-justify-center">
+    <svws-ui-popover v-bind="args">
+      <template #trigger>
+        <span class="svws-ui-underline">Hier versteckt sich ein Tooltip</span>
+      </template>
+      <template #content>
+        <svws-ui-tooltip>
+          Das ist ein Tooltip
+        </svws-ui-tooltip>
+      </template>
+    </svws-ui-popover>
+  </div>
   `,
 });
 
 export const Default = Template.bind({});
 Default.args = {
   placement: 'auto',
-  disableClickAway: false,
-  hover: true,
 };
