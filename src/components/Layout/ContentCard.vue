@@ -1,7 +1,7 @@
 <template>
   <div class="svws-ui--content-card--wrapper">
-    <h5 class="svws-ui-headline-5">{{ title }}</h5>
-    <div class="mt-4">
+    <h5 class="svws-ui-headline-5 svws-ui--content-card--headline">{{ title }}</h5>
+    <div class="svws-ui-mt-4">
       <slot />
     </div>
   </div>
@@ -22,7 +22,11 @@ export default defineComponent({
 
 <style>
 .svws-ui--content-card--wrapper {
-  @apply border-dark-20 border-b-2;
-  @apply pt-4 pb-8;
+  @apply svws-ui-border-dark-20 svws-ui-border-b-2;
+  @apply svws-ui-pt-4 svws-ui-pb-8;
+}
+
+.svws-ui--content-card--headline {
+  @apply svws-ui-text-black;
 }
 </style>

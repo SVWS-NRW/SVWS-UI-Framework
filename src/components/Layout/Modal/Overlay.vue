@@ -13,8 +13,8 @@ export default defineComponent({
 
 <style>
 .svws-ui--overlay {
-  @apply backdrop-filter backdrop-blur-sm;
-  @apply bg-light bg-opacity-50;
-  @apply fixed inset-0;
+  @apply svws-ui-backdrop-filter svws-ui-backdrop-blur-sm;
+  @apply svws-ui-bg-light svws-ui-bg-opacity-50;
+  @apply svws-ui-fixed svws-ui-inset-0;
 }
 </style>

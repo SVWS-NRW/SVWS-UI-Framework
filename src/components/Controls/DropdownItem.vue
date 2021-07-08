@@ -54,43 +54,43 @@ export default defineComponent({
 
 <style>
 .svws-ui--dropdown--item {
-  @apply text-button font-bold text-left text-black;
-  @apply flex items-start;
-  @apply w-full;
-  @apply px-5 py-2;
-  @apply border-t-2 border-b-2 border-transparent;
+  @apply svws-ui-text-button svws-ui-font-bold svws-ui-text-left svws-ui-text-black;
+  @apply svws-ui-flex svws-ui-items-start;
+  @apply svws-ui-w-full;
+  @apply svws-ui-px-5 svws-ui-py-2;
+  @apply svws-ui-border-t-2 svws-ui-border-b-2 svws-ui-border-transparent;
 }
 
 .svws-ui--dropdown--item:disabled {
-  @apply text-disabled-dark;
-  @apply bg-transparent;
-  @apply cursor-not-allowed;
+  @apply svws-ui-text-disabled-dark;
+  @apply svws-ui-bg-transparent;
+  @apply svws-ui-cursor-not-allowed;
 }
 
 .svws-ui--dropdown--item:focus {
-  @apply ring-2 outline-none;
+  @apply svws-ui-ring-2 svws-ui-outline-none;
 }
 
 .svws-ui--dropdown--item--active {
-  @apply bg-dark-20 bg-opacity-50;
+  @apply svws-ui-bg-dark-20 svws-ui-bg-opacity-50;
 }
 
 .svws-ui--dropdown--items--primary .svws-ui--dropdown--item:focus {
-  @apply ring-primary ring-opacity-50;
-  @apply border-primary;
+  @apply svws-ui-ring-primary svws-ui-ring-opacity-50;
+  @apply svws-ui-border-primary;
 }
 
 .svws-ui--dropdown--items--secondary .svws-ui--dropdown--item:focus {
-  @apply ring-primary ring-opacity-50;
-  @apply border-black;
+  @apply svws-ui-ring-primary svws-ui-ring-opacity-50;
+  @apply svws-ui-border-black;
 }
 
 .svws-ui--dropdown--items--danger .svws-ui--dropdown--item:focus {
-  @apply ring-error ring-opacity-50;
-  @apply border-error;
+  @apply svws-ui-ring-error svws-ui-ring-opacity-50;
+  @apply svws-ui-border-error;
 }
 
 .svws-ui--dropdown--item--icon {
-  @apply mr-2;
+  @apply svws-ui-mr-2;
 }
 </style>

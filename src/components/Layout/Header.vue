@@ -1,6 +1,6 @@
 <template>
   <div class="svws-ui--header--wrapper">
-    <h5 class="svws-ui-headline-2"><slot /></h5>
+    <h5 class="svws-ui-headline-2 svws-ui-text-black"><slot /></h5>
     <svws-ui-badge v-if="badge" variant="highlight" size="normal">{{
       badge
     }}</svws-ui-badge>
@@ -22,8 +22,8 @@ export default defineComponent({
 
 <style>
 .svws-ui--header--wrapper {
-  @apply flex flex-row items-center flex-grow;
-  @apply py-4;
-  @apply space-x-2;
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center svws-ui-flex-grow;
+  @apply svws-ui-py-4;
+  @apply svws-ui-space-x-2;
 }
 </style>

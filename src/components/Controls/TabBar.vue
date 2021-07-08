@@ -91,21 +91,21 @@ export default defineComponent({
 
 <style>
 .svws-ui--tab-bar--wrapper {
-  @apply flex items-center;
-  @apply overflow-hidden;
-  @apply relative;
-  @apply rounded-full;
-  @apply w-full;
+  @apply svws-ui-flex svws-ui-items-center;
+  @apply svws-ui-overflow-hidden;
+  @apply svws-ui-relative;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-w-full;
 }
 
 .svws-ui--tab-bar {
-  @apply bg-light;
-  @apply flex flex-row items-center;
-  @apply overflow-x-scroll;
-  @apply relative;
-  @apply rounded-full;
-  @apply space-x-2;
-  @apply w-full;
+  @apply svws-ui-bg-light;
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center;
+  @apply svws-ui-overflow-x-scroll;
+  @apply svws-ui-relative;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-space-x-2;
+  @apply svws-ui-w-full;
 
   -ms-overflow-style: none; /* Remove Scrollbar in IE and Edge */
   scrollbar-width: none; /* Remove Scrollbar in Firefox */
@@ -116,35 +116,36 @@ export default defineComponent({
 }
 
 .svws-ui--tab-bar--scroll-button-background {
-  @apply absolute z-20;
-  @apply h-full;
-  @apply pointer-events-none;
-  @apply to-light via-light from-transparent;
+  @apply svws-ui-absolute svws-ui-z-20;
+  @apply svws-ui-h-full;
+  @apply svws-ui-pointer-events-none;
+  @apply svws-ui-to-light svws-ui-via-light svws-ui-from-transparent;
 }
 
 .svws-ui--tab-bar--scroll-button-background-right {
-  @apply bg-gradient-to-r;
-  @apply pl-8;
-  @apply right-0;
-  @apply rounded-r-full;
+  @apply svws-ui-bg-gradient-to-r;
+  @apply svws-ui-pl-8;
+  @apply svws-ui-right-0;
+  @apply svws-ui-rounded-r-full;
 }
 
 .svws-ui--tab-bar--scroll-button-background-left {
-  @apply bg-gradient-to-l;
-  @apply left-0;
-  @apply pr-8;
-  @apply rounded-l-full;
+  @apply svws-ui-bg-gradient-to-l;
+  @apply svws-ui-left-0;
+  @apply svws-ui-pr-8;
+  @apply svws-ui-rounded-l-full;
 }
 
 .svws-ui--tab-bar--scroll-button {
-  @apply h-full;
-  @apply inline-flex items-center justify-center;
-  @apply pointer-events-auto;
-  @apply px-3.5;
-  @apply rounded-full;
+  @apply svws-ui-h-full;
+  @apply svws-ui-inline-flex svws-ui-items-center svws-ui-justify-center;
+  @apply svws-ui-pointer-events-auto;
+  @apply svws-ui-px-3.5;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-text-black;
 }
 
 .svws-ui--tab-bar--scroll-button:focus {
-  @apply ring ring-inset ring-primary ring-opacity-75 outline-none;
+  @apply svws-ui-ring svws-ui-ring-inset svws-ui-ring-primary svws-ui-ring-opacity-75 svws-ui-outline-none;
 }
 </style>

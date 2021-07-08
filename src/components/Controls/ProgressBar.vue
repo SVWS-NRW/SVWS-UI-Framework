@@ -46,44 +46,44 @@ export default defineComponent({
 
 <style>
 .svws-ui--progress-bar {
-  @apply flex flex-wrap justify-between;
+  @apply svws-ui-flex svws-ui-flex-wrap svws-ui-justify-between;
 }
 
 .svws-ui--progress-bar--default {
-  @apply text-input;
+  @apply svws-ui-text-input;
 }
 
 .svws-ui--progress-bar--small {
-  @apply text-caption;
+  @apply svws-ui-text-caption;
 }
 
 .svws-ui--progress-bar--bar {
-  @apply bg-light;
-  @apply overflow-hidden;
-  @apply rounded-full;
-  @apply w-full;
+  @apply svws-ui-bg-light;
+  @apply svws-ui-overflow-hidden;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-w-full;
 }
 
 .svws-ui--progress-bar--default .svws-ui--progress-bar--bar {
-  @apply h-3;
-  @apply mt-3;
+  @apply svws-ui-h-3;
+  @apply svws-ui-mt-3;
 }
 
 .svws-ui--progress-bar--small .svws-ui--progress-bar--bar {
-  @apply h-1;
-  @apply mt-1;
+  @apply svws-ui-h-1;
+  @apply svws-ui-mt-1;
 }
 
 .svws-ui--progress-bar--completed {
-  @apply bg-primary;
-  @apply transition-all;
+  @apply svws-ui-bg-primary;
+  @apply svws-ui-transition-all;
 }
 
 .svws-ui--progress-bar--default .svws-ui--progress-bar--completed {
-  @apply h-3;
+  @apply svws-ui-h-3;
 }
 
 .svws-ui--progress-bar--small .svws-ui--progress-bar--completed {
-  @apply h-1;
+  @apply svws-ui-h-1;
 }
 </style>

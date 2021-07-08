@@ -1,44 +1,27 @@
+function withOpacity(cssVariale) {
+  return ({opacityValue}) => {
+    if(opacityValue !== undefined) {
+      return `rgba(var(${cssVariale}), ${opacityValue})`
+    }
+    return `rgb(var(${cssVariale}))`
+  }
+}
+
 module.exports = {
-  purge: ['./src/components/**/*.{vue,js,ts,jsx,tsx}'],
+  purge: {
+    layers: ['components', 'utilities'],
+    content: ['./src/components/**/*.{vue,js,ts,jsx,tsx}'],
+    safelist: ['theme-dark'],
+  },
   darkMode: false,
   theme: {
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-
-      white: '#FFF',
-      black: '#2C2C2C',
-      gray: '#666',
-      primary: '#329CD5',
-      light: '#F0F4F7',
-      'dark-20': '#C8D0D6',
-      dark: '#2B4452',
-      error: '#EB6161',
-      success: '#B6E65C',
-      highlight: '#FFF693',
-
       disabled: {
         light: '#F3F3F3',
         DEFAULT: '#D9D9D9',
         medium: '#C0C0C0',
         dark: '#959595',
       },
-
-      brown: '#9B8458',
-      'brown-light': '#D6CDBC',
-      'brown-dark': '#625337',
-      orange: '#FDB34E',
-      'orange-light': '#FFE1B9',
-      'orange-dark': '#B26701',
-      purple: '#B472ED',
-      'purple-light': '#E0D2ED',
-      'purple-dark': '#461C6A',
-      blue: '#6D88E5',
-      'blue-light': '#CBD3EF',
-      'blue-dark': '#182D74',
-      green: '#89EDCA',
-      'green-light': '#BEE8DA',
-      'green-dark': '#0F5D42',
     },
     fontFamily: {
       sans: [
@@ -74,6 +57,38 @@ module.exports = {
       bold: '700',
     },
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+
+        white: withOpacity('--color-white'),
+        black: withOpacity('--color-black'),
+        gray: withOpacity('--color-gray'),
+        primary: withOpacity('--color-primary'),
+        light: withOpacity('--color-light'),
+        'dark-20': withOpacity('--color-dark-20'),
+        'dark-80': withOpacity('--color-dark-80'),
+        dark: withOpacity('--color-dark'),
+        error: withOpacity('--color-error'),
+        success: withOpacity('--color-success'),
+        highlight: withOpacity('--color-highlight'),
+
+        brown: withOpacity('--color-brown'),
+        'brown-light': withOpacity('--color-brown-light'),
+        'brown-dark': withOpacity('--color-brown-dark'),
+        orange: withOpacity('--color-orange'),
+        'orange-light': withOpacity('--color-orange-light'),
+        'orange-dark': withOpacity('--color-orange-dark'),
+        purple: withOpacity('--color-purple'),
+        'purple-light': withOpacity('--color-purple-light'),
+        'purple-dark': withOpacity('--color-purple-dark'),
+        blue: withOpacity('--color-blue'),
+        'blue-light': withOpacity('--color-blue-light'),
+        'blue-dark': withOpacity('--color-blue-dark'),
+        green: withOpacity('--color-green'),
+        'green-light': withOpacity('--color-green-light'),
+        'green-dark': withOpacity('--color-green-dark'),
+      },
       opacity: {
         92: '0.92',
       },
@@ -96,4 +111,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  prefix: 'svws-ui-',
 };

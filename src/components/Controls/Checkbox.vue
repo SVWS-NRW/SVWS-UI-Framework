@@ -38,43 +38,45 @@ export default defineComponent({
 
 <style>
 .svws-ui--checkbox {
-  @apply cursor-pointer;
-  @apply inline-flex;
-  @apply items-center justify-start;
-  @apply select-none;
-  @apply text-input;
+  @apply svws-ui-cursor-pointer;
+  @apply svws-ui-inline-flex;
+  @apply svws-ui-items-center svws-ui-justify-start;
+  @apply svws-ui-select-none;
+  @apply svws-ui-text-input;
 }
 
 .svws-ui--checkbox--control {
-  @apply hidden;
+  @apply svws-ui-hidden;
 }
 
 .svws-ui--checkbox--indicator {
-  @apply bg-white;
-  @apply border-2 border-black;
-  @apply inline-flex items-center justify-center;
-  @apply w-5 h-5;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border-2 svws-ui-border-black;
+  @apply svws-ui-inline-flex svws-ui-items-center svws-ui-justify-center;
+  @apply svws-ui-w-5 svws-ui-h-5;
 }
 
 .svws-ui--checkbox--indicator .svws-ui--icon {
-  @apply opacity-0;
+  @apply svws-ui-opacity-0;
 
   font-size: 1rem;
 }
 
 .svws-ui--checkbox:focus .svws-ui--checkbox--indicator,
 .svws-ui--checkbox input:focus + .svws-ui--checkbox--indicator {
-  @apply border-primary;
+  @apply svws-ui-border-primary;
 }
 
 .svws-ui--checkbox
   input:checked
   + .svws-ui--checkbox--indicator
   .svws-ui--icon {
-  @apply opacity-100;
+  @apply svws-ui-opacity-100;
+  @apply svws-ui-text-black;
 }
 
 .svws-ui--checkbox--label {
-  @apply ml-2;
+  @apply svws-ui-ml-2;
+  @apply svws-ui-text-black;
 }
 </style>

@@ -63,90 +63,90 @@ export default defineComponent({
 
 <style>
 .svws-ui--dropdown--wrapper {
-  @apply inline-block;
-  @apply relative;
+  @apply svws-ui-inline-block;
+  @apply svws-ui-relative;
 }
 
 .svws-ui--dropdown--button {
-  @apply border-2;
-  @apply flex items-center;
-  @apply px-5 py-2;
-  @apply relative z-10;
-  @apply rounded-full;
-  @apply text-button font-bold;
+  @apply svws-ui-border-2;
+  @apply svws-ui-flex svws-ui-items-center;
+  @apply svws-ui-px-5 svws-ui-py-2;
+  @apply svws-ui-relative svws-ui-z-10;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-text-button svws-ui-font-bold;
 }
 
 .svws-ui--dropdown--button:focus {
-  @apply ring outline-none;
+  @apply svws-ui-ring svws-ui-outline-none;
 }
 
 .svws-ui--dropdown--button--primary {
-  @apply bg-primary;
-  @apply border-primary;
-  @apply text-white;
+  @apply svws-ui-bg-primary;
+  @apply svws-ui-border-primary;
+  @apply svws-ui-text-white;
 }
 
 .svws-ui--dropdown--button--primary:focus {
-  @apply ring-primary ring-opacity-50;
+  @apply svws-ui-ring-primary svws-ui-ring-opacity-50;
 }
 
 .svws-ui--dropdown--button--secondary {
-  @apply bg-transparent;
-  @apply border-black;
-  @apply text-black;
+  @apply svws-ui-bg-transparent;
+  @apply svws-ui-border-black;
+  @apply svws-ui-text-black;
 }
 
 .svws-ui--dropdown--button--secondary:focus {
-  @apply ring-primary ring-opacity-50;
+  @apply svws-ui-ring-primary svws-ui-ring-opacity-50;
 }
 
 .svws-ui--dropdown--button--danger {
-  @apply bg-transparent;
-  @apply border-error;
-  @apply text-error;
+  @apply svws-ui-bg-transparent;
+  @apply svws-ui-border-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--dropdown--button--danger:focus {
-  @apply bg-error;
-  @apply ring-error ring-opacity-50;
-  @apply text-white;
+  @apply svws-ui-bg-error;
+  @apply svws-ui-ring-error svws-ui-ring-opacity-50;
+  @apply svws-ui-text-white;
 }
 
 .svws-ui--dropdown--button:disabled {
-  @apply bg-disabled;
-  @apply border-disabled-medium;
-  @apply cursor-not-allowed;
-  @apply text-disabled-dark;
+  @apply svws-ui-bg-disabled;
+  @apply svws-ui-border-disabled-medium;
+  @apply svws-ui-cursor-not-allowed;
+  @apply svws-ui-text-disabled-dark;
 }
 
 .svws-ui--dropdown--icon {
-  @apply inline-block;
-  @apply ml-1;
+  @apply svws-ui-inline-block;
+  @apply svws-ui-ml-1;
 }
 
 .svws-ui--dropdown--items {
-  @apply absolute z-0 top-4;
-  @apply bg-white;
-  @apply border-2 border-t-0;
-  @apply overflow-hidden;
-  @apply pt-6 pb-2;
-  @apply rounded-b-3xl;
-  @apply w-full;
+  @apply svws-ui-absolute svws-ui-z-0 svws-ui-top-4;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border-2 svws-ui-border-t-0;
+  @apply svws-ui-overflow-hidden;
+  @apply svws-ui-pt-6 svws-ui-pb-2;
+  @apply svws-ui-rounded-b-3xl;
+  @apply svws-ui-w-full;
 }
 
 .svws-ui--dropdown--items:focus {
-  @apply outline-none;
+  @apply svws-ui-outline-none;
 }
 
 .svws-ui--dropdown--items--primary {
-  @apply border-primary;
+  @apply svws-ui-border-primary;
 }
 
 .svws-ui--dropdown--items--secondary {
-  @apply border-black;
+  @apply svws-ui-border-black;
 }
 
 .svws-ui--dropdown--items--danger {
-  @apply border-error;
+  @apply svws-ui-border-error;
 }
 </style>

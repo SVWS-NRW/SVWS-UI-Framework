@@ -55,37 +55,37 @@ export default defineComponent({
 
 <style>
 .svws-ui--sidebar--menu-item {
-  @apply flex items-center;
-  @apply py-1;
-  @apply my-1;
-  @apply border-l-2 border-transparent;
-  @apply text-white;
-  @apply cursor-pointer;
+  @apply svws-ui-flex svws-ui-items-center;
+  @apply svws-ui-py-1;
+  @apply svws-ui-my-1;
+  @apply svws-ui-border-l-2 svws-ui-border-transparent;
+  @apply svws-ui-text-white;
+  @apply svws-ui-cursor-pointer;
 }
 
 .svws-ui--sidebar--menu-item--active {
-  @apply border-white;
-  @apply font-bold;
+  @apply svws-ui-border-white;
+  @apply svws-ui-font-bold;
 }
 
 .svws-ui--sidebar--menu-item--icon {
-  @apply flex;
-  @apply mr-4 ml-3;
-  @apply text-headline-2;
+  @apply svws-ui-flex;
+  @apply svws-ui-mr-4 svws-ui-ml-3;
+  @apply svws-ui-text-headline-2;
 }
 
 .svws-ui--sidebar--menu-item--label {
-  @apply flex flex-col;
-  @apply text-body;
+  @apply svws-ui-flex svws-ui-flex-col;
+  @apply svws-ui-text-body;
 
   line-height: 1.25;
 }
 
 .svws-ui--sidebar--menu-item--collapsed .svws-ui--sidebar--menu-item--label {
-  @apply hidden;
+  @apply svws-ui-hidden;
 }
 
 .svws-ui--sidebar--menu-item--subline {
-  @apply text-caption font-normal;
+  @apply svws-ui-text-caption svws-ui-font-normal;
 }
 </style>

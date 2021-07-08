@@ -32,30 +32,30 @@ export default defineComponent({
 
 <style>
 .svws-ui--toggle {
-  @apply cursor-pointer;
-  @apply inline-flex;
-  @apply select-none;
-  @apply text-input;
+  @apply svws-ui-cursor-pointer;
+  @apply svws-ui-inline-flex;
+  @apply svws-ui-select-none;
+  @apply svws-ui-text-input;
 }
 
 .svws-ui--toggle--control {
-  @apply hidden;
+  @apply svws-ui-hidden;
 }
 
 .svws-ui--toggle--indicator {
-  @apply bg-white;
-  @apply border-2 border-black rounded-full;
-  @apply mr-3;
-  @apply relative;
-  @apply w-9 h-5;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border-2 svws-ui-border-black svws-ui-rounded-full;
+  @apply svws-ui-mr-3;
+  @apply svws-ui-relative;
+  @apply svws-ui-w-9 svws-ui-h-5;
 }
 
 .svws-ui--toggle--indicator:before {
-  @apply absolute;
-  @apply bg-black;
-  @apply block;
-  @apply rounded-full;
-  @apply w-3 h-3;
+  @apply svws-ui-absolute;
+  @apply svws-ui-bg-black;
+  @apply svws-ui-block;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-w-3 svws-ui-h-3;
 
   content: '';
   left: 0.125rem;
@@ -63,12 +63,12 @@ export default defineComponent({
 }
 
 .svws-ui--toggle input:checked + .svws-ui--toggle--indicator {
-  @apply bg-primary;
-  @apply border-primary;
+  @apply svws-ui-bg-primary;
+  @apply svws-ui-border-primary;
 }
 
 .svws-ui--toggle input:checked + .svws-ui--toggle--indicator:before {
-  @apply bg-white;
+  @apply svws-ui-bg-white;
 
   left: auto;
   right: 0.125rem;

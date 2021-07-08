@@ -30,6 +30,6 @@ export default defineComponent({
 
 <style>
 .svws-ui--tab-container {
-  @apply mt-8;
+  @apply svws-ui-mt-8;
 }
 </style>

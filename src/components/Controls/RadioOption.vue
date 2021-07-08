@@ -53,42 +53,42 @@ export default defineComponent({
 
 <style>
 .svws-ui--radio--label {
-  @apply cursor-pointer;
-  @apply flex flex-row items-center;
-  @apply select-none;
-  @apply space-x-2;
-  @apply text-input;
+  @apply svws-ui-cursor-pointer;
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center;
+  @apply svws-ui-select-none;
+  @apply svws-ui-space-x-2;
+  @apply svws-ui-text-input;
 }
 
 .svws-ui--radio--indicator {
-  @apply appearance-none;
-  @apply border-2 border-black rounded-full;
-  @apply cursor-pointer;
-  @apply flex items-center justify-center flex-shrink-0;
-  @apply w-5 h-5;
+  @apply svws-ui-appearance-none;
+  @apply svws-ui-border-2 svws-ui-border-black svws-ui-rounded-full;
+  @apply svws-ui-cursor-pointer;
+  @apply svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-flex-shrink-0;
+  @apply svws-ui-w-5 svws-ui-h-5;
 }
 
 .svws-ui--radio--indicator:focus {
-  @apply ring-2 ring-opacity-50 ring-primary outline-none;
+  @apply svws-ui-ring-2 svws-ui-ring-opacity-50 svws-ui-ring-primary svws-ui-outline-none;
 }
 
 .svws-ui--radio--indicator:checked::before {
-  @apply bg-black;
-  @apply block;
-  @apply rounded-full;
-  @apply w-3 h-3;
+  @apply svws-ui-bg-black;
+  @apply svws-ui-block;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-w-3 svws-ui-h-3;
   content: '';
 }
 
 .svws-ui--radio--indicator:disabled {
-  @apply bg-disabled;
-  @apply border-disabled-medium;
-  @apply cursor-not-allowed;
-  @apply text-disabled-dark;
+  @apply svws-ui-bg-disabled;
+  @apply svws-ui-border-disabled-medium;
+  @apply svws-ui-cursor-not-allowed;
+  @apply svws-ui-text-disabled-dark;
 }
 
 .svws-ui--radio--label--disabled {
-  @apply cursor-not-allowed;
-  @apply text-disabled-dark;
+  @apply svws-ui-cursor-not-allowed;
+  @apply svws-ui-text-disabled-dark;
 }
 </style>

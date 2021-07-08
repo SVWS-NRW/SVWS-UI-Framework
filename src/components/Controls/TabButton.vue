@@ -29,26 +29,26 @@ export default defineComponent({
 
 <style>
 .svws-ui--tab {
-  @apply bg-light;
-  @apply inline-flex items-center justify-center;
-  @apply py-2.5 px-5;
-  @apply rounded-full;
-  @apply select-none;
-  @apply text-dark text-button font-bold;
-  @apply whitespace-nowrap;
+  @apply svws-ui-bg-light;
+  @apply svws-ui-inline-flex svws-ui-items-center svws-ui-justify-center;
+  @apply svws-ui-py-2.5 svws-ui-px-5;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-select-none;
+  @apply svws-ui-text-dark svws-ui-text-button svws-ui-font-bold;
+  @apply svws-ui-whitespace-nowrap;
 }
 
 .svws-ui--tab:focus {
-  @apply ring ring-inset ring-primary ring-opacity-75 outline-none;
+  @apply svws-ui-ring svws-ui-ring-inset svws-ui-ring-primary svws-ui-ring-opacity-75 svws-ui-outline-none;
 }
 
 .svws-ui--tab--active {
-  @apply bg-dark;
-  @apply text-light;
+  @apply svws-ui-bg-dark;
+  @apply svws-ui-text-light;
 }
 
 .svws-ui--tab:disabled {
-  @apply cursor-not-allowed;
-  @apply text-disabled-dark;
+  @apply svws-ui-cursor-not-allowed;
+  @apply svws-ui-text-disabled-dark;
 }
 </style>

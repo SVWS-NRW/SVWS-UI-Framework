@@ -45,58 +45,58 @@ export default defineComponent({
 
 <style>
 .svws-ui--badge {
-  @apply border;
-  @apply font-bold;
-  @apply rounded;
+  @apply svws-ui-border;
+  @apply svws-ui-font-bold;
+  @apply svws-ui-rounded;
 }
 
 .svws-ui--badge--normal {
-  @apply px-2 py-1;
-  @apply text-body;
+  @apply svws-ui-px-2 svws-ui-py-1;
+  @apply svws-ui-text-body;
 }
 
 .svws-ui--badge--small {
-  @apply px-2 py-1;
-  @apply text-button;
+  @apply svws-ui-px-2 svws-ui-py-1;
+  @apply svws-ui-text-button;
 }
 
 .svws-ui--badge--medium {
-  @apply px-2.5 py-1.5;
-  @apply text-headline-4;
+  @apply svws-ui-px-2.5 svws-ui-py-1.5;
+  @apply svws-ui-text-headline-4;
 }
 
 .svws-ui--badge--big {
-  @apply px-3 py-2;
-  @apply text-headline-3;
+  @apply svws-ui-px-3 svws-ui-py-2;
+  @apply svws-ui-text-headline-3;
 }
 
 .svws-ui--badge--error {
-  @apply bg-error;
-  @apply border-error;
-  @apply text-white;
+  @apply svws-ui-bg-error;
+  @apply svws-ui-border-error;
+  @apply svws-ui-text-white;
 }
 
 .svws-ui--badge--primary {
-  @apply bg-primary;
-  @apply border-primary;
-  @apply text-white;
+  @apply svws-ui-bg-primary;
+  @apply svws-ui-border-primary;
+  @apply svws-ui-text-white;
 }
 
 .svws-ui--badge--light {
-  @apply bg-light;
-  @apply border-light;
-  @apply text-dark;
+  @apply svws-ui-bg-light;
+  @apply svws-ui-border-light;
+  @apply svws-ui-text-dark;
 }
 
 .svws-ui--badge--success {
-  @apply bg-success;
-  @apply border-success;
-  @apply text-dark;
+  @apply svws-ui-bg-success;
+  @apply svws-ui-border-success;
+  @apply svws-ui-text-dark;
 }
 
 .svws-ui--badge--highlight {
-  @apply bg-highlight;
-  @apply border-highlight;
-  @apply text-dark;
+  @apply svws-ui-bg-highlight;
+  @apply svws-ui-border-highlight;
+  @apply svws-ui-text-dark;
 }
 </style>

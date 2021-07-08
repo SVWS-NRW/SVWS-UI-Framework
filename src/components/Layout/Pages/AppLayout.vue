@@ -25,32 +25,32 @@ export default defineComponent({
 
 <style>
 .svws-ui--app-layout--pattern-wrapper {
-  @apply h-full w-full;
-  @apply relative;
+  @apply svws-ui-h-full svws-ui-w-full;
+  @apply svws-ui-relative;
 }
 
 .svws-ui--app-layout--pattern-overlay {
-  @apply absolute inset-0 -z-10;
-  @apply bg-white bg-opacity-92;
-  @apply block;
-  @apply w-full h-full;
+  @apply svws-ui-absolute svws-ui-inset-0 svws-ui--z-10;
+  @apply svws-ui-bg-white svws-ui-bg-opacity-92;
+  @apply svws-ui-block;
+  @apply svws-ui-w-full svws-ui-h-full;
 }
 
 .svws-ui--app-layout--pattern {
   background-image: url('/img/pattern.png');
   background-size: 12.5rem;
 
-  @apply absolute inset-0 -z-20;
-  @apply bg-repeat;
+  @apply svws-ui-absolute svws-ui-inset-0 svws-ui--z-20;
+  @apply svws-ui-bg-repeat;
 }
 
 .svws-ui--app-layout--wrapper {
-  @apply absolute inset-0;
-  @apply flex flex-row;
+  @apply svws-ui-absolute svws-ui-inset-0;
+  @apply svws-ui-flex svws-ui-flex-row;
 }
 
 .svws-ui--app-layout--sidebar-wrapper {
-  @apply flex-shrink-0;
-  @apply relative z-20;
+  @apply svws-ui-flex-shrink-0;
+  @apply svws-ui-relative svws-ui-z-20;
 }
 </style>

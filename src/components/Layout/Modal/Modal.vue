@@ -74,75 +74,75 @@ export default defineComponent({
 
 <style>
 .svws-ui--modal--closeButton {
-  @apply -mr-3;
-  @apply flex items-center justify-center;
-  @apply rounded-full;
-  @apply w-8 h-8;
+  @apply svws-ui--mr-3;
+  @apply svws-ui-flex svws-ui-items-center svws-ui-justify-center;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-w-8 svws-ui-h-8;
 }
 
 .svws-ui--modal--closeButton:hover {
-  @apply bg-light;
+  @apply svws-ui-bg-light;
 }
 
 .svws-ui--modal--closeButton:focus {
-  @apply bg-light;
-  @apply ring ring-primary ring-opacity-50 outline-none;
+  @apply svws-ui-bg-light;
+  @apply svws-ui-ring svws-ui-ring-primary svws-ui-ring-opacity-50 svws-ui-outline-none;
 }
 
 .svws-ui--modal--closeIcon {
-  @apply inline-block;
-  @apply ml-0;
+  @apply svws-ui-inline-block;
+  @apply svws-ui-ml-0;
 }
 
 .svws-ui--modal--pageWrapper {
-  @apply flex items-center justify-center;
-  @apply min-h-screen;
-  @apply p-8;
+  @apply svws-ui-flex svws-ui-items-center svws-ui-justify-center;
+  @apply svws-ui-min-h-screen;
+  @apply svws-ui-p-8;
 }
 .svws-ui--modal--titlebar {
-  @apply flex flex-row items-center justify-between;
-  @apply w-full;
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center svws-ui-justify-between;
+  @apply svws-ui-w-full;
 }
 
 .svws-ui--modal {
-  @apply bg-white;
-  @apply flex flex-col items-center;
-  @apply mx-auto;
-  @apply px-6 py-4;
-  @apply relative z-10;
-  @apply rounded-md;
-  @apply shadow-lg;
-  @apply space-y-8;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-flex svws-ui-flex-col svws-ui-items-center;
+  @apply svws-ui-mx-auto;
+  @apply svws-ui-px-6 svws-ui-py-4;
+  @apply svws-ui-relative svws-ui-z-10;
+  @apply svws-ui-rounded-md;
+  @apply svws-ui-shadow-lg;
+  @apply svws-ui-space-y-8;
 }
 
 .svws-ui--modal--sm {
-  @apply max-w-modal-sm w-full;
+  @apply svws-ui-max-w-modal-sm svws-ui-w-full;
 }
 
 .svws-ui--modal--md {
-  @apply max-w-modal-md w-full;
+  @apply svws-ui-max-w-modal-md svws-ui-w-full;
 }
 
 .svws-ui--modal--lg {
-  @apply max-w-modal-lg w-full;
+  @apply svws-ui-max-w-modal-lg svws-ui-w-full;
 }
 
 .svws-ui--modal--title {
-  @apply flex-grow;
-  @apply text-caption text-black uppercase;
+  @apply svws-ui-flex-grow;
+  @apply svws-ui-text-caption svws-ui-text-black svws-ui-uppercase;
 }
 
 .svws-ui--modal--description {
-  @apply font-bold text-center text-black;
+  @apply svws-ui-font-bold svws-ui-text-center svws-ui-text-black;
 }
 
 .svws-ui--modal--wrapper {
-  @apply fixed inset-0 z-10;
-  @apply overflow-y-auto;
+  @apply svws-ui-fixed svws-ui-inset-0 svws-ui-z-10;
+  @apply svws-ui-overflow-y-auto;
 }
 
 .svws-ui--modal--actions {
-  @apply flex items-center justify-center;
-  @apply space-x-4;
+  @apply svws-ui-flex svws-ui-items-center svws-ui-justify-center;
+  @apply svws-ui-space-x-4;
 }
 </style>

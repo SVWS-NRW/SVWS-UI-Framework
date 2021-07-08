@@ -107,53 +107,53 @@ export default defineComponent({
 
 <style>
 .svws-ui--textarea-input {
-  @apply flex;
-  @apply relative;
+  @apply svws-ui-flex;
+  @apply svws-ui-relative;
 }
 
 .svws-ui--textarea-input--control {
-  @apply bg-white;
-  @apply border-opacity-20 border border-black rounded;
-  @apply h-24 w-full;
-  @apply px-4 py-2;
-  @apply text-input text-black;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border-opacity-20 svws-ui-border svws-ui-border-black svws-ui-rounded;
+  @apply svws-ui-h-24 svws-ui-w-full;
+  @apply svws-ui-px-4 svws-ui-py-2;
+  @apply svws-ui-text-input svws-ui-text-black;
 }
 
 .svws-ui--textarea-input-focus .svws-ui--textarea-input--control,
 .svws-ui--textarea-input-filled .svws-ui--textarea-input--control {
-  @apply border-gray border-opacity-100;
-  @apply outline-none;
+  @apply svws-ui-border-gray svws-ui-border-opacity-100;
+  @apply svws-ui-outline-none;
 }
 
 .svws-ui--textarea-input-disabled .svws-ui--textarea-input--control {
-  @apply cursor-not-allowed;
+  @apply svws-ui-cursor-not-allowed;
 }
 
 .svws-ui--textarea-input-invalid .svws-ui--textarea-input--control {
-  @apply border-error;
+  @apply svws-ui-border-error;
 }
 
 .svws-ui--textarea-input--resize-none .svws-ui--textarea-input--control {
-  @apply resize-none;
+  @apply svws-ui-resize-none;
 }
 
 .svws-ui--textarea-input--resize-vertical .svws-ui--textarea-input--control {
-  @apply resize-y;
+  @apply svws-ui-resize-y;
 }
 
 .svws-ui--textarea-input--resize-horizontal .svws-ui--textarea-input--control {
-  @apply resize-x;
+  @apply svws-ui-resize-x;
 }
 
 .svws-ui--textarea-input--resize-both .svws-ui--textarea-input--control {
-  @apply resize;
+  @apply svws-ui-resize;
 }
 
 .svws-ui--textarea-input--placeholder {
-  @apply absolute;
-  @apply pointer-events-none;
-  @apply text-input text-gray;
-  @apply transform;
+  @apply svws-ui-absolute;
+  @apply svws-ui-pointer-events-none;
+  @apply svws-ui-text-input svws-ui-text-gray;
+  @apply svws-ui-transform;
 
   top: theme('spacing.2');
   left: theme('spacing.4');
@@ -161,25 +161,25 @@ export default defineComponent({
 
 .svws-ui--textarea-input-focus .svws-ui--textarea-input--placeholder,
 .svws-ui--textarea-input-filled .svws-ui--textarea-input--placeholder {
-  @apply -translate-y-1/2;
-  @apply bg-white;
-  @apply px-1;
-  @apply text-caption;
+  @apply svws-ui--translate-y-1/2;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-px-1;
+  @apply svws-ui-text-caption;
 
   top: 0;
   left: theme('spacing.1');
 }
 
 .svws-ui--textarea-input-invalid .svws-ui--textarea-input--placeholder {
-  @apply text-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--textarea-input-disabled {
-  @apply opacity-50;
+  @apply svws-ui-opacity-50;
 }
 
 .svws-ui--textarea-input--placeholder--required:after {
-  @apply text-error;
+  @apply svws-ui-text-error;
   content: ' *';
 }
 </style>

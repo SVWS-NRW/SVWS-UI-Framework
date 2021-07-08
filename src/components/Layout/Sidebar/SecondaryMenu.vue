@@ -1,8 +1,9 @@
 <template>
   <div class="svws-ui--secondary-menu">
-    <h3 class="font-bold text-black text-headline-3">
-      <slot name="header" />
+    <h3 class="svws-ui--secondary-menu--header">
+      <slot name="headline" />
     </h3>
+    <slot name="header" />
     <div class="svws-ui--secondary-menu--content">
       <slot name="content" />
     </div>
@@ -18,18 +19,22 @@ export default defineComponent({
 </script>
 
 <style>
+.svws-ui--secondary-menu--header {
+  @apply svws-ui-font-bold svws-ui-text-black svws-ui-text-headline-3 svws-ui-px-6;
+}
 .svws-ui--secondary-menu {
-  @apply bg-light;
-  @apply border-r-2 border-dark-20;
-  @apply flex flex-col flex-shrink-0;
-  @apply max-w-116 min-w-84 w-1/4 h-screen;
-  @apply overflow-y-auto;
-  @apply px-6 pt-8;
-  @apply shadow;
+  @apply svws-ui-bg-light;
+  @apply svws-ui-border-r-2 svws-ui-border-dark-20;
+  @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-shrink-0;
+  @apply svws-ui-max-w-116 svws-ui-min-w-84 svws-ui-w-1/4 svws-ui-h-screen;
+  @apply svws-ui-overflow-y-auto;
+  @apply svws-ui-pt-8;
+  @apply svws-ui-shadow;
 }
 
 .svws-ui--secondary-menu--content {
-  @apply flex-grow;
-  @apply mt-4;
+  @apply svws-ui-flex-grow;
+  @apply svws-ui-mt-4;
+  @apply svws-ui-overflow-y-auto;
 }
 </style>

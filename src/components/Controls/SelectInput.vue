@@ -111,19 +111,19 @@ export default defineComponent({
 
 <style>
 .svws-ui--select-input {
-  @apply flex;
-  @apply relative;
+  @apply svws-ui-flex;
+  @apply svws-ui-relative;
 }
 
 .svws-ui--select-input .svws-ui--icon {
-  @apply absolute;
-  @apply flex;
-  @apply inset-y-0 right-0;
-  @apply justify-center items-center;
-  @apply opacity-20;
-  @apply pointer-events-none;
-  @apply rounded;
-  @apply w-8;
+  @apply svws-ui-absolute;
+  @apply svws-ui-flex;
+  @apply svws-ui-inset-y-0 svws-ui-right-0;
+  @apply svws-ui-justify-center svws-ui-items-center;
+  @apply svws-ui-opacity-20;
+  @apply svws-ui-pointer-events-none;
+  @apply svws-ui-rounded;
+  @apply svws-ui-w-8;
 
   margin-top: 1px;
   margin-right: 1px;
@@ -132,19 +132,19 @@ export default defineComponent({
 
 .svws-ui--select-input-focus .svws-ui--icon,
 .svws-ui--select-input-filled .svws-ui--icon {
-  @apply opacity-100;
+  @apply svws-ui-opacity-100;
 }
 
 .svws-ui--select-input-invalid .svws-ui--icon {
-  @apply text-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--select-input--control {
-  @apply bg-white;
-  @apply border border-black border-opacity-20 rounded;
-  @apply h-9 w-full;
-  @apply px-4 py-2;
-  @apply text-input text-black;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border svws-ui-border-black svws-ui-border-opacity-20 svws-ui-rounded;
+  @apply svws-ui-h-9 svws-ui-w-full;
+  @apply svws-ui-px-4 svws-ui-py-2;
+  @apply svws-ui-text-input svws-ui-text-black;
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -152,36 +152,36 @@ export default defineComponent({
 
 .svws-ui--select-input-focus .svws-ui--select-input--control,
 .svws-ui--select-input-filled .svws-ui--select-input--control {
-  @apply border-gray border-opacity-100;
-  @apply outline-none;
+  @apply svws-ui-border-gray svws-ui-border-opacity-100;
+  @apply svws-ui-outline-none;
 }
 
 .svws-ui--select-input-disabled .svws-ui--select-input--control {
-  @apply cursor-not-allowed;
+  @apply svws-ui-cursor-not-allowed;
 }
 
 .svws-ui--select-input-invalid .svws-ui--select-input--control {
-  @apply border-error;
+  @apply svws-ui-border-error;
 }
 
 .svws-ui--select-input--placeholder {
-  @apply -translate-y-1/2;
-  @apply absolute;
-  @apply bg-white;
-  @apply pointer-events-none;
-  @apply px-1;
-  @apply text-gray text-caption;
-  @apply transform;
+  @apply svws-ui--translate-y-1/2;
+  @apply svws-ui-absolute;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-pointer-events-none;
+  @apply svws-ui-px-1;
+  @apply svws-ui-text-gray svws-ui-text-caption;
+  @apply svws-ui-transform;
 
   top: 0;
   left: theme('spacing.1');
 }
 
 .svws-ui--select-input-invalid .svws-ui--select-input--placeholder {
-  @apply text-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--select-input-disabled {
-  @apply opacity-50;
+  @apply svws-ui-opacity-50;
 }
 </style>

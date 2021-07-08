@@ -52,27 +52,27 @@ export default defineComponent({
 
 <style>
 .svws-ui--sidebar--menu-header {
-  @apply flex items-center;
-  @apply cursor-pointer;
+  @apply svws-ui-flex svws-ui-items-center;
+  @apply svws-ui-cursor-pointer;
 }
 
 .svws-ui--sidebar--menu-header--icon {
-  @apply w-8;
-  @apply h-8;
+  @apply svws-ui-w-8;
+  @apply svws-ui-h-8;
 }
 
 .svws-ui--sidebar--menu-header--icon svg {
-  @apply w-full;
-  @apply h-auto;
+  @apply svws-ui-w-full;
+  @apply svws-ui-h-auto;
 }
 
 .svws-ui--sidebar--menu-header--label {
-  @apply ml-4;
-  @apply font-bold text-headline-3 text-dark;
+  @apply svws-ui-ml-4;
+  @apply svws-ui-font-bold svws-ui-text-headline-3 svws-ui-text-dark;
 }
 
 .svws-ui--sidebar--menu-header--collapsed
   .svws-ui--sidebar--menu-header--label {
-  @apply hidden;
+  @apply svws-ui-hidden;
 }
 </style>

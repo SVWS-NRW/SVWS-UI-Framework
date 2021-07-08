@@ -8,7 +8,6 @@
       'svws-ui--button--transparent': type === 'transparent',
       'svws-ui--button--dropdown-action': dropdownAction === true,
     }"
-    @click="onClick"
     :disabled="disabled"
   >
     <slot />
@@ -51,72 +50,72 @@ export default defineComponent({
 
 <style>
 .svws-ui--button {
-  @apply border-2 rounded-full;
-  @apply px-5 py-2;
-  @apply select-none;
-  @apply text-button font-bold;
+  @apply svws-ui-border-2 svws-ui-rounded-full;
+  @apply svws-ui-px-5 svws-ui-py-2;
+  @apply svws-ui-select-none;
+  @apply svws-ui-text-button svws-ui-font-bold;
 }
 
 .svws-ui--button:focus {
-  @apply ring outline-none;
+  @apply svws-ui-ring svws-ui-outline-none;
 }
 
 .svws-ui--button--primary {
-  @apply bg-primary;
-  @apply border-primary;
-  @apply text-white;
+  @apply svws-ui-bg-primary;
+  @apply svws-ui-border-primary;
+  @apply svws-ui-text-white;
 }
 
 .svws-ui--button--primary:focus {
-  @apply ring-primary ring-opacity-50;
+  @apply svws-ui-ring-primary svws-ui-ring-opacity-50;
 }
 
 .svws-ui--button--secondary {
-  @apply bg-transparent;
-  @apply border-black;
-  @apply text-black;
+  @apply svws-ui-bg-transparent;
+  @apply svws-ui-border-black;
+  @apply svws-ui-text-black;
 }
 
 .svws-ui--button--secondary:focus {
-  @apply ring-primary ring-opacity-50;
+  @apply svws-ui-ring-primary svws-ui-ring-opacity-50;
 }
 
 .svws-ui--button--danger {
-  @apply bg-transparent;
-  @apply border-error;
-  @apply text-error;
+  @apply svws-ui-bg-transparent;
+  @apply svws-ui-border-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--button--danger:focus {
-  @apply bg-error;
-  @apply ring-error ring-opacity-50;
-  @apply text-white;
+  @apply svws-ui-bg-error;
+  @apply svws-ui-ring-error svws-ui-ring-opacity-50;
+  @apply svws-ui-text-white;
 }
 
 .svws-ui--button--transparent {
-  @apply bg-transparent;
-  @apply border-transparent;
-  @apply text-primary;
+  @apply svws-ui-bg-transparent;
+  @apply svws-ui-border-transparent;
+  @apply svws-ui-text-primary;
 }
 
 .svws-ui--button--transparent:hover {
-  @apply bg-dark-20 bg-opacity-50;
+  @apply svws-ui-bg-dark-20 svws-ui-bg-opacity-50;
 }
 
 .svws-ui--button--transparent:focus {
-  @apply ring-primary;
+  @apply svws-ui-ring-primary;
 }
 
 .svws-ui--button:disabled {
-  @apply bg-disabled;
-  @apply border-disabled-medium;
-  @apply cursor-not-allowed;
-  @apply text-disabled-dark;
+  @apply svws-ui-bg-disabled;
+  @apply svws-ui-border-disabled-medium;
+  @apply svws-ui-cursor-not-allowed;
+  @apply svws-ui-text-disabled-dark;
 }
 
 .svws-ui--button--dropdown-action {
-  @apply pr-3;
-  @apply relative z-20;
-  @apply rounded-r-none;
+  @apply svws-ui-pr-3;
+  @apply svws-ui-relative svws-ui-z-20;
+  @apply svws-ui-rounded-r-none;
 }
 </style>

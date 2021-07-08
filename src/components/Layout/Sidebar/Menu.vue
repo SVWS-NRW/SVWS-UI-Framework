@@ -48,48 +48,48 @@ export default defineComponent({
 
 <style>
 .svws-ui--sidebar--menu {
-  @apply flex flex-col flex-1 min-h-full;
-  @apply w-64;
-  @apply bg-dark;
+  @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-1 svws-ui-min-h-full;
+  @apply svws-ui-w-64;
+  @apply svws-ui-bg-dark;
 }
 
 .svws-ui--sidebar--menu--collapsed {
-  @apply w-16;
+  @apply svws-ui-w-16;
 }
 
 .svws-ui--sidebar--menu--header {
-  @apply relative;
-  @apply flex flex-col flex-shrink-0;
-  @apply px-4 py-8;
-  @apply bg-white;
+  @apply svws-ui-relative;
+  @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-shrink-0;
+  @apply svws-ui-px-4 svws-ui-py-8;
+  @apply svws-ui-bg-white;
 }
 
 .svws-ui--sidebar--menu--collapse {
-  @apply absolute;
-  @apply bottom-0;
-  @apply flex justify-center items-center;
-  @apply w-7;
-  @apply h-7;
-  @apply rounded-full;
-  @apply bg-white;
-  @apply text-headline-4 text-black;
-  @apply transform translate-y-1/2;
+  @apply svws-ui-absolute;
+  @apply svws-ui-bottom-0;
+  @apply svws-ui-flex svws-ui-justify-center svws-ui-items-center;
+  @apply svws-ui-w-7;
+  @apply svws-ui-h-7;
+  @apply svws-ui-rounded-full;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-text-headline-4 svws-ui-text-black;
+  @apply svws-ui-transform svws-ui-translate-y-1/2;
 
   right: theme('spacing.2');
 }
 
 .svws-ui--sidebar--menu--collapse:focus {
-  @apply outline-none;
-  @apply ring ring-primary ring-opacity-50;
+  @apply svws-ui-outline-none;
+  @apply svws-ui-ring svws-ui-ring-primary svws-ui-ring-opacity-50;
 }
 
 .svws-ui--sidebar--menu--body {
-  @apply flex flex-col flex-1;
-  @apply py-4;
+  @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-1;
+  @apply svws-ui-py-4;
 }
 
 .svws-ui--sidebar--menu--footer {
-  @apply flex flex-col;
-  @apply py-4;
+  @apply svws-ui-flex svws-ui-flex-col;
+  @apply svws-ui-py-4;
 }
 </style>

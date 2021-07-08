@@ -112,21 +112,21 @@ export default defineComponent({
 
 <style>
 .svws-ui--text-input {
-  @apply flex;
-  @apply relative;
-  @apply w-full;
-  @apply whitespace-nowrap overflow-hidden;
+  @apply svws-ui-flex;
+  @apply svws-ui-relative;
+  @apply svws-ui-w-full;
+  @apply svws-ui-whitespace-nowrap svws-ui-overflow-hidden;
 }
 
 .svws-ui--text-input .svws-ui--icon {
-  @apply absolute;
-  @apply flex;
-  @apply inset-y-0 right-0;
-  @apply justify-center items-center;
-  @apply opacity-20;
-  @apply pointer-events-none;
-  @apply rounded;
-  @apply w-8;
+  @apply svws-ui-absolute;
+  @apply svws-ui-flex;
+  @apply svws-ui-inset-y-0 svws-ui-right-0;
+  @apply svws-ui-justify-center svws-ui-items-center;
+  @apply svws-ui-opacity-20;
+  @apply svws-ui-pointer-events-none;
+  @apply svws-ui-rounded;
+  @apply svws-ui-w-8;
 
   margin-bottom: 1px;
   margin-right: 1px;
@@ -135,59 +135,60 @@ export default defineComponent({
 
 .svws-ui--text-input-focus .svws-ui--icon,
 .svws-ui--text-input-filled .svws-ui--icon {
-  @apply opacity-100;
+  @apply svws-ui-opacity-100;
 }
 
 .svws-ui--text-input-invalid .svws-ui--icon {
-  @apply text-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--text-input--control {
-  @apply bg-white;
-  @apply border border-black border-opacity-20 rounded;
-  @apply h-9 w-full;
-  @apply px-4 py-2;
-  @apply text-input text-black;
-  @apply whitespace-nowrap;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border svws-ui-border-black svws-ui-border-opacity-20 svws-ui-rounded;
+  @apply svws-ui-h-9 svws-ui-w-full;
+  @apply svws-ui-px-4 svws-ui-py-2;
+  @apply svws-ui-text-input svws-ui-text-black;
+  @apply svws-ui-whitespace-nowrap;
 }
 
 .svws-ui--text-input-focus .svws-ui--text-input--control,
 .svws-ui--text-input-filled .svws-ui--text-input--control {
-  @apply border-gray border-opacity-100;
-  @apply outline-none;
+  @apply svws-ui-border-gray svws-ui-border-opacity-100;
+  @apply svws-ui-outline-none;
 }
 
 .svws-ui--text-input--control[type='date']::-webkit-inner-spin-button,
 .svws-ui--text-input--control[type='date']::-webkit-calendar-picker-indicator {
-  @apply opacity-0;
+  @apply svws-ui-opacity-0;
 }
 
 .svws-ui--text-input--control[type='date'] {
   color: transparent;
+  @apply svws-ui-bg-transparent;
 }
 
 .svws-ui--text-input-focus .svws-ui--text-input--control[type='date'],
 .svws-ui--text-input-filled .svws-ui--text-input--control[type='date'] {
-  @apply text-black;
+  @apply svws-ui-text-black;
 }
 
 .svws-ui--text-input-disabled .svws-ui--text-input--control {
-  @apply cursor-not-allowed;
+  @apply svws-ui-cursor-not-allowed;
 }
 
 .svws-ui--text-input-readonly .svws-ui--text-input--control {
-  @apply cursor-default;
+  @apply svws-ui-cursor-default;
 }
 
 .svws-ui--text-input-invalid .svws-ui--text-input--control {
-  @apply border-error;
+  @apply svws-ui-border-error;
 }
 
 .svws-ui--text-input--placeholder {
-  @apply absolute;
-  @apply pointer-events-none;
-  @apply text-input text-gray;
-  @apply transform;
+  @apply svws-ui-absolute;
+  @apply svws-ui-pointer-events-none;
+  @apply svws-ui-text-input svws-ui-text-gray;
+  @apply svws-ui-transform;
 
   top: theme('spacing.2');
   left: theme('spacing.4');
@@ -195,34 +196,34 @@ export default defineComponent({
 
 .svws-ui--text-input-focus .svws-ui--text-input--placeholder,
 .svws-ui--text-input-filled .svws-ui--text-input--placeholder {
-  @apply -translate-y-1/2;
-  @apply bg-white;
-  @apply px-1;
-  @apply text-caption;
+  @apply svws-ui--translate-y-1/2;
+  @apply svws-ui-bg-white;
+  @apply svws-ui-px-1;
+  @apply svws-ui-text-caption;
 
   top: 0;
   left: theme('spacing.1');
 }
 
 .svws-ui--text-input-invalid .svws-ui--text-input--placeholder {
-  @apply text-error;
+  @apply svws-ui-text-error;
 }
 
 .svws-ui--text-input-disabled {
-  @apply opacity-50;
+  @apply svws-ui-opacity-50;
 }
 
 .svws-ui--text-input-focus,
 .svws-ui--text-input-filled {
-  @apply overflow-visible;
+  @apply svws-ui-overflow-visible;
 }
 
 .svws-ui--text-input--placeholder--required:after {
-  @apply text-error;
+  @apply svws-ui-text-error;
   content: ' *';
 }
 
 .svws-ui--text-input--icon .svws-ui--text-input--control {
-  @apply pr-8;
+  @apply svws-ui-pr-8;
 }
 </style>
