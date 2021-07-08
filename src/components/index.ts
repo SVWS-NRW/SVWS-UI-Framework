@@ -25,3 +25,5 @@ export { default as SvwsUiTabButton } from './Controls/TabButton.vue';
 export { default as SvwsUiContentCard } from './Layout/ContentCard.vue';
 export { default as SvwsUiHeader } from './Layout/Header.vue';
 export { default as SvwsUiTable } from './Layout/Table.vue';
+export { default as SvwsUiTooltip } from './Tooltip.vue';
+export { default as SvwsUiPopover } from './Popover.vue';

@@ -16,7 +16,8 @@
   "main": "./dist/svws-ui.umd.js",
   "module": "./dist/svws-ui.es.js",
   "dependencies": {
-    "@headlessui/vue": "^1.2.0"
+    "@headlessui/vue": "^1.2.0",
+    "vue3-popper": "^0.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
