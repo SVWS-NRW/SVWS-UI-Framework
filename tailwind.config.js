@@ -1,10 +1,10 @@
 function withOpacity(cssVariale) {
-  return ({opacityValue}) => {
-    if(opacityValue !== undefined) {
-      return `rgba(var(${cssVariale}), ${opacityValue})`
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${cssVariale}), ${opacityValue})`;
     }
-    return `rgb(var(${cssVariale}))`
-  }
+    return `rgb(var(${cssVariale}))`;
+  };
 }
 
 module.exports = {

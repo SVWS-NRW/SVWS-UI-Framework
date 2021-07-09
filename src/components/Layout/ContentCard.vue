@@ -1,6 +1,8 @@
 <template>
   <div class="svws-ui--content-card--wrapper">
-    <h5 class="svws-ui-headline-5 svws-ui--content-card--headline">{{ title }}</h5>
+    <h5 class="svws-ui-headline-5 svws-ui--content-card--headline">
+      {{ title }}
+    </h5>
     <div class="svws-ui-mt-4">
       <slot />
     </div>

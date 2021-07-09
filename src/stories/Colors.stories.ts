@@ -7,8 +7,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template:
-    `<div class="svws-ui-bg-white svws-ui-grid svws-ui-cols-1 svws-ui-gap-8" v-bind:class="{ 'theme-dark': args.darkTheme }">
+  template: `<div class="svws-ui-bg-white svws-ui-grid svws-ui-cols-1 svws-ui-gap-8" v-bind:class="{ 'theme-dark': args.darkTheme }">
       <div class="svws-ui-px-12 svws-ui-w-full svws-ui-py-24">
         <div class="svws-ui-flex svws-ui-flex-row svws-ui-items-cenrter svws-ui-flex-wrap svws-ui-gap-4 svws-ui-mt-4">
           <div class="svws-ui-h-24 svws-ui-w-24 svws-ui-rounded-2xl svws-ui-shadow-md svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-border svws-ui-border-dark svws-ui-bg-white svws-ui-text-black">white</div>

@@ -65,9 +65,9 @@ Default.args = {
     { id: 39, kuerzel: 'BECK', nachname: 'Beckmann', vorname: 'Kahtrin' },
   ],
   actions: [
-    { id: 1, label: 'Löschen', action: 'delete'},
-    { id: 2, label: 'Kopieren', action: 'copy'},
-    { id: 3, label: 'Foo', action: 'bar'},
+    { id: 1, label: 'Löschen', action: 'delete' },
+    { id: 2, label: 'Kopieren', action: 'copy' },
+    { id: 3, label: 'Foo', action: 'bar' },
   ],
 };
 
@@ -121,8 +121,8 @@ MultiSelect.args = {
     { id: 39, kuerzel: 'BECK', nachname: 'Beckmann', vorname: 'Kahtrin' },
   ],
   actions: [
-    { id: 1, label: 'Löschen', action: 'delete'},
-    { id: 2, label: 'Kopieren', action: 'copy'},
-    { id: 3, label: 'Foo', action: 'bar'},
+    { id: 1, label: 'Löschen', action: 'delete' },
+    { id: 2, label: 'Kopieren', action: 'copy' },
+    { id: 3, label: 'Foo', action: 'bar' },
   ],
 };
