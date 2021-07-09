@@ -1,6 +1,6 @@
 <template>
-  <table class="svws-ui--table">
-    <thead>
+  <table class="svws-ui--table" style="width: calc(100% - 1px)">
+    <thead class="svws-ui--table--header">
       <tr>
         <td class="svws-ui--table--cell" v-if="multiSelect">
           <svws-ui-checkbox
@@ -15,8 +15,10 @@
           :width="col.width"
           @click="changeSort(col)"
         >
-          <div class="svws-ui--table--header">
-            <span class="svws-ui--table--header--text">{{ col.title }}</span>
+          <div class="svws-ui--table--header-col">
+            <span class="svws-ui--table--header-col--text">{{
+              col.title
+            }}</span>
             <span v-if="col.sortable">
               <svws-ui-icon
                 v-show="col.id !== sorting.column"
@@ -33,12 +35,14 @@
             </span>
           </div>
         </td>
+        <td class="svws-ui--table--cell" v-if="actions && actions.length > 0"></td>
       </tr>
     </thead>
     <tbody>
       <tr
         v-for="item in items"
         :key="item.data.id"
+        :tabindex="this.items.indexOf(item) + 1"
         class="svws-ui--table--row"
         v-bind:class="{ 'svws-ui--table--row-selected': current === item }"
       >
@@ -57,6 +61,37 @@
         >
           {{ item.data[col.id] }}
         </td>
+        <td
+          class="svws-ui-border svws-ui-border-dark-20 svws-ui-bg-white"
+          v-if="actions && actions.length > 0"
+        >
+          <Menu
+            as="div"
+            class="svws-ui-relative svws-ui-inline-block svws-ui-text-left"
+          >
+            <MenuButton class="svws-ui--table--action-button"
+              ><svws-ui-icon variant="fill" icon="more-2" />
+            </MenuButton>
+            <MenuItems
+              class="svws-ui-z-10 svws-ui-origin-top-right svws-ui-absolute svws-ui-right-0 svws-ui-mt-0 svws-ui-w-48 svws-ui-rounded-md svws-ui-px-2 svws-ui-shadow-lg svws-ui-bg-white svws-ui-ring-1 svws-ui-ring-black svws-ui-ring-opacity-5 svws-ui-focus:outline-none"
+            >
+              <div class="svws-ui-flex svws-ui-flex-col svws-ui-py-1">
+                <MenuItem v-for="action in actions" :key="action">
+                  <svws-ui-button
+                    type="transparent"
+                    @click="this.$emit('action', [action.action, item])"
+                    >{{ action.label }}</svws-ui-button
+                  >
+                </MenuItem>
+              </div>
+            </MenuItems>
+          </Menu>
+        </td>
+      </tr>
+      <tr class="svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0">
+        <td class="svws-ui-py-2 svws-ui-px-4 svws-ui-bg-white" colspan="1000">
+          fsdfjkskl
+        </td>
       </tr>
     </tbody>
   </table>
@@ -64,9 +99,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 
 export default defineComponent({
   name: 'SvwsUiTable',
+  components: {
+    Menu,
+    MenuButton,
+    MenuItems,
+    MenuItem,
+  },
   props: {
     multiSelect: {
       type: Boolean,
@@ -80,11 +122,21 @@ export default defineComponent({
       type: Array,
       default: () => [],
     },
+    actions: {
+      type: Array,
+      default: () => [],
+    },
     selected: {
       type: Object,
     },
   },
-  emits: ['update:sort', 'update:asc', 'update:selected'],
+  emits: [
+    'update:sort',
+    'update:asc',
+    'update:selected',
+    'action',
+    'update:selectedCounter',
+  ],
   data() {
     return {
       sort: '',
@@ -144,9 +196,11 @@ export default defineComponent({
       ) {
         this.items.forEach((item) => (item.selected = true));
         this.selectedCounter = this.items.length;
+        this.$emit('update:selectedCounter', this.selectedCounter);
       } else if (this.selectedCounter <= this.items.length) {
         this.items.forEach((item) => (item.selected = false));
         this.selectedCounter = 0;
+        this.$emit('update:selectedCounter', this.selectedCounter);
       }
     },
     mousePressed(item) {
@@ -156,8 +210,10 @@ export default defineComponent({
       item.selected = !item.selected;
       if (item.selected) {
         this.selectedCounter++;
+        this.$emit('update:selectedCounter', this.selectedCounter);
       } else {
         this.selectedCounter--;
+        this.$emit('update:selectedCounter', this.selectedCounter);
       }
     },
     updateData() {
@@ -185,6 +241,14 @@ export default defineComponent({
     asc() {
       this.sorting.asc = this.asc;
     },
+    items: {
+      deep: true,
+      handler() {
+        if (this.current.data.id === undefined && this.items[0] !== undefined) {
+          this.changeCurrent(this.items[0]);
+        }
+      },
+    },
     rows: {
       deep: true,
       handler() {
@@ -202,38 +266,50 @@ export default defineComponent({
 </script>
 
 <style>
+.svws-ui--table--header-col {
+  @apply svws-ui-inline-flex svws-ui-flex-row svws-ui-items-center;
+  @apply svws-ui-space-x-2;
+  @apply svws-ui-text-black svws-ui-text-button svws-ui-font-bold;
+  @apply svws-ui-select-none;
+}
+
 .svws-ui--table--header {
-  @apply inline-flex flex-row items-center;
-  @apply space-x-2;
-  @apply text-black text-button font-bold;
-  @apply select-none;
 }
 
 .svws-ui--table--row {
-  @apply text-black text-button;
+  @apply svws-ui-text-black svws-ui-text-button;
 }
 
 .svws-ui--table--row:hover {
-  @apply cursor-pointer;
+  @apply svws-ui-cursor-pointer;
 }
 
 .svws-ui--table--row-selected {
-  @apply text-primary font-bold;
+  @apply svws-ui-text-primary svws-ui-font-bold;
 }
 
 .svws-ui--table--row-selected .svws-ui--checkbox {
-  @apply font-normal;
+  @apply svws-ui-font-normal;
 }
 
 .svws-ui--table--row-selected .svws-ui--checkbox .svws-ui--checkbox--indicator {
-  @apply border-primary;
+  @apply svws-ui-border-primary;
 }
 
 .svws-ui--table--cell {
-  @apply border border-dark-20 bg-white px-3 py-1;
+  @apply svws-ui-border svws-ui-border-dark-20 svws-ui-bg-white svws-ui-px-3 svws-ui-py-1;
 }
 
 .svws-ui--table {
-  @apply w-full;
+  @apply svws-ui-h-full;
+  @apply svws-ui-overflow-y-auto;
+}
+
+.svws-ui--table--action-button {
+  @apply svws-ui-h-6 svws-ui-w-6;
+}
+
+.svws-ui--table--action-button:focus {
+  @apply svws-ui-outline-none svws-ui-ring-inset svws-ui-ring-primary svws-ui-ring-2;
 }
 </style>
