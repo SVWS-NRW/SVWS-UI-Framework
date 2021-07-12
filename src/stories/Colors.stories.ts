@@ -8,7 +8,7 @@ const Template = (args) => ({
     return { args };
   },
   template: `<div class="svws-ui-bg-white svws-ui-grid svws-ui-cols-1 svws-ui-gap-8" v-bind:class="{ 'theme-dark': args.darkTheme }">
-      <div class="svws-ui-px-12 svws-ui-w-full svws-ui-py-24">
+      <div class="svws-ui-px-12 svws-ui-w-full svws-ui-py-4">
         <div class="svws-ui-flex svws-ui-flex-row svws-ui-items-cenrter svws-ui-flex-wrap svws-ui-gap-4 svws-ui-mt-4">
           <div class="svws-ui-h-24 svws-ui-w-24 svws-ui-rounded-2xl svws-ui-shadow-md svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-border svws-ui-border-dark svws-ui-bg-white svws-ui-text-black">white</div>
           <div class="svws-ui-h-24 svws-ui-w-24 svws-ui-rounded-2xl svws-ui-shadow-md svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-border svws-ui-border-dark svws-ui-bg-black svws-ui-text-white">black</div>
@@ -23,7 +23,7 @@ const Template = (args) => ({
           <div class="svws-ui-h-24 svws-ui-w-24 svws-ui-rounded-2xl svws-ui-shadow-md svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-border svws-ui-border-dark svws-ui-bg-highlight svws-ui-text-black">highlight</div>
         </div>
       </div>
-      <div class="svws-ui-px-12 svws-ui-w-full svws-ui-py-24">
+      <div class="svws-ui-px-12 svws-ui-w-full svws-ui-py-4">
         <div class="svws-ui-flex svws-ui-flex-row svws-ui-items-cenrter svws-ui-flex-wrap svws-ui-gap-4 svws-ui-mt-4">
           <div class="svws-ui-h-24 svws-ui-w-24 svws-ui-rounded-2xl svws-ui-shadow-md svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-border svws-ui-border-dark svws-ui-bg-brown svws-ui-text-white">brown</div>
           <div class="svws-ui-h-24 svws-ui-w-24 svws-ui-rounded-2xl svws-ui-shadow-md svws-ui-flex svws-ui-items-center svws-ui-justify-center svws-ui-border svws-ui-border-dark svws-ui-bg-brown-light svws-ui-text-black">brown-light</div>
