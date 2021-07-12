@@ -12,7 +12,13 @@ const Template = (args, { argTypes }) => ({
     return { args };
   },
   props: Object.keys(argTypes),
-  template: '<svws-ui-table v-bind="args" />',
+  template: `
+  <svws-ui-table v-bind="args">
+    <template #footer>
+      <p>Gruppenaktionen</p>
+    </template>
+  </svws-ui-table>
+  `,
 });
 
 export const Default = Template.bind({});
@@ -69,6 +75,7 @@ Default.args = {
     { id: 2, label: 'Kopieren', action: 'copy' },
     { id: 3, label: 'Foo', action: 'bar' },
   ],
+  footer: true,
 };
 
 export const MultiSelect = Template.bind({});
@@ -125,4 +132,5 @@ MultiSelect.args = {
     { id: 2, label: 'Kopieren', action: 'copy' },
     { id: 3, label: 'Foo', action: 'bar' },
   ],
+  footer: true,
 };
