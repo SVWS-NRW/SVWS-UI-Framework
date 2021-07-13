@@ -2,7 +2,10 @@
   <table class="svws-ui--table">
     <thead class="svws-ui--table--header">
       <tr>
-        <td class="svws-ui--table--cell svws-ui--table--cell-padded" v-if="multiSelect"></td>
+        <td
+          class="svws-ui--table--cell svws-ui--table--cell-padded svws-ui-w-1"
+          v-if="multiSelect"
+        ></td>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
           v-for="col in cols"
@@ -44,7 +47,10 @@
         class="svws-ui--table--row"
         v-bind:class="{ 'svws-ui--table--row-selected': current === item }"
       >
-        <td class="svws-ui--table--cell svws-ui--table--cell-padded" v-if="multiSelect">
+        <td
+          class="svws-ui--table--cell svws-ui--table--cell-padded"
+          v-if="multiSelect"
+        >
           <svws-ui-checkbox
             :value="item.selected"
             @change="toggleSelect(item)"
@@ -59,10 +65,7 @@
         >
           {{ item.data[col.id] }}
         </td>
-        <td
-          class="svws-ui--table--cell"
-          v-if="actions && actions.length > 0"
-        >
+        <td class="svws-ui--table--cell" v-if="actions && actions.length > 0">
           <Menu
             as="div"
             class="svws-ui-relative svws-ui-inline-block svws-ui-text-left"
@@ -70,24 +73,19 @@
             <MenuButton class="svws-ui--table--action-button"
               ><svws-ui-icon variant="fill" icon="more-2" />
             </MenuButton>
-            <MenuItems
-              class="svws-ui--table--action-items"
-            >
-                <MenuItem v-for="action in actions" :key="action">
-                  <svws-ui-button
-                    type="transparent"
-                    @click="this.$emit('action', [action.action, item])"
-                    >{{ action.label }}</svws-ui-button
-                  >
-                </MenuItem>
+            <MenuItems class="svws-ui--table--action-items">
+              <MenuItem v-for="action in actions" :key="action">
+                <svws-ui-button
+                  type="transparent"
+                  @click="this.$emit('action', [action.action, item])"
+                  >{{ action.label }}</svws-ui-button
+                >
+              </MenuItem>
             </MenuItems>
           </Menu>
         </td>
       </tr>
-      <tr
-        class="svws-ui--table--footer-wrapper"
-        v-if="multiSelect || footer"
-      >
+      <tr class="svws-ui--table--footer-wrapper" v-if="multiSelect || footer">
         <td class="svws-ui--table--footer-row" colspan="1000">
           <div class="svws-ui--table--footer">
             <svws-ui-checkbox
@@ -309,7 +307,7 @@ export default defineComponent({
 }
 
 .svws-ui--table--cell-padded {
-  @apply  svws-ui-px-3 svws-ui-py-1;
+  @apply svws-ui-px-3 svws-ui-py-1;
 }
 
 .svws-ui--table {
