@@ -13,11 +13,11 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
       <svws-ui-content-card v-bind="args">
-        <div class="flex flex-row items-start space-x-4">
-          <div class="flex-shrink-0">
-            <img src="http://placehold.it/256x256" class="w-32 h-32 rounded-full md:h-20 md:w-20 lg:h-24 lg:w-24">
+        <div class="svws-ui-flex svws-ui-flex-row svws-ui-items-start svws-ui-space-x-4">
+          <div class="svws-ui-flex-shrink-0">
+            <img src="http://placehold.it/256x256" class="svws-ui-w-32 svws-ui-h-32 svws-ui-rounded-full md:svws-ui-h-20 md:svws-ui-w-20 lg:svws-ui-h-24 lg:svws-ui-w-24">
           </div>
-          <div class="flex-grow grid gap-4 grid-cols-1 md:grid-cols-2">
+          <div class="svws-ui-flex-grow svws-ui-grid svws-ui-gap-4 svws-ui-grid-cols-1 md:svws-ui-grid-cols-2">
             <svws-ui-text-input type="text" placeholder="Vorname" />
             <svws-ui-text-input type="text" placeholder="Alle Vornamen" />
             <svws-ui-text-input type="text" placeholder="Nachname" />
