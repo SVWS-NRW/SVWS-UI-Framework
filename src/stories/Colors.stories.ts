@@ -46,8 +46,8 @@ const Template = (args) => ({
     `,
 });
 
-export const Default = Template.bind({});
-Default.args = {
+export const LightTheme = Template.bind({});
+LightTheme.args = {
   darkTheme: false,
 };
 
