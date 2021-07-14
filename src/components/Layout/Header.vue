@@ -1,7 +1,7 @@
 <template>
   <div class="svws-ui--header--wrapper">
-    <h5 class="svws-ui-headline-2 svws-ui-text-black"><slot /></h5>
-    <svws-ui-badge v-if="badge" variant="highlight" size="normal">{{
+    <h5 class="svws-ui-headline-2 svws-ui-text-black svws-ui-flex svws-ui-items-center svws-ui-space-x-2"><slot /></h5>
+    <svws-ui-badge v-if="badge" :variant="badgeVariant" :size="badgeSize">{{
       badge
     }}</svws-ui-badge>
   </div>
@@ -16,6 +16,12 @@ export default defineComponent({
     badge: {
       type: String,
     },
+    badgeVariant: {
+      type: String,
+    },
+    badgeSize: {
+      type: String,
+    }
   },
 });
 </script>
