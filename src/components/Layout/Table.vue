@@ -66,6 +66,26 @@
           {{ item.data[col.id] }}
         </td>
         <td class="svws-ui--table--cell" v-if="actions && actions.length > 0">
+            <svws-ui-popover :hover=false placement="left-end" :disableClickAway=false>
+              <template #trigger>
+                <button class="svws-ui--table--action-button">
+                  <svws-ui-icon variant="fill" icon="more-2" />
+                </button>
+              </template>
+              <template #content>
+                <div class="svws-ui--table--action-items">
+                  <div v-for="action in actions" :key="action">
+                    <svws-ui-button
+                      class="svws-ui--table--action-item"
+                      type="transparent"
+                      @click="this.$emit('action', [action.action, item])"
+                      >{{ action.label }}</svws-ui-button
+                    >
+                  </div>
+                </div>
+              </template>
+            </svws-ui-popover>
+          <!--
           <Menu
             as="div"
             class="svws-ui-relative svws-ui-inline-block svws-ui-text-left"
@@ -83,6 +103,7 @@
               </MenuItem>
             </MenuItems>
           </Menu>
+          -->
         </td>
       </tr>
       <tr class="svws-ui--table--footer-wrapper" v-if="multiSelect || footer">
@@ -311,8 +332,7 @@ export default defineComponent({
 }
 
 .svws-ui--table {
-  @apply svws-ui-h-full svws-ui-w-full;
-  @apply svws-ui-overflow-y-auto;
+  @apply svws-ui-w-full;
 }
 
 .svws-ui--table--action-button {
@@ -322,14 +342,17 @@ export default defineComponent({
 .svws-ui--table--action-items {
   @apply svws-ui-bg-white;
   @apply svws-ui-flex svws-ui-flex-col;
-  @apply svws-ui-mt-0;
   @apply svws-ui-px-2 svws-ui-py-1;
   @apply svws-ui-ring-1;
   @apply svws-ui-ring-black svws-ui-ring-opacity-5;
   @apply svws-ui-rounded-md;
   @apply svws-ui-shadow-lg;
   @apply svws-ui-w-48;
-  @apply svws-ui-z-10 svws-ui-origin-top-right svws-ui-absolute svws-ui-right-0;
+}
+
+.svws-ui--table--action-item {
+  @apply svws-ui-block;
+  @apply svws-ui-w-full;
 }
 
 .svws-ui--table--action-items:focus {
