@@ -44,6 +44,8 @@
         v-for="item in items"
         :key="item.data.id"
         :tabindex="this.items.indexOf(item) + 1"
+        @keydown.down="onKeyDown"
+        @keydown.up="onKeyUp"
         class="svws-ui--table--row"
         v-bind:class="{ 'svws-ui--table--row-selected': current === item }"
       >
@@ -256,6 +258,26 @@ export default defineComponent({
       this.$emit('update:selected', item.data);
       return item.data;
     },
+    /* KEYBOARD NAVIGATION */
+    onKeyDown(e) {
+      e.preventDefault();
+      const index = this.items.indexOf(this.current);
+      if(index + 1 >= this.items.length) {
+        this.changeCurrent(this.items[0]);
+      } else {
+        this.changeCurrent(this.items[index + 1]);
+      }
+    },
+
+    onKeyUp(e) {
+      e.preventDefault();
+      const index = this.items.indexOf(this.current);
+      if(index <= 0) {
+        this.changeCurrent(this.items[this.items.length - 1]);
+      } else {
+        this.changeCurrent(this.items[index - 1]);
+      }
+    }
   },
   created() {
     this.updateData();
@@ -308,6 +330,10 @@ export default defineComponent({
 
 .svws-ui--table--row:hover {
   @apply svws-ui-cursor-pointer;
+}
+
+.svws-ui--table--row:focus {
+  @apply svws-ui-outline-none;
 }
 
 .svws-ui--table--row-selected {
