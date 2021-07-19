@@ -44,6 +44,7 @@
         v-for="item in items"
         :key="item.data.id"
         :tabindex="this.items.indexOf(item) + 1"
+        :id="'row_' + (this.items.indexOf(item) + 1)"
         @keydown.down="onKeyDown"
         @keydown.up="onKeyUp"
         class="svws-ui--table--row"
@@ -68,25 +69,29 @@
           {{ item.data[col.id] }}
         </td>
         <td class="svws-ui--table--cell" v-if="actions && actions.length > 0">
-            <svws-ui-popover :hover=false placement="left-end" :disableClickAway=false>
-              <template #trigger>
-                <button class="svws-ui--table--action-button">
-                  <svws-ui-icon variant="fill" icon="more-2" />
-                </button>
-              </template>
-              <template #content>
-                <div class="svws-ui--table--action-items">
-                  <div v-for="action in actions" :key="action">
-                    <svws-ui-button
-                      class="svws-ui--table--action-item"
-                      type="transparent"
-                      @click="this.$emit('action', [action.action, item])"
-                      >{{ action.label }}</svws-ui-button
-                    >
-                  </div>
+          <svws-ui-popover
+            :hover="false"
+            placement="left-end"
+            :disableClickAway="false"
+          >
+            <template #trigger>
+              <button class="svws-ui--table--action-button">
+                <svws-ui-icon variant="fill" icon="more-2" />
+              </button>
+            </template>
+            <template #content>
+              <div class="svws-ui--table--action-items">
+                <div v-for="action in actions" :key="action">
+                  <svws-ui-button
+                    class="svws-ui--table--action-item"
+                    type="transparent"
+                    @click="this.$emit('action', [action.action, item])"
+                    >{{ action.label }}</svws-ui-button
+                  >
                 </div>
-              </template>
-            </svws-ui-popover>
+              </div>
+            </template>
+          </svws-ui-popover>
           <!--
           <Menu
             as="div"
@@ -126,16 +131,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
+//import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 
 export default defineComponent({
   name: 'SvwsUiTable',
+  /*
   components: {
     Menu,
     MenuButton,
     MenuItems,
     MenuItem,
   },
+  */
   props: {
     multiSelect: {
       type: Boolean,
@@ -262,22 +269,37 @@ export default defineComponent({
     onKeyDown(e) {
       e.preventDefault();
       const index = this.items.indexOf(this.current);
-      if(index + 1 >= this.items.length) {
+      if (index + 1 >= this.items.length) {
         this.changeCurrent(this.items[0]);
+        const element = document.getElementById('row_1');
+        this.focusAndScroll(element);
       } else {
         this.changeCurrent(this.items[index + 1]);
+        const element = document.getElementById('row_' + (index + 1));
+        this.focusAndScroll(element);
       }
     },
-
     onKeyUp(e) {
       e.preventDefault();
       const index = this.items.indexOf(this.current);
-      if(index <= 0) {
+      if (index <= 0) {
         this.changeCurrent(this.items[this.items.length - 1]);
+        const element = document.getElementById('row_' + this.items.length);
+        this.focusAndScroll(element);
       } else {
         this.changeCurrent(this.items[index - 1]);
+        const element = document.getElementById('row_' + index);
+        this.focusAndScroll(element);
       }
-    }
+    },
+    focusAndScroll(element) {
+      element?.focus();
+      element?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      });
+    },
   },
   created() {
     this.updateData();
