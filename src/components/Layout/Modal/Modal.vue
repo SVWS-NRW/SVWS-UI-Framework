@@ -74,6 +74,7 @@ export default defineComponent({
 
 <style>
 .svws-ui--modal--closeButton {
+  @apply svws-ui-text-dark;
   @apply svws-ui--mr-3;
   @apply svws-ui-flex svws-ui-items-center svws-ui-justify-center;
   @apply svws-ui-rounded-full;
