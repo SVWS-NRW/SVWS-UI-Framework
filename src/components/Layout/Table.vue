@@ -45,6 +45,7 @@
         :key="item.data.id"
         :tabindex="this.items.indexOf(item) + 1"
         :id="'row_' + (this.items.indexOf(item) + 1)"
+        @keydown.space="onKeyDownSpace"
         @keydown.down="onKeyDown"
         @keydown.up="onKeyUp"
         class="svws-ui--table--row"
@@ -269,8 +270,8 @@ export default defineComponent({
       return item.data;
     },
     /* KEYBOARD NAVIGATION */
-    onKeyDown(e) {
-      e.preventDefault();
+    onKeyDown() {
+      event?.preventDefault();
       let element = null;
       const index = this.items.indexOf(this.current);
       if (index + 1 === this.items.length) {
@@ -282,8 +283,12 @@ export default defineComponent({
       }
       this.focusAndScroll(element);
     },
-    onKeyUp(e) {
-      e.preventDefault();
+    onKeyDownSpace() {
+      event?.preventDefault();
+      this.toggleSelect(this.current);
+    },
+    onKeyUp() {
+      event?.preventDefault();
       let element = null;
       const index = this.items.indexOf(this.current);
       if (index === 0) {
