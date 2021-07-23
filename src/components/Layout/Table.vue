@@ -238,7 +238,7 @@ export default defineComponent({
         this.items.forEach((item) => (item.selected = false));
         this.selectedItems = [];
       }
-      this.$emit('update:selectedItems', this.selectedItems)
+      this.$emit('update:selectedItems', this.selectedItems);
     },
     mousePressed(item) {
       this.changeCurrent(item);
@@ -256,7 +256,7 @@ export default defineComponent({
       this.items = this.rows.map((item) => ({ data: item, selected: false }));
     },
     removeFromArray(arr, val) {
-      return arr.filter(function(ele) {
+      return arr.filter(function (ele) {
         return ele != val;
       });
     },
