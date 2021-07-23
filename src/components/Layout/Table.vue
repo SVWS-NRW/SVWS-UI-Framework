@@ -117,7 +117,7 @@
         <td class="svws-ui--table--footer-row" colspan="1000">
           <div class="svws-ui--table--footer">
             <svws-ui-checkbox
-              :value="this.selectedCounter === this.items.length"
+              :value="this.selectedItems === this.items"
               @change="selectAll()"
               v-if="multiSelect"
             />
@@ -173,7 +173,7 @@ export default defineComponent({
     'update:asc',
     'update:selected',
     'action',
-    'update:selectedCounter',
+    'update:selectedItems',
   ],
   data() {
     return {
@@ -191,7 +191,7 @@ export default defineComponent({
         data: {},
         selected: false,
       },
-      selectedCounter: 0,
+      selectedItems: [],
     };
   },
   methods: {
@@ -229,17 +229,16 @@ export default defineComponent({
     },
     selectAll() {
       if (
-        this.selectedCounter >= 0 &&
-        this.selectedCounter < this.items.length
+        this.selectedItems.length >= 0 &&
+        this.selectedItems.length < this.items.length
       ) {
         this.items.forEach((item) => (item.selected = true));
-        this.selectedCounter = this.items.length;
-        this.$emit('update:selectedCounter', this.selectedCounter);
-      } else if (this.selectedCounter <= this.items.length) {
+        this.selectedItems = this.items;
+      } else if (this.selectedItems.length === this.items.length) {
         this.items.forEach((item) => (item.selected = false));
-        this.selectedCounter = 0;
-        this.$emit('update:selectedCounter', this.selectedCounter);
+        this.selectedItems = [];
       }
+      this.$emit('update:selectedItems', this.selectedItems)
     },
     mousePressed(item) {
       this.changeCurrent(item);
@@ -247,15 +246,19 @@ export default defineComponent({
     toggleSelect(item) {
       item.selected = !item.selected;
       if (item.selected) {
-        this.selectedCounter++;
-        this.$emit('update:selectedCounter', this.selectedCounter);
+        this.selectedItems.push(item);
       } else {
-        this.selectedCounter--;
-        this.$emit('update:selectedCounter', this.selectedCounter);
+        this.selectedItems = this.removeFromArray(this.selectedItems, item);
       }
+      this.$emit('update:selectedItems', this.selectedItems);
     },
     updateData() {
       this.items = this.rows.map((item) => ({ data: item, selected: false }));
+    },
+    removeFromArray(arr, val) {
+      return arr.filter(function(ele) {
+        return ele != val;
+      });
     },
     changeCurrent(item) {
       if (!item) {
@@ -268,33 +271,33 @@ export default defineComponent({
     /* KEYBOARD NAVIGATION */
     onKeyDown(e) {
       e.preventDefault();
+      let element = null;
       const index = this.items.indexOf(this.current);
-      if (index + 1 >= this.items.length) {
+      if (index + 1 === this.items.length) {
         this.changeCurrent(this.items[0]);
-        const element = document.getElementById('row_1');
-        this.focusAndScroll(element);
+        element = document.getElementById('row_1');
       } else {
         this.changeCurrent(this.items[index + 1]);
-        const element = document.getElementById('row_' + (index + 1));
-        this.focusAndScroll(element);
+        element = document.getElementById('row_' + (index + 1));
       }
+      this.focusAndScroll(element);
     },
     onKeyUp(e) {
       e.preventDefault();
+      let element = null;
       const index = this.items.indexOf(this.current);
-      if (index <= 0) {
+      if (index === 0) {
         this.changeCurrent(this.items[this.items.length - 1]);
-        const element = document.getElementById('row_' + this.items.length);
-        this.focusAndScroll(element);
+        element = document.getElementById('row_' + this.items.length);
       } else {
         this.changeCurrent(this.items[index - 1]);
-        const element = document.getElementById('row_' + index);
-        this.focusAndScroll(element);
+        element = document.getElementById('row_' + index);
       }
+      this.focusAndScroll(element);
     },
     focusAndScroll(element) {
-      element?.focus();
-      element?.scrollIntoView({
+      element.focus();
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
         inline: 'nearest',
