@@ -307,6 +307,9 @@ export default defineComponent({
   created() {
     this.updateData();
   },
+  mounted() {
+    document.getElementById('row_1')?.focus();
+  },
   watch: {
     current() {
       //console.log(this.current);
