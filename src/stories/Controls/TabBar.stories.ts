@@ -19,7 +19,7 @@ const Template = (args, { argTypes }) => ({
       <svws-ui-tab title="Schulbesuch">Das ist der Tab Schulbesuch</svws-ui-tab>
       <svws-ui-tab title="Weitere Adressen">Das ist der Tab Adressen</svws-ui-tab>
       <svws-ui-tab title="Laufbahninfo">Das ist der Tab Laufbahninfo</svws-ui-tab>
-      <svws-ui-tab title="Fördermaßnahmen">Das ist der Tab Fördermaßnahmen</svws-ui-tab>
+      <svws-ui-tab title="Fördermaßnahmen" :visible=false>Das ist der Tab Fördermaßnahmen</svws-ui-tab>
       <svws-ui-tab title="Aktuelles Halbjahr">Das ist der Tab Aktuelles Halbjahr</svws-ui-tab>
       <svws-ui-tab title="Übersicht S1">Das ist der Tab Übersicht S1</svws-ui-tab>
       <svws-ui-tab title="Gesamtübersicht">Das ist der Tab Gesamtübersicht</svws-ui-tab>
