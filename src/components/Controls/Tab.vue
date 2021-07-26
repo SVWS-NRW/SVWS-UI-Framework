@@ -1,5 +1,5 @@
 <template>
-  <div v-show="isActive" class="svws-ui--tab-container">
+  <div v-if="isActive" class="svws-ui--tab-container">
     <slot />
   </div>
 </template>
