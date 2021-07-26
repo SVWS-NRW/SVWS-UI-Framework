@@ -1,6 +1,6 @@
 <template>
   <div v-if="isActive" class="svws-ui--tab-container" :visible="visible">
-    <slot />
+    <slot v-if="visible == true" />
   </div>
 </template>
 
