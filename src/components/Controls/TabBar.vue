@@ -16,6 +16,7 @@
         @click="selectTab(index)"
         :active="index === this.selectedIndex ? true : false"
         :disabled="tab.disabled"
+        v-show="tab.visible"
       >
         {{ tab.title }}
       </svws-ui-tab-button>

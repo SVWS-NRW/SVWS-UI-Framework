@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isActive" class="svws-ui--tab-container">
+  <div v-if="isActive" class="svws-ui--tab-container" :visible="visible">
     <slot />
   </div>
 </template>
@@ -15,6 +15,10 @@ export default defineComponent({
     },
     disabled: {
       type: Boolean,
+    },
+    visible: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
