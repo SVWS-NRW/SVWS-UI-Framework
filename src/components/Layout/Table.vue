@@ -4,10 +4,12 @@
       <tr>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded svws-ui-w-1"
+          :class="{ 'svws-ui--table--border': border }"
           v-if="multiSelect"
         ></td>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
+          :class="{ 'svws-ui--table--border': border }"
           v-for="col in cols"
           :key="col.id"
           :width="col.width"
@@ -35,6 +37,7 @@
         </td>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
+          :class="{ 'svws-ui--table--border': border }"
           v-if="actions && actions.length > 0"
         ></td>
       </tr>
@@ -53,6 +56,7 @@
       >
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
+          :class="{ 'svws-ui--table--border': border }"
           v-if="multiSelect"
         >
           <svws-ui-checkbox
@@ -62,6 +66,7 @@
         </td>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
+          :class="{ 'svws-ui--table--border': border }"
           v-for="col in cols"
           :key="item.data[col.id]"
           @click="mousePressed(item)"
@@ -69,7 +74,7 @@
         >
           {{ item.data[col.id] }}
         </td>
-        <td class="svws-ui--table--cell" v-if="actions && actions.length > 0">
+        <td class="svws-ui--table--cell" :class="{ 'svws-ui--table--border': border }" v-if="actions && actions.length > 0">
           <svws-ui-popover
             :hover="false"
             placement="left-end"
@@ -145,6 +150,10 @@ export default defineComponent({
   },
   */
   props: {
+    border: {
+      type: Boolean,
+      default: true,
+    },
     multiSelect: {
       type: Boolean,
       default: false,
@@ -383,7 +392,11 @@ export default defineComponent({
 
 .svws-ui--table--cell {
   @apply svws-ui-bg-white;
-  @apply svws-ui-border svws-ui-border-dark-20;
+  @apply svws-ui-border-dark-20;
+}
+
+.svws-ui--table--border {
+  @apply svws-ui-border;
 }
 
 .svws-ui--table--cell-padded {
