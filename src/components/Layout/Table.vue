@@ -74,7 +74,11 @@
         >
           {{ item.data[col.id] }}
         </td>
-        <td class="svws-ui--table--cell" :class="{ 'svws-ui--table--border': border }" v-if="actions && actions.length > 0">
+        <td
+          class="svws-ui--table--cell"
+          :class="{ 'svws-ui--table--border': border }"
+          v-if="actions && actions.length > 0"
+        >
           <svws-ui-popover
             :hover="false"
             placement="left-end"
