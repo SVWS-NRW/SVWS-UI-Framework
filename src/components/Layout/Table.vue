@@ -123,6 +123,8 @@
           -->
         </td>
       </tr>
+    </tbody>
+    <tfoot>
       <tr class="svws-ui--table--footer-wrapper" v-if="multiSelect || footer">
         <td class="svws-ui--table--footer-row" colspan="1000">
           <div class="svws-ui--table--footer">
@@ -131,11 +133,13 @@
               @change="selectAll()"
               v-if="multiSelect"
             />
-            <slot v-if="footer" name="footer" />
+            <div class="svws-ui--table--footer--actions">
+              <slot v-if="footer" name="footer" />
+            </div>
           </div>
         </td>
       </tr>
-    </tbody>
+    </tfoot>
   </table>
 </template>
 
@@ -445,11 +449,17 @@ export default defineComponent({
 }
 
 .svws-ui--table--footer-wrapper {
-  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0;
+  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0 svws-ui-z-30;
+
+  position: -webkit-sticky;
 }
 
 .svws-ui--table--footer-row {
   @apply svws-ui-bg-white;
   @apply svws-ui-py-2 svws-ui-px-3;
+}
+
+.svws-ui--table--footer--actions {
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center svws-ui-space-x-2;
 }
 </style>
