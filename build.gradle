@@ -1,7 +1,7 @@
 plugins {
 	id 'base'
 	id 'maven-publish'
-	id "com.github.node-gradle.node" version "3.0.1"
+	id "com.github.node-gradle.node" version "3.1.0"
 }
 
 version = '0.0.1'
@@ -9,13 +9,13 @@ group = 'de.nrw.schule.svws.ui'
 
 wrapper {
     description "Regenerates the Gradle Wrapper files"
-    gradleVersion = '6.6.1'
+    gradleVersion = '7.1.1'
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 node {
-  download = false
-  version = '15.14.0'
+  download = true
+  version = '16.6.1'
 }
 
 

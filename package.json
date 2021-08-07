@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "./node_modules/.bin/vue-cli-service lint",
-    "format": "./node_modules/.bin/prettier --write ./.storybook ./src ./*.config.js",
-    "build": "./node_modules/.bin/vite build",
-    "storybook:start": "./node_modules/.bin/start-storybook -s ./src/assets -p 6006",
-    "storybook:build": "./node_modules/.bin/build-storybook -s ./src/assets",
-    "storybook:deploy": "./node_modules/.bin/storybook-to-ghpages"
+    "lint": "vue-cli-service lint",
+    "format": "prettier --write ./.storybook ./src ./*.config.js",
+    "build": "vite build",
+    "storybook:start": "start-storybook -s ./src/assets -p 6006",
+    "storybook:build": "build-storybook -s ./src/assets",
+    "storybook:deploy": "storybook-to-ghpages"
   },
   "files": [
     "dist"
