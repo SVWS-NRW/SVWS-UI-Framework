@@ -16,8 +16,6 @@ const Template = (args, { argTypes }) => ({
     return { args };
   },
   props: Object.keys(argTypes),
-  data() {},
-  methods: {},
   template: `
     <svws-ui-secondary-menu>
       Secondary Menu

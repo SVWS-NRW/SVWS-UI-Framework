@@ -36,7 +36,7 @@ const Template = (args, { argTypes }) => ({
       <template v-slot:dropdownItems>
         <svws-ui-dropdown-item v-bind="args" @click="onClick" icon="home">Option 1</svws-ui-dropdown-item>
         <svws-ui-dropdown-item v-bind="args" @click="onClick">Option 2</svws-ui-dropdown-item>
-        <svws-ui-dropdown-item v-bind="args" @click="onClick" :disabled>Option 3</svws-ui-dropdown-item>
+        <svws-ui-dropdown-item v-bind="args" @click="onClick" :disabled="true">Option 3</svws-ui-dropdown-item>
         <svws-ui-dropdown-item v-bind="args" @click="onClick">Option 4</svws-ui-dropdown-item>
       </template>
     </svws-ui-dropdown-with-action>

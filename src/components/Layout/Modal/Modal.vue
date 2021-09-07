@@ -110,7 +110,7 @@ export default defineComponent({
   @apply svws-ui-flex svws-ui-flex-col svws-ui-items-center;
   @apply svws-ui-mx-auto;
   @apply svws-ui-px-6 svws-ui-py-4;
-  @apply svws-ui-relative svws-ui-z-10;
+  @apply svws-ui-relative svws-ui-z-20;
   @apply svws-ui-rounded-md;
   @apply svws-ui-shadow-lg;
   @apply svws-ui-space-y-8;
@@ -138,7 +138,7 @@ export default defineComponent({
 }
 
 .svws-ui--modal--wrapper {
-  @apply svws-ui-fixed svws-ui-inset-0 svws-ui-z-10;
+  @apply svws-ui-fixed svws-ui-inset-0 svws-ui-z-50;
   @apply svws-ui-overflow-y-auto;
 }
 

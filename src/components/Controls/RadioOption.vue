@@ -42,12 +42,13 @@ export default defineComponent({
     },
   },
   methods: {
-    onInput: function (event: { target: HTMLInputElement }) {
+    onInput(event: { target: HTMLInputElement }) {
       if (!this.disabled) {
         this.$emit('input', event.target.value);
       }
     },
   },
+  emits: ['input'],
 });
 </script>
 

@@ -4,12 +4,10 @@
       <tr>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded svws-ui-w-1"
-          :class="{ 'svws-ui--table--border': border }"
           v-if="multiSelect"
         ></td>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
-          :class="{ 'svws-ui--table--border': border }"
           v-for="col in cols"
           :key="col.id"
           :width="col.width"
@@ -37,7 +35,6 @@
         </td>
         <td
           class="svws-ui--table--cell svws-ui--table--cell-padded"
-          :class="{ 'svws-ui--table--border': border }"
           v-if="actions && actions.length > 0"
         ></td>
       </tr>
@@ -302,7 +299,9 @@ export default defineComponent({
     },
     onKeyDownSpace() {
       event?.preventDefault();
-      this.toggleSelect(this.current);
+      if (this.multiSelect) {
+        this.toggleSelect(this.current);
+      }
     },
     onKeyUp() {
       event?.preventDefault();
@@ -367,6 +366,12 @@ export default defineComponent({
 </script>
 
 <style>
+.svws-ui--table--header {
+  @apply svws-ui-sticky svws-ui-top-0 svws-ui--top-px svws-ui-left-0 svws-ui-z-10;
+
+  position: -webkit-sticky;
+}
+
 .svws-ui--table--header-col {
   @apply svws-ui-inline-flex svws-ui-flex-row svws-ui-items-center;
   @apply svws-ui-select-none;
@@ -412,7 +417,7 @@ export default defineComponent({
 }
 
 .svws-ui--table {
-  @apply svws-ui-w-full;
+  width: calc(100% - 1px);
 }
 
 .svws-ui--table--action-button {
@@ -449,7 +454,7 @@ export default defineComponent({
 }
 
 .svws-ui--table--footer-wrapper {
-  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0 svws-ui-z-30;
+  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0 svws-ui-z-10;
 
   position: -webkit-sticky;
 }

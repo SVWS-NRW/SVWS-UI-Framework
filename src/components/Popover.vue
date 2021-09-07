@@ -60,15 +60,15 @@ export default defineComponent({
      * Distance in pixels along the trigger element
      */
     offsetX: {
-      type: Number,
-      default: 0,
+      type: String,
+      default: '0',
     },
     /**
      * Distance in pixels away from the trigger element
      */
     offsetY: {
-      type: Number,
-      default: 12,
+      type: String,
+      default: '12',
     },
     /**
      * Trigger the popper on hover
