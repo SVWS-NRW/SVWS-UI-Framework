@@ -4,7 +4,7 @@
     v-bind:class="{
       'svws-ui--text-input-focus': focused,
       'svws-ui--text-input-filled': !!value,
-      'svws-ui--text-input-invalid': !valid,
+      'svws-ui--text-input-invalid': !valid || !emailValid,
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,
       'svws-ui--text-input--icon': icon,
@@ -75,6 +75,23 @@ export default defineComponent({
   emits: ['update:value', 'focus', 'blur', 'click', 'mousedown', 'keydown'],
   data() {
     return { focused: false };
+  },
+  computed: {
+    emailValid(): boolean {
+      if (this.type !== 'email' || !this.value) return true;
+      else {
+        return (
+          // eslint-disable-next-line no-useless-escape
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))[^@]?$/.test(
+            this.value
+          ) ||
+          // eslint-disable-next-line no-useless-escape
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+            this.value
+          )
+        );
+      }
+    },
   },
   methods: {
     focus() {
