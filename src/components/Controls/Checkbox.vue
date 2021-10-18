@@ -1,10 +1,10 @@
 <template>
   <label class="svws-ui--checkbox">
     <input
+      v-model="model"
       class="svws-ui--checkbox--control"
       type="checkbox"
-      :checked="value"
-      @input="onInput"
+      :value="value"
     />
     <span class="svws-ui--checkbox--indicator">
       <svws-ui-icon icon="check" />
@@ -24,13 +24,22 @@ export default defineComponent({
   components: { SvwsUiIcon },
   props: {
     value: {
-      type: Boolean,
-      default: false,
+      type: String,
+    },
+    modelValue: {
+      type: Array,
+      required: true,
     },
   },
-  methods: {
-    onInput(event: { target: HTMLInputElement }) {
-      this.$emit('input', event.target.checked);
+  emits: ['update:modelValue'],
+  computed: {
+    model: {
+      get(): any {
+        return this.modelValue;
+      },
+      set(value: any) {
+        this.$emit('update:modelValue', value);
+      },
     },
   },
 });
