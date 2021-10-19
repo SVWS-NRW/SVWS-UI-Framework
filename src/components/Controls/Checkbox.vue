@@ -5,6 +5,7 @@
       class="svws-ui--checkbox--control"
       type="checkbox"
       :value="value"
+      :checked="checked"
     />
     <span class="svws-ui--checkbox--indicator">
       <svws-ui-icon icon="check" />
@@ -29,6 +30,10 @@ export default defineComponent({
     modelValue: {
       type: Array,
       required: true,
+    },
+    checked: {
+      type: Boolean,
+      default: false,
     },
   },
   emits: ['update:modelValue'],
