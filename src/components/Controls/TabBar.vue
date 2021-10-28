@@ -65,6 +65,9 @@ export default defineComponent({
   },
   updated() {
     this.handleScroll();
+    if(this.tabs.length - 1 < this.selectedIndex) {
+      this.selectTab(0);
+    }
   },
   methods: {
     selectTab(selectedTab) {

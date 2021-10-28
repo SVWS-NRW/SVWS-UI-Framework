@@ -1,6 +1,6 @@
 <template>
-  <div v-if="isActive" class="svws-ui--tab-container" :visible="visible">
-    <slot v-if="visible == true" />
+  <div v-if="isActive" class="svws-ui--tab-container" :visible="isActive">
+    <slot v-if="isActive" />
   </div>
 </template>
 
@@ -23,12 +23,15 @@ export default defineComponent({
   },
   data() {
     return {
-      isActive: true,
+      isActive: false,
     };
   },
-  created() {
+  mounted() {
     this.$parent.tabs.push(this);
   },
+  beforeUnmount() {
+    this.$parent.tabs.splice(this.$parent.tabs.indexOf(this), 1);
+  }
 });
 </script>
 
