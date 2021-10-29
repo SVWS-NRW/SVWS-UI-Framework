@@ -24,12 +24,9 @@ export default defineComponent({
   name: 'SvwsUiCheckbox',
   components: { SvwsUiIcon },
   props: {
-    value: {
-      type: String,
-    },
+    value: {},
     modelValue: {
-      type: Array,
-      required: true,
+      type: [Boolean, Array],
     },
     checked: {
       type: Boolean,
