@@ -58,6 +58,7 @@
         >
           <svws-ui-checkbox
             :value="item.selected"
+            :checked="item.selected"
             @change="toggleSelect(item)"
           />
         </td>
@@ -99,25 +100,6 @@
               </div>
             </template>
           </svws-ui-popover>
-          <!--
-          <Menu
-            as="div"
-            class="svws-ui-relative svws-ui-inline-block svws-ui-text-left"
-          >
-            <MenuButton class="svws-ui--table--action-button"
-              ><svws-ui-icon variant="fill" icon="more-2" />
-            </MenuButton>
-            <MenuItems class="svws-ui--table--action-items">
-              <MenuItem v-for="action in actions" :key="action">
-                <svws-ui-button
-                  type="transparent"
-                  @click="this.$emit('action', [action.action, item])"
-                  >{{ action.label }}</svws-ui-button
-                >
-              </MenuItem>
-            </MenuItems>
-          </Menu>
-          -->
         </td>
       </tr>
     </tbody>
@@ -127,6 +109,7 @@
           <div class="svws-ui--table--footer">
             <svws-ui-checkbox
               :value="this.selectedItems === this.items"
+              :checked="this.selectedItems === this.items"
               @change="selectAll()"
               v-if="multiSelect"
             />
@@ -142,18 +125,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-//import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
 
 export default defineComponent({
   name: 'SvwsUiTable',
-  /*
-  components: {
-    Menu,
-    MenuButton,
-    MenuItems,
-    MenuItem,
-  },
-  */
   props: {
     border: {
       type: Boolean,
