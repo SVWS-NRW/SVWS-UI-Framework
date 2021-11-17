@@ -80,3 +80,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.popper {
+  @apply svws-ui-z-50; 
+}
+</style>
