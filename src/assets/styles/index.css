@@ -96,3 +96,7 @@ html {
 .svws-ui-headline-5 {
   @apply svws-ui-text-headline-5 svws-ui-font-bold;
 }
+
+.popper {
+  @apply svws-ui-z-50;
+}

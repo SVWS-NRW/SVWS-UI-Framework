@@ -5,6 +5,7 @@
     :disableClickAway="disableClickAway"
     :offsetX="offsetX"
     :offsetY="offsetY"
+    arrow
   >
     <slot name="trigger" />
     <template #content>
@@ -81,8 +82,22 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.popper {
-  @apply svws-ui-z-50; 
+<style scoped>
+  :deep(div[data-v-2e7b3708]) {
+    @apply svws-ui-block;
+  }
+
+  :deep(.popper #arrow) {
+    @apply svws-ui--z-20;
+  }
+
+  :deep(.popper #arrow::before) {
+    @apply svws-ui-bg-primary;
+  }
+
+  :deep(.popper:hover),
+  :deep(.popper:hover > #arrow::before) {
+    @apply svws-ui-bg-primary;
 }
+
 </style>
