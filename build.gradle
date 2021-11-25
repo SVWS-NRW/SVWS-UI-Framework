@@ -9,13 +9,13 @@ group = 'de.nrw.schule.svws.ui'
 
 wrapper {
     description "Regenerates the Gradle Wrapper files"
-    gradleVersion = '7.2'
+    gradleVersion = '7.3'
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
 node {
   download = false
-  version = '16.6.1'
+  version = '16.13.0'
 }
 
 
