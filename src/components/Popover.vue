@@ -69,7 +69,7 @@ export default defineComponent({
      * Popover Opening Delay in ms
      */
     openDelay: {
-      type: String,
+      type: Number,
       default: '0',
     },
     /**
