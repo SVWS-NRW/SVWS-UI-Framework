@@ -5,6 +5,7 @@
     :disableClickAway="disableClickAway"
     :offsetX="offsetX"
     :offsetY="offsetY"
+    :openDelay="openDelay"
     arrow
   >
     <slot name="trigger" />
@@ -62,6 +63,13 @@ export default defineComponent({
      */
     offsetX: {
       type: String,
+      default: '0',
+    },
+    /**
+     * Popover Opening Delay in ms
+     */
+    openDelay: {
+      type: Number,
       default: '0',
     },
     /**
