@@ -1,5 +1,10 @@
 <template>
-  <label class="svws-ui--toggle">
+  <label
+    class="svws-ui--toggle"
+    v-bind:class="{
+      'svws-ui--toggle--statistic': statistic,
+    }"
+  >
     <input
       class="svws-ui--toggle--control"
       type="checkbox"
@@ -7,7 +12,10 @@
       @input="onInput"
     />
     <span class="svws-ui--toggle--indicator" />
-    <slot />
+    <span class="svws-ui--toggle--label">
+        <slot />
+        <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+    </span>
   </label>
 </template>
 
@@ -18,6 +26,10 @@ export default defineComponent({
   name: 'SvwsUiToggle',
   props: {
     value: {
+      type: Boolean,
+      default: false,
+    },
+    statistic: {
       type: Boolean,
       default: false,
     },
@@ -50,6 +62,14 @@ export default defineComponent({
   @apply svws-ui-w-9 svws-ui-h-5;
 }
 
+.svws-ui--toggle--statistic {
+  @apply svws-ui-text-purple;
+}
+
+.svws-ui--toggle--statistic .svws-ui--toggle--indicator {
+  @apply svws-ui-border-purple;
+}
+
 .svws-ui--toggle--indicator:before {
   @apply svws-ui-absolute;
   @apply svws-ui-bg-black;
@@ -62,9 +82,20 @@ export default defineComponent({
   top: 0.125rem;
 }
 
+.svws-ui--toggle--statistic .svws-ui--toggle--indicator:before {
+  @apply svws-ui-bg-purple;
+}
+
 .svws-ui--toggle input:checked + .svws-ui--toggle--indicator {
   @apply svws-ui-bg-primary;
   @apply svws-ui-border-primary;
+}
+
+.svws-ui--toggle.svws-ui--toggle--statistic
+  input:checked
+  + .svws-ui--toggle--indicator {
+  @apply svws-ui-bg-purple;
+  @apply svws-ui-border-purple;
 }
 
 .svws-ui--toggle input:checked + .svws-ui--toggle--indicator:before {
@@ -72,5 +103,9 @@ export default defineComponent({
 
   left: auto;
   right: 0.125rem;
+}
+
+.svws-ui--toggle--label {
+    @apply svws-ui-flex svws-ui-items-center;
 }
 </style>
