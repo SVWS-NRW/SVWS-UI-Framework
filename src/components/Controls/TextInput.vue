@@ -8,6 +8,7 @@
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,
       'svws-ui--text-input--icon': icon,
+      'svws-ui--text-input--statistic': statistic,
     }"
   >
     <input
@@ -30,8 +31,10 @@
       :class="{
         'svws-ui--text-input--placeholder--required': required,
       }"
-      >{{ placeholder }}</span
-    >
+      >
+        {{ placeholder }}
+        <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+      </span>
     <svws-ui-icon v-if="icon" :icon="icon" />
   </label>
 </template>
@@ -54,6 +57,10 @@ export default defineComponent({
     },
     icon: {
       type: String,
+    },
+    statistic: {
+      type: Boolean,
+      default: false,
     },
     valid: {
       type: Boolean,
@@ -206,6 +213,7 @@ export default defineComponent({
   @apply svws-ui-pointer-events-none;
   @apply svws-ui-text-input svws-ui-text-gray;
   @apply svws-ui-transform;
+  @apply svws-ui-flex svws-ui-items-center;
 
   top: theme('spacing.2');
   left: theme('spacing.4');
@@ -224,6 +232,20 @@ export default defineComponent({
 
 .svws-ui--text-input-invalid .svws-ui--text-input--placeholder {
   @apply svws-ui-text-error;
+}
+
+.svws-ui--text-input--statistic .svws-ui--text-input--control {
+  @apply svws-ui-border-purple;
+  @apply svws-ui-bg-purple svws-ui-bg-opacity-5;
+}
+
+.svws-ui--text-input--statistic.svws-ui--text-input-invalid
+  .svws-ui--text-input--control {
+  @apply svws-ui-border-error;
+}
+
+.svws-ui--text-input--statistic .svws-ui--text-input--placeholder {
+  @apply svws-ui-text-purple;
 }
 
 .svws-ui--text-input-disabled {

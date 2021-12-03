@@ -23,6 +23,7 @@ Default.args = {
   name: 'name',
   value: 'value',
   label: 'Option',
+  statistic: false,
   disabled: false,
   checked: false,
 };
@@ -32,6 +33,7 @@ Checked.args = {
   name: 'name',
   value: 'value',
   label: 'Option',
+  statistic: false,
   disabled: false,
   checked: true,
 };
@@ -41,6 +43,17 @@ Disabled.args = {
   name: 'name',
   value: 'value',
   label: 'Option',
+  statistic: false,
   disabled: true,
+  checked: false,
+};
+
+export const Statistic = Template.bind({});
+Statistic.args = {
+  name: 'name',
+  value: 'value',
+  label: 'Option',
+  statistic: true,
+  disabled: false,
   checked: false,
 };

@@ -21,9 +21,17 @@ const Template = (args, { argTypes }) => ({
 export const Checked = Template.bind({});
 Checked.args = {
   value: true,
+  statistic: false,
 };
 
 export const Unchecked = Template.bind({});
 Unchecked.args = {
   value: false,
+  statistic: false,
+};
+
+export const Statistic = Template.bind({});
+Statistic.args = {
+  value: false,
+  statistic: true,
 };

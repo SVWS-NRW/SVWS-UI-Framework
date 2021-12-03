@@ -1,5 +1,11 @@
 <template>
-  <label class="svws-ui--checkbox">
+  <label
+    class="svws-ui--checkbox"
+    v-bind:class="{
+      'svws-ui--checkbox--disabled': disabled,
+      'svws-ui--checkbox--statistic': statistic,
+    }"
+  >
     <input
       v-model="model"
       class="svws-ui--checkbox--control"
@@ -12,6 +18,7 @@
     </span>
     <span class="svws-ui--checkbox--label">
       <slot />
+      <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
     </span>
   </label>
 </template>
@@ -24,11 +31,18 @@ export default defineComponent({
   name: 'SvwsUiCheckbox',
   components: { SvwsUiIcon },
   props: {
-    value: {},
+    value: {
+      type: String,
+    },
     modelValue: {
       type: [Boolean, Array],
+      required: true,
     },
     checked: {
+      type: Boolean,
+      default: false,
+    },
+    statistic: {
       type: Boolean,
       default: false,
     },
@@ -67,6 +81,10 @@ export default defineComponent({
   @apply svws-ui-w-5 svws-ui-h-5;
 }
 
+.svws-ui--checkbox--statistic .svws-ui--checkbox--indicator {
+  @apply svws-ui-border-purple;
+}
+
 .svws-ui--checkbox--indicator .svws-ui--icon {
   @apply svws-ui-opacity-0;
 
@@ -86,8 +104,23 @@ export default defineComponent({
   @apply svws-ui-text-black;
 }
 
+.svws-ui--checkbox--statistic
+  input:checked
+  + .svws-ui--checkbox--indicator
+  .svws-ui--icon {
+  @apply svws-ui-opacity-100;
+  @apply svws-ui-text-purple;
+  @apply svws-ui-bg-purple;
+  @apply svws-ui-bg-opacity-5;
+}
+
 .svws-ui--checkbox--label {
   @apply svws-ui-ml-2;
   @apply svws-ui-text-black;
+  @apply svws-ui-flex svws-ui-items-center;
+}
+
+.svws-ui--checkbox--statistic .svws-ui--checkbox--label {
+  @apply svws-ui-text-purple;
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <label
     class="svws-ui--radio--label"
-    :class="[disabled ? 'svws-ui--radio--label--disabled' : '']"
+    v-bind:class="{
+      'svws-ui--radio--label--disabled': disabled,
+      'svws-ui--radio--statistic': statistic,
+    }"
   >
     <input
       @input="onInput"
@@ -12,7 +15,7 @@
       :checked="checked"
       class="svws-ui--radio--indicator"
     />
-    <span>{{ label }}</span>
+    <span class="svws-ui--radio--label">{{ label }}<i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i></span>
   </label>
 </template>
 
@@ -33,6 +36,10 @@ export default defineComponent({
       type: String,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    statistic: {
       type: Boolean,
       default: false,
     },
@@ -59,6 +66,18 @@ export default defineComponent({
   @apply svws-ui-select-none;
   @apply svws-ui-space-x-2;
   @apply svws-ui-text-input;
+}
+
+.svws-ui--radio--label.svws-ui--radio--statistic {
+  @apply svws-ui-text-purple;
+}
+
+.svws-ui--radio--statistic .svws-ui--radio--indicator {
+  @apply svws-ui-border-purple;
+}
+
+.svws-ui--radio--statistic .svws-ui--radio--indicator:checked::before {
+  @apply svws-ui-bg-purple;
 }
 
 .svws-ui--radio--indicator {
