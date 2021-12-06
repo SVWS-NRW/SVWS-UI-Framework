@@ -54,6 +54,7 @@ export default defineComponent({
   @apply svws-ui-px-5 svws-ui-py-2;
   @apply svws-ui-select-none;
   @apply svws-ui-text-button svws-ui-font-bold;
+  @apply svws-ui-flex svws-ui-items-center;
 }
 
 .svws-ui--button:focus {

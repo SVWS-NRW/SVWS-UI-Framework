@@ -13,6 +13,9 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
       <svws-ui-content-card v-bind="args">
+        <template #actions>
+            test
+        </template>
         <div class="svws-ui-flex svws-ui-flex-row svws-ui-items-start svws-ui-space-x-4">
           <div class="svws-ui-flex-shrink-0">
             <img src="http://placehold.it/256x256" class="svws-ui-w-32 svws-ui-h-32 svws-ui-rounded-full md:svws-ui-h-20 md:svws-ui-w-20 lg:svws-ui-h-24 lg:svws-ui-w-24">
