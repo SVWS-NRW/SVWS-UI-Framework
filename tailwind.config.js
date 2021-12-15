@@ -8,9 +8,9 @@ function withOpacity(cssVariale) {
 }
 
 module.exports = {
-  purge: {
+  content: {
     layers: ['components', 'utilities'],
-    content: ['./src/components/**/*.{vue,js,ts,jsx,tsx}'],
+    content: ['./src/components/**/*.{vue,js,ts,jsx,tsx}', './src/stories/**/*.{vue,js,ts,jsx,tsx}'],
     safelist: ['theme-dark'],
   },
   darkMode: false,
@@ -56,7 +56,7 @@ module.exports = {
       normal: '400',
       bold: '700',
     },
-    extend: {
+    extend: { 
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
