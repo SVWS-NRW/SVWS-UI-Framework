@@ -7,7 +7,8 @@
     "format": "prettier --write ./.storybook ./src ./*.config.js",
     "build": "vite build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "check-licenses": "license-checker-rseidelsohn --summary --unknown"
   },
   "files": [
     "dist"
@@ -31,6 +32,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.2.0",
+    "license-checker-rseidelsohn": "^2.2.0",
     "postcss": "^8.3.4",
     "prettier": "^2.2.1",
     "remixicon": "^2.5.0",
