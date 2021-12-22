@@ -1,9 +1,9 @@
 <template>
   <label
     class="svws-ui--text-input"
-    v-bind:class="{
+    :class="{
       'svws-ui--text-input-focus': focused,
-      'svws-ui--text-input-filled': !!value,
+      'svws-ui--text-input-filled': !!modelValue,
       'svws-ui--text-input-invalid': !valid || !emailValid,
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,
@@ -14,7 +14,7 @@
     <input
       class="svws-ui--text-input--control"
       :type="type"
-      :value="value"
+      :value="modelValue"
       :disabled="disabled"
       :required="required"
       :readonly="readonly"
@@ -24,6 +24,7 @@
       @click="onClick"
       @mousedown="onMouseDown"
       @keydown="onKeyDown"
+      ref="input"
     />
     <span
       v-if="placeholder"
@@ -31,10 +32,10 @@
       :class="{
         'svws-ui--text-input--placeholder--required': required,
       }"
-      >
-        {{ placeholder }}
-        <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
-      </span>
+    >
+      {{ placeholder }}
+      <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+    </span>
     <svws-ui-icon v-if="icon" :icon="icon" />
   </label>
 </template>
@@ -49,7 +50,7 @@ export default defineComponent({
       type: String,
       default: 'text',
     },
-    value: {
+    modelValue: {
       type: String,
     },
     placeholder: {
@@ -79,22 +80,29 @@ export default defineComponent({
       default: false,
     },
   },
-  emits: ['update:value', 'focus', 'blur', 'click', 'mousedown', 'keydown'],
+  emits: [
+    'update:modelValue',
+    'focus',
+    'blur',
+    'click',
+    'mousedown',
+    'keydown',
+  ],
   data() {
     return { focused: false };
   },
   computed: {
     emailValid(): boolean {
-      if (this.type !== 'email' || !this.value) return true;
+      if (this.type !== 'email' || !this.modelValue) return true;
       else {
         return (
           // eslint-disable-next-line no-useless-escape
           /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))[^@]?$/.test(
-            this.value
+            this.modelValue
           ) ||
           // eslint-disable-next-line no-useless-escape
           /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-            this.value
+            this.modelValue
           )
         );
       }
@@ -102,16 +110,20 @@ export default defineComponent({
   },
   methods: {
     focus() {
-      // this.$refs.input.focus();
+      if (this.$refs.input instanceof HTMLElement) {
+        this.$refs.input.focus();
+      }
     },
     blur() {
-      // this.$refs.input.blur();
+      if (this.$refs.input instanceof HTMLElement) {
+        this.$refs.input.blur();
+      }
     },
     hasFocus() {
       return this.focused;
     },
     onInput(event: { target: HTMLInputElement }) {
-      this.$emit('update:value', event.target.value);
+      this.$emit('update:modelValue', event.target.value);
     },
     onFocus(event: Event) {
       this.focused = true;
