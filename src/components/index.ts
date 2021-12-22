@@ -16,6 +16,7 @@ export { default as SvwsUiSidebarMenuHeader } from './Layout/Sidebar/MenuHeader.
 export { default as SvwsUiSidebarMenuItem } from './Layout/Sidebar/MenuItem.vue';
 export { default as SvwsUiSecondaryMenu } from './Layout/Sidebar/SecondaryMenu.vue';
 export { default as SvwsUiModal } from './Layout/Modal/Modal.vue';
+export { default as SvwsUiMultiSelect } from './Controls/MultiSelect.vue';
 export { default as SvwsUiOverlay } from './Layout/Modal/Overlay.vue';
 export { default as SvwsUiAppLayout } from './Layout/Pages/AppLayout.vue';
 export { default as SvwsUiTab } from './Controls/Tab.vue';

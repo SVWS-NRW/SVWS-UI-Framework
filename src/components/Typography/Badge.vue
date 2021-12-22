@@ -11,6 +11,7 @@
       'svws-ui--badge--medium': size === 'medium',
       'svws-ui--badge--normal': size === 'normal',
       'svws-ui--badge--small': size === 'small',
+      'svws-ui--badge--tiny': size === 'tiny'
     }"
   >
     <slot />
@@ -36,7 +37,7 @@ export default defineComponent({
       type: String,
       default: 'normal',
       validator: function (value: string) {
-        return ['big', 'medium', 'normal', 'small'].includes(value);
+        return ['big', 'medium', 'normal', 'small', 'tiny'].includes(value);
       },
     },
   },
@@ -53,6 +54,11 @@ export default defineComponent({
 .svws-ui--badge--normal {
   @apply svws-ui-px-2 svws-ui-py-1;
   @apply svws-ui-text-body;
+}
+
+.svws-ui--badge--tiny {
+  @apply svws-ui-px-1 svws-ui-py-0;
+  @apply svws-ui-text-button;
 }
 
 .svws-ui--badge--small {
