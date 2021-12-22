@@ -8,7 +8,7 @@
     "build": "vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "check-licenses": "license-checker-rseidelsohn --summary --unknown"
+    "check-licenses": "license-checker-rseidelsohn --summary --unknown --production"
   },
   "files": [
     "dist"
