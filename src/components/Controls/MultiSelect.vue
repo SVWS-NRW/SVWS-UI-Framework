@@ -46,7 +46,6 @@
         }"
       >
         <svws-ui-text-input
-          class="svws-ui--text-input--control"
           :class="{
             'svws-ui--multiselect--input--open': input,
           }"
