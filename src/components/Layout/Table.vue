@@ -57,8 +57,7 @@
           v-if="multiSelect"
         >
           <svws-ui-checkbox
-            :value="item.selected"
-            :checked="item.selected"
+            :modelValue="item.selected"
             @change="toggleSelect(item)"
           />
         </td>
@@ -108,8 +107,7 @@
         <td class="svws-ui--table--footer-row" colspan="1000">
           <div class="svws-ui--table--footer">
             <svws-ui-checkbox
-              :value="this.selectedItems === this.items"
-              :checked="this.selectedItems === this.items"
+              :modelValue="this.selectedItems === this.items"
               @change="selectAll()"
               v-if="multiSelect"
             />

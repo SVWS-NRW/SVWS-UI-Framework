@@ -7,11 +7,11 @@
     }"
   >
     <input
-      v-model="model"
       class="svws-ui--checkbox--control"
       type="checkbox"
+      v-model="model"
       :value="value"
-      :checked="checked"
+      :disabled="disabled"
     />
     <span class="svws-ui--checkbox--indicator">
       <svws-ui-icon icon="check" />
@@ -29,18 +29,15 @@ import SvwsUiIcon from '../Layout/Icon.vue';
 
 export default defineComponent({
   name: 'SvwsUiCheckbox',
-  components: { SvwsUiIcon },
+  components: {SvwsUiIcon},
   props: {
     value: {
-      type: String,
+      type: Object,
+      default: () => ({})
     },
     modelValue: {
       type: [Boolean, Array],
       required: true,
-    },
-    checked: {
-      type: Boolean,
-      default: false,
     },
     statistic: {
       type: Boolean,
