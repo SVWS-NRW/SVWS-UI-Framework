@@ -8,12 +8,12 @@ function withOpacity(cssVariale) {
 }
 
 module.exports = {
-  content: {
-    layers: ['components', 'utilities'],
-    content: ['./src/components/**/*.{vue,js,ts,jsx,tsx}', './src/stories/**/*.{vue,js,ts,jsx,tsx}'],
-    safelist: ['theme-dark'],
-  },
-  darkMode: false,
+  layers: ['components', 'utilities'],
+  content: [
+    './src/components/**/*.{vue,js,ts,jsx,tsx}',
+    './src/stories/**/*.{vue,js,ts,jsx,tsx}',
+  ],
+  safelist: ['theme-dark'],
   theme: {
     colors: {
       disabled: {
@@ -56,7 +56,7 @@ module.exports = {
       normal: '400',
       bold: '700',
     },
-    extend: { 
+    extend: {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
