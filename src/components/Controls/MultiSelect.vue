@@ -311,7 +311,7 @@ export default defineComponent({
 }
 
 .svws-ui--multiselect--items-wrapper {
-  @apply svws-ui-absolute svws-ui-w-full svws-ui-z-0;
+  @apply svws-ui-absolute svws-ui-w-full svws-ui-z-20;
   @apply svws-ui-divide-y svws-ui-divide-light;
   @apply svws-ui-border svws-ui-border-t-0 svws-ui-border-gray svws-ui-rounded;
   @apply svws-ui-pt-2 svws-ui--mt-2;
