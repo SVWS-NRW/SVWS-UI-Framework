@@ -70,7 +70,7 @@ export default defineComponent({
      */
     openDelay: {
       type: Number,
-      default: '0',
+      default: 0,
     },
     /**
      * Distance in pixels away from the trigger element
@@ -91,21 +91,20 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  :deep(div[data-v-2e7b3708]) {
-    @apply svws-ui-block;
-  }
-
-  :deep(.popper #arrow) {
-    @apply svws-ui--z-20;
-  }
-
-  :deep(.popper #arrow::before) {
-    @apply svws-ui-bg-primary;
-  }
-
-  :deep(.popper:hover),
-  :deep(.popper:hover > #arrow::before) {
-    @apply svws-ui-bg-primary;
+:deep(div[data-v-2e7b3708]) {
+  @apply svws-ui-block;
 }
 
+:deep(.popper #arrow) {
+  @apply svws-ui--z-20;
+}
+
+:deep(.popper #arrow::before) {
+  @apply svws-ui-bg-primary;
+}
+
+:deep(.popper:hover),
+:deep(.popper:hover > #arrow::before) {
+  @apply svws-ui-bg-primary;
+}
 </style>
