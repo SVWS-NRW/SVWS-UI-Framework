@@ -31,7 +31,7 @@ export default defineComponent({
   },
   beforeUnmount() {
     this.$parent.tabs.splice(this.$parent.tabs.indexOf(this), 1);
-  }
+  },
 });
 </script>
 

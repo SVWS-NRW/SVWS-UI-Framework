@@ -1,12 +1,12 @@
 <template>
   <div class="svws-ui--content-card--wrapper">
     <div class="svws-ui--content-card--header">
-        <h5 class="svws-ui-headline-5 svws-ui--content-card--headline">
+      <h5 class="svws-ui-headline-5 svws-ui--content-card--headline">
         {{ title }}
-        </h5>
-        <div class="svws-ui--content-card--actions">
-            <slot name="actions" />
-        </div>
+      </h5>
+      <div class="svws-ui--content-card--actions">
+        <slot name="actions" />
+      </div>
     </div>
     <div class="svws-ui-mt-4">
       <slot />
@@ -39,6 +39,6 @@ export default defineComponent({
 }
 
 .svws-ui--content-card--header {
-    @apply svws-ui-flex svws-ui-items-center svws-ui-justify-between;
+  @apply svws-ui-flex svws-ui-items-center svws-ui-justify-between;
 }
 </style>
