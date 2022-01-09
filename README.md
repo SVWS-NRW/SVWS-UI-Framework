@@ -15,4 +15,4 @@ Die Storybook-Umgebung kann auf einem Windows-Rechner wie folgt aus einem abonie
 
 * Im Stammordner von git/SVWS-UI-Framework eine Powershell öffnen.
 * .\gradlew clean build
-* npm run storybook:start
+* npm run storybook
