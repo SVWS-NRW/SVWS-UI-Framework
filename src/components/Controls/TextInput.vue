@@ -59,7 +59,7 @@ export default defineComponent({
     icon: {
       type: String,
     },
-    statisticss: {
+    statistics: {
       type: Boolean,
       default: false,
     },
