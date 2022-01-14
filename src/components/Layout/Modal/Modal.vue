@@ -15,7 +15,7 @@
             ><slot name="modalTitle"
           /></dialog-title>
           <button @click="closeModal" class="svws-ui--modal--closeButton">
-            <svws-ui-icon class="svws-ui--modal--closeIcon" icon="close" />
+            <svws-ui-icon class="svws-ui--modal--closeIcon"><i-ri-close-line /></svws-ui-icon>
           </button>
         </div>
         <dialog-description class="svws-ui--modal--description">

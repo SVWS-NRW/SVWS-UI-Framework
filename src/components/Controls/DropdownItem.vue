@@ -5,14 +5,11 @@
       :class="{
         'svws-ui--dropdown--item--active': active === true,
       }"
-      :icon="icon"
       @click="onClick"
     >
       <svws-ui-icon
-        v-if="icon"
-        :icon="icon"
         class="svws-ui--dropdown--item--icon"
-      />
+      ><slot></slot></svws-ui-icon>
       <slot />
     </button>
   </menu-item>
@@ -37,9 +34,6 @@ export default defineComponent({
     disabled: {
       type: Boolean,
       default: false,
-    },
-    icon: {
-      type: String,
     },
   },
   methods: {

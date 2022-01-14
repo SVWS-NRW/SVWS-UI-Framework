@@ -14,7 +14,7 @@
     <span class="svws-ui--toggle--indicator" />
     <span class="svws-ui--toggle--label">
         <slot />
-        <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+        <i-ri-bar-chart-fill class="svws-ui-ml-2" v-if="statistics" />
     </span>
   </label>
 </template>

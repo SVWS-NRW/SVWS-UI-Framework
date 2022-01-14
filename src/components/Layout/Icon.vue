@@ -1,5 +1,5 @@
 <template>
-  <i class="svws-ui--icon" :class="`ri-${icon}-${variant}`" />
+  <span class="svws-ui--icon"><slot></slot></span>
 </template>
 
 <script lang="ts">
@@ -7,18 +7,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'SvwsUiIcon',
-  props: {
-    icon: {
-      type: String,
-    },
-    variant: {
-      type: String,
-      default: 'line',
-      validator: function (value: string) {
-        return ['line', 'fill'].includes(value);
-      },
-    },
-  },
 });
 </script>
 

@@ -14,11 +14,11 @@
       :disabled="disabled"
     />
     <span class="svws-ui--checkbox--indicator">
-      <svws-ui-icon icon="check" />
+      <svws-ui-icon><i-ri-check-line/></svws-ui-icon>
     </span>
     <span class="svws-ui--checkbox--label">
       <slot />
-      <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+      <i-ri-bar-chart-fill class="svws-ui-ml-2" v-if="statistics" />
     </span>
   </label>
 </template>

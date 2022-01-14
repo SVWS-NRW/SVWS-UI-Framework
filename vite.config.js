@@ -1,8 +1,16 @@
 import { resolve } from 'path';
-const vue = require('@vitejs/plugin-vue');
-
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import Components from 'unplugin-vue-components/vite';
+import Vue from '@vitejs/plugin-vue';
 module.exports = {
-  plugins: [vue()],
+  plugins: [
+    Vue(),
+    Components({
+      resolvers: IconsResolver(),
+    }),
+    Icons(),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),

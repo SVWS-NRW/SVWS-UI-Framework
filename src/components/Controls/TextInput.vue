@@ -7,7 +7,7 @@
       'svws-ui--text-input-invalid': !valid || !emailValid,
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,
-      'svws-ui--text-input--icon': icon,
+      'svws-ui--text-input--icon': true,
       'svws-ui--text-input--statistics': statistics,
     }"
   >
@@ -34,9 +34,9 @@
       }"
     >
       {{ placeholder }}
-      <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+      <i-ri-bar-chart-fill class="svws-ui-ml-2" v-if="statistics" />
     </span>
-    <svws-ui-icon v-if="icon" :icon="icon" />
+    <svws-ui-icon><slot></slot></svws-ui-icon>
   </label>
 </template>
 
@@ -54,9 +54,6 @@ export default defineComponent({
       type: [String, Number],
     },
     placeholder: {
-      type: String,
-    },
-    icon: {
       type: String,
     },
     statistics: {

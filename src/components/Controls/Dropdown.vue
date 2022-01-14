@@ -11,10 +11,7 @@
       :disabled="disabled"
     >
       <slot name="dropdownButton" />
-      <svws-ui-icon
-        :icon="open ? 'arrow-up-s' : 'arrow-down-s'"
-        class="svws-ui--dropdown--icon"
-      />
+     <svws-ui-icon class="svws-ui--dropdown--icon"><i-ri-arrow-up-s-line v-if="open"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon> 
     </menu-button>
     <menu-items
       as="div"

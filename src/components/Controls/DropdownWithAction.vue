@@ -12,10 +12,7 @@
       v-slot="{ open }"
       :disabled="dropdownDisabled"
     >
-      <svws-ui-icon
-        :icon="open ? 'arrow-up-s' : 'arrow-down-s'"
-        class="svws-ui--dropdown-with-action--icon"
-      />
+    <svws-ui-icon class="svws-ui--dropdown-with-action--icon"><i-ri-arrow-up-s-line v-if="open"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon> 
     </menu-button>
     <menu-items
       as="div"

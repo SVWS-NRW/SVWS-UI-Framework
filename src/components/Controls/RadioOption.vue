@@ -15,7 +15,9 @@
       :checked="checked"
       class="svws-ui--radio--indicator"
     />
-    <span class="svws-ui--radio--label">{{ label }}<i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i></span>
+    <span class="svws-ui--radio--label">{{ label }}
+      <i-ri-bar-chart-fill class="svws-ui-ml-2" v-if="statistics" />
+      </span>
   </label>
 </template>
 

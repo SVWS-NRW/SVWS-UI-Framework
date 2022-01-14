@@ -11,7 +11,10 @@
         class="svws-ui--sidebar--menu--collapse"
         @click.prevent="onCollapse"
       >
-        <svws-ui-icon :icon="collapsed ? 'arrow-right-s' : 'arrow-left-s'" />
+        <svws-ui-icon
+          ><i-ri-arrow-right-s-line v-if="collapsed" /><i-ri-arrow-left-s-line
+            v-else
+        /></svws-ui-icon>
       </button>
     </div>
     <div class="svws-ui--sidebar--menu--body">

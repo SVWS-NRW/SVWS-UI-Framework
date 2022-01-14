@@ -26,15 +26,13 @@
             <span
               class="tag-remove svws-ui-mt-1 svws-ui-ml-1"
               @click="tag_remove(index)"
-              ><svws-ui-icon icon="close"
-            /></span>
+              >
+              <svws-ui-icon><i-ri-close-line/></svws-ui-icon>
+            </span>
           </svws-ui-badge>
         </div>
       </div>
-      <svws-ui-icon
-        :icon="this.focused ? 'arrow-up-s' : 'arrow-down-s'"
-        class="svws-ui--dropdown--icon"
-      />
+     <svws-ui-icon class="svws-ui--dropdown--icon"><i-ri-arrow-up-s-line v-if="focused"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon> 
     </div>
     <div v-show="input" class="input">
       <label
@@ -66,11 +64,7 @@
         <span v-if="placeholder" class="svws-ui--text-input--placeholder">
           {{ placeholder }}
         </span>
-        <svws-ui-icon
-          v-if="!tags"
-          :icon="this.focused ? 'arrow-up-s' : 'arrow-down-s'"
-          class="svws-ui--dropdown--icon"
-        />
+      <svws-ui-icon class="svws-ui--dropdown--icon"><i-ri-arrow-up-s-line v-if="focused"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon>
       </label>
     </div>
     <ul v-if="list" class="svws-ui--multiselect--items-wrapper">

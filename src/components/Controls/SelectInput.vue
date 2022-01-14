@@ -32,10 +32,7 @@
     <span v-if="placeholder" class="svws-ui--select-input--placeholder">{{
       placeholder
     }}</span>
-    <svws-ui-icon
-      :icon="this.focused ? 'arrow-up-s' : 'arrow-down-s'"
-      class="svws-ui--dropdown--icon"
-    />
+    <svws-ui-icon class="svws-ui--dropdown--icon"><i-ri-arrow-up-s-line v-if="focused"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon>
   </label>
 </template>
 

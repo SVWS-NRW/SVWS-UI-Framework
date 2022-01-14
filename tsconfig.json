@@ -11,6 +11,9 @@
     "experimentalDecorators": true,
     "lib": ["dom", "esnext"],
     "allowSyntheticDefaultImports": true,
+    "types": [
+      "unplugin-icons/types/vue",
+    ]
   },
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }

@@ -9,10 +9,10 @@
     @click.prevent="onClick"
   >
     <span class="svws-ui--sidebar--menu-item--icon">
-      <svws-ui-icon :icon="icon" :variant="active ? 'fill' : 'line'" />
+      <svws-ui-icon><slot name="icon"/></svws-ui-icon>
     </span>
     <span class="svws-ui--sidebar--menu-item--label">
-      <slot />
+      <slot name="label"/>
       <span v-if="subline" class="svws-ui--sidebar--menu-item--subline">
         {{ subline }}
       </span>
@@ -30,9 +30,6 @@ export default defineComponent({
     SvwsUiIcon,
   },
   props: {
-    icon: {
-      type: String,
-    },
     active: {
       type: Boolean,
       default: false,

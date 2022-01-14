@@ -18,18 +18,15 @@
               {{ col.title }}
             </span>
             <span v-if="col.sortable">
-              <svws-ui-icon
-                v-show="col.id !== sorting.column"
-                icon="arrow-up-down"
-              />
-              <svws-ui-icon
-                v-show="sorting.asc && col.id === sorting.column"
-                icon="sort-asc "
-              />
-              <svws-ui-icon
-                v-show="!sorting.asc && col.id === sorting.column"
-                icon="sort-desc "
-              />
+              <svws-ui-icon v-show="col.id !== sorting.column"
+                ><i-ri-arrow-up-down-line
+              /></svws-ui-icon>
+              <svws-ui-icon v-show="sorting.asc && col.id === sorting.column"
+                ><i-ri-sort-asc
+              /></svws-ui-icon>
+              <svws-ui-icon v-show="!sorting.asc && col.id === sorting.column"
+                ><i-ri-sort-desc
+              /></svws-ui-icon>
             </span>
           </div>
         </td>
@@ -83,7 +80,7 @@
           >
             <template #trigger>
               <button class="svws-ui--table--action-button">
-                <svws-ui-icon variant="fill" icon="more-2" />
+                <svws-ui-icon><i-ri-more--2-fill /></svws-ui-icon>
               </button>
             </template>
             <template #content>

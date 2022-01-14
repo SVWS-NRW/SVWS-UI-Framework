@@ -5,7 +5,7 @@
       class="svws-ui--tab-bar--scroll-button-background svws-ui--tab-bar--scroll-button-background-left"
     >
       <button class="svws-ui--tab-bar--scroll-button" @click="scroll('left')">
-        <svws-ui-icon icon="arrow-left" />
+        <svws-ui-icon><i-ri-arrow-left-line /></svws-ui-icon>
       </button>
     </div>
     <div class="svws-ui--tab-bar" id="content">
@@ -26,7 +26,7 @@
       class="svws-ui--tab-bar--scroll-button-background svws-ui--tab-bar--scroll-button-background-right"
     >
       <button class="svws-ui--tab-bar--scroll-button" @click="scroll('right')">
-        <svws-ui-icon icon="arrow-right" />
+        <svws-ui-icon><i-ri-arrow-right-line /></svws-ui-icon>
       </button>
     </div>
   </div>
