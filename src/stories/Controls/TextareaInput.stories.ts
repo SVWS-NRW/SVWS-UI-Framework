@@ -31,7 +31,7 @@ Empty.args = {
   placeholder: 'Textarea Input Placeholder',
   valid: true,
   disabled: false,
-  statistic: false,
+  statistics: false,
   required: false,
   resizeable: 'both',
 };
@@ -42,7 +42,7 @@ Filled.args = {
   placeholder: 'Textarea Input Placeholder',
   valid: true,
   disabled: false,
-  statistic: false,
+  statistics: false,
   required: false,
   resizeable: 'both',
 };
@@ -63,18 +63,18 @@ Disabled.args = {
   placeholder: 'Textarea Input Placeholder',
   valid: true,
   required: false,
-  statistic: false,
+  statistics: false,
   disabled: true,
   resizeable: 'both',
 };
 
-export const Statistic = Template.bind({});
-Statistic.args = {
+export const Statistics = Template.bind({});
+Statistics.args = {
   value: '',
   placeholder: 'Textarea Input Placeholder',
   valid: true,
   required: false,
-  statistic: true,
+  statistics: true,
   disabled: false,
   resizeable: 'both',
 };

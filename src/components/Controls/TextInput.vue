@@ -8,7 +8,7 @@
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,
       'svws-ui--text-input--icon': icon,
-      'svws-ui--text-input--statistic': statistic,
+      'svws-ui--text-input--statistics': statistics,
     }"
   >
     <input
@@ -34,7 +34,7 @@
       }"
     >
       {{ placeholder }}
-      <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+      <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
     </span>
     <svws-ui-icon v-if="icon" :icon="icon" />
   </label>
@@ -59,7 +59,7 @@ export default defineComponent({
     icon: {
       type: String,
     },
-    statistic: {
+    statisticss: {
       type: Boolean,
       default: false,
     },
@@ -246,17 +246,17 @@ export default defineComponent({
   @apply svws-ui-text-error;
 }
 
-.svws-ui--text-input--statistic .svws-ui--text-input--control {
+.svws-ui--text-input--statistics .svws-ui--text-input--control {
   @apply svws-ui-border-purple;
   @apply svws-ui-bg-purple svws-ui-bg-opacity-5;
 }
 
-.svws-ui--text-input--statistic.svws-ui--text-input-invalid
+.svws-ui--text-input--statistics.svws-ui--text-input-invalid
   .svws-ui--text-input--control {
   @apply svws-ui-border-error;
 }
 
-.svws-ui--text-input--statistic .svws-ui--text-input--placeholder {
+.svws-ui--text-input--statistics .svws-ui--text-input--placeholder {
   @apply svws-ui-text-purple;
 }
 

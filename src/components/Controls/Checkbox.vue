@@ -3,7 +3,7 @@
     class="svws-ui--checkbox"
     v-bind:class="{
       'svws-ui--checkbox--disabled': disabled,
-      'svws-ui--checkbox--statistic': statistic,
+      'svws-ui--checkbox--statistics': statistics,
     }"
   >
     <input
@@ -18,7 +18,7 @@
     </span>
     <span class="svws-ui--checkbox--label">
       <slot />
-      <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+      <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
     </span>
   </label>
 </template>
@@ -39,7 +39,7 @@ export default defineComponent({
       type: [Boolean, Array],
       required: true,
     },
-    statistic: {
+    statistics: {
       type: Boolean,
       default: false,
     },
@@ -82,7 +82,7 @@ export default defineComponent({
   @apply svws-ui-w-5 svws-ui-h-5;
 }
 
-.svws-ui--checkbox--statistic .svws-ui--checkbox--indicator {
+.svws-ui--checkbox--statistics .svws-ui--checkbox--indicator {
   @apply svws-ui-border-purple;
 }
 
@@ -105,7 +105,7 @@ export default defineComponent({
   @apply svws-ui-text-black;
 }
 
-.svws-ui--checkbox--statistic
+.svws-ui--checkbox--statistics
   input:checked
   + .svws-ui--checkbox--indicator
   .svws-ui--icon {
@@ -121,7 +121,7 @@ export default defineComponent({
   @apply svws-ui-flex svws-ui-items-center;
 }
 
-.svws-ui--checkbox--statistic .svws-ui--checkbox--label {
+.svws-ui--checkbox--statistics .svws-ui--checkbox--label {
   @apply svws-ui-text-purple;
 }
 </style>

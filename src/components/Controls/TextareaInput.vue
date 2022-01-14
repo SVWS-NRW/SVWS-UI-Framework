@@ -6,7 +6,7 @@
       'svws-ui--textarea-input-filled': !!value,
       'svws-ui--textarea-input-invalid': !valid,
       'svws-ui--textarea-input-disabled': disabled,
-      'svws-ui--textarea-input--statistic': statistic,
+      'svws-ui--textarea-input--statistics': statistics,
       'svws-ui--textarea-input--resize-none': resizeable === 'none',
       'svws-ui--textarea-input--resize-horizontal': resizeable === 'horizontal',
       'svws-ui--textarea-input--resize-vertical': resizeable === 'vertical',
@@ -33,7 +33,7 @@
       }"
       >
         {{ placeholder }}
-        <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+        <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
       </span>
   </label>
 </template>
@@ -54,7 +54,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-    statistic: {
+    statistics: {
       type: Boolean,
       default: false,
     },
@@ -167,21 +167,21 @@ export default defineComponent({
   left: theme('spacing.4');
 }
 
-.svws-ui--textarea-input--statistic .svws-ui--textarea-input--control {
+.svws-ui--textarea-input--statistics .svws-ui--textarea-input--control {
   @apply svws-ui-border-purple;
   @apply svws-ui-bg-purple svws-ui-bg-opacity-5;
 }
 
-.svws-ui--textarea-input--statistic.svws-ui--textarea-input-invalid
+.svws-ui--textarea-input--statistics.svws-ui--textarea-input-invalid
   .svws-ui--textarea-input--control {
   @apply svws-ui-border-error;
 }
 
-.svws-ui--textarea-input--statistic .svws-ui--textarea-input--placeholder {
+.svws-ui--textarea-input--statistics .svws-ui--textarea-input--placeholder {
   @apply svws-ui-text-purple;
 }
 
-.svws-ui--textarea-input--statistic.svws-ui--textarea-input-invalid
+.svws-ui--textarea-input--statistics.svws-ui--textarea-input-invalid
   .svws-ui--textarea-input--placeholder {
   @apply svws-ui-text-purple;
 }

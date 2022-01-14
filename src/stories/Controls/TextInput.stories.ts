@@ -25,7 +25,7 @@ Empty.args = {
   icon: null,
   valid: true,
   required: false,
-  statistic: false,
+  statistics: false,
   readonly: false,
   disabled: false,
 };
@@ -38,7 +38,7 @@ Filled.args = {
   icon: null,
   valid: true,
   required: false,
-  statistic: false,
+  statistics: false,
   readonly: false,
   disabled: false,
 };
@@ -51,7 +51,7 @@ Invalid.args = {
   icon: null,
   valid: false,
   required: false,
-  statistic: false,
+  statistics: false,
   readonly: false,
   disabled: false,
 };
@@ -64,20 +64,20 @@ Disabled.args = {
   icon: null,
   valid: true,
   required: false,
-  statistic: false,
+  statistics: false,
   readonly: false,
   disabled: true,
 };
 
-export const Statistic = Template.bind({});
-Statistic.args = {
+export const Statistics = Template.bind({});
+Statistics.args = {
   type: 'text',
   value: '',
   placeholder: 'Text Input Placeholder',
   icon: null,
   valid: true,
   required: false,
-  statistic: true,
+  statistics: true,
   readonly: false,
   disabled: false,
 };

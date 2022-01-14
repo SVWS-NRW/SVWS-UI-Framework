@@ -2,7 +2,7 @@
   <label
     class="svws-ui--toggle"
     v-bind:class="{
-      'svws-ui--toggle--statistic': statistic,
+      'svws-ui--toggle--statistics': statistics,
     }"
   >
     <input
@@ -14,7 +14,7 @@
     <span class="svws-ui--toggle--indicator" />
     <span class="svws-ui--toggle--label">
         <slot />
-        <i v-if="statistic" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
+        <i v-if="statistics" class="svws-ui-ml-2 ri-bar-chart-fill"></i>
     </span>
   </label>
 </template>
@@ -29,7 +29,7 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    statistic: {
+    statistics: {
       type: Boolean,
       default: false,
     },
@@ -62,11 +62,11 @@ export default defineComponent({
   @apply svws-ui-w-9 svws-ui-h-5;
 }
 
-.svws-ui--toggle--statistic {
+.svws-ui--toggle--statistics {
   @apply svws-ui-text-purple;
 }
 
-.svws-ui--toggle--statistic .svws-ui--toggle--indicator {
+.svws-ui--toggle--statistics .svws-ui--toggle--indicator {
   @apply svws-ui-border-purple;
 }
 
@@ -82,7 +82,7 @@ export default defineComponent({
   top: 0.125rem;
 }
 
-.svws-ui--toggle--statistic .svws-ui--toggle--indicator:before {
+.svws-ui--toggle--statistics .svws-ui--toggle--indicator:before {
   @apply svws-ui-bg-purple;
 }
 
@@ -91,7 +91,7 @@ export default defineComponent({
   @apply svws-ui-border-primary;
 }
 
-.svws-ui--toggle.svws-ui--toggle--statistic
+.svws-ui--toggle.svws-ui--toggle--statistics
   input:checked
   + .svws-ui--toggle--indicator {
   @apply svws-ui-bg-purple;

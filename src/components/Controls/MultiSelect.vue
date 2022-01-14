@@ -53,7 +53,7 @@
           :model-value="search"
           :readonly="!autocomplete"
           :placeholder="title"
-          :statistic="statistic"
+          :statistics="statistics"
           @update:model-value="onUpdate"
           @focus="onFocus"
           @blur="onBlur"
@@ -110,7 +110,7 @@ export default defineComponent({
     // Das Select ist nicht wählbar
     disabled: { type: Boolean, default: false },
     // Das Select ist notwendig für die Statistik
-    statistic: { type: Boolean, default: false },
+    statistics: { type: Boolean, default: false },
     // Array mit den übergebenen Auswahlmöglichkeiten
     items: {
       type: Array,
