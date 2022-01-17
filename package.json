@@ -6,6 +6,8 @@
   "scripts": {
     "format": "prettier --write ./.storybook ./src ./*.config.js",
     "build": "vite build",
+    "dts": "vue-tsc --declaration --emitDeclarationOnly",
+    "lint": "vue-tsc --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "check-licenses": "license-checker-rseidelsohn --summary --unknown --production"
@@ -44,6 +46,7 @@
     "vite": "^2.2.1",
     "vue": "^3.2",
     "vue-loader": "^16.8.3",
+    "vue-tsc": "^0.30.5",
     "vue3-popper": "^1.4.1"
   },
   "peerDependencies": {
