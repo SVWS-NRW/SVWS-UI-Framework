@@ -1,38 +1,53 @@
 <template>
-  <div class="wrapper">
+  <div
+    class="wrapper"
+    :class="{
+      'svws-ui-z-50': list,
+    }"
+  >
     <div
       v-if="tags"
       class="svws-ui--text-input--control tags"
       :class="{
         'svws-ui--multiselect--input--open': list,
       }"
+      tabindex="1"
+      @blur="blur"
       @click.self="onClickTags"
     >
-      <div class="tag-list">
-        <slot v-if="!selected_item_list.length" name="no-content"
-          ><span class="svws-ui-py-1">Keine Auswahl</span></slot
-        >
-        <div
-          v-for="(item, index) in selected_item_list"
-          v-else
-          :key="index"
-          class="tag"
-        >
-          <svws-ui-badge
-            size="tiny"
-            class="svws-ui-inline-flex svws-ui-items-center"
+      <div class="tag-list-wrapper" @click.self="onClickTags">
+        <div class="tag-list"  @click.self="onClickTags">
+          <slot v-if="!selected_item_list.length" name="no-content"
+            ><span class="svws-ui-py-1">Keine Auswahl</span></slot
           >
-            <span>{{ itemText(item) }}</span>
-            <span
-              class="tag-remove svws-ui-mt-1 svws-ui-ml-1"
-              @click="tag_remove(index)"
+          <div
+            v-for="(item, index) in selected_item_list"
+            v-else
+            :key="index"
+            class="tag"
+          >
+            <svws-ui-badge
+              size="small"
+              variant="light"
+              class="svws-ui-inline-flex svws-ui-items-center"
+            >
+              <span>{{ itemText(item) }}</span>
+              <span
+                class="tag-remove svws-ui-ml-1"
+                @click="tag_remove(index)"
               >
-              <svws-ui-icon><i-ri-close-line/></svws-ui-icon>
-            </span>
-          </svws-ui-badge>
+                <svws-ui-icon class="-svws-ui-mt-1"><i-ri-close-line /></svws-ui-icon>
+              </span>
+            </svws-ui-badge>
+          </div>
         </div>
+        <svws-ui-icon
+          class="svws-ui--dropdown--icon dropdown-icon"
+          @click.self="onClickTags"
+          ><i-ri-arrow-up-s-line class="svws-ui-pointer-events-none" v-if="focused" /><i-ri-arrow-down-s-line class="svws-ui-pointer-events-none"
+            v-else
+        /></svws-ui-icon>
       </div>
-     <svws-ui-icon class="svws-ui--dropdown--icon"><i-ri-arrow-up-s-line v-if="focused"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon> 
     </div>
     <div v-show="input" class="input">
       <label
@@ -64,7 +79,10 @@
         <span v-if="placeholder" class="svws-ui--text-input--placeholder">
           {{ placeholder }}
         </span>
-      <svws-ui-icon class="svws-ui--dropdown--icon"><i-ri-arrow-up-s-line v-if="focused"/><i-ri-arrow-down-s-line v-else/></svws-ui-icon>
+        <svws-ui-icon class="svws-ui--dropdown--icon"
+          ><i-ri-arrow-up-s-line v-if="focused" /><i-ri-arrow-down-s-line
+            v-else
+        /></svws-ui-icon>
       </label>
     </div>
     <ul v-if="list" class="svws-ui--multiselect--items-wrapper">
@@ -84,19 +102,20 @@
       </li>
     </ul>
   </div>
-  <br />
 </template>
 
 <script lang="ts">
 import SvwsUiTextInput from './TextInput.vue';
+import SvwsUiBadge from '../Typography/Badge.vue';
+import SvwsUiIcon from '../Layout/Icon.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'SvwsUiMultiSelect',
-  components: { SvwsUiTextInput },
+  components: { SvwsUiTextInput, SvwsUiBadge, SvwsUiIcon },
   props: {
-    placeholder: {type: String},
-    required: {type: Boolean, default: false},
+    placeholder: { type: String },
+    required: { type: Boolean, default: false },
     // Bei mehrfachauswahl werden Tags angezeigt über dem Suchfeld
     tags: { type: Boolean, default: false },
     // Wenn eine Eingabe möglich sein soll
@@ -149,7 +168,7 @@ export default defineComponent({
   computed: {
     search: {
       get(): string {
-        if (!this.modelValue) return "";
+        if (!this.modelValue) return '';
         return this.itemText(this.modelValue);
       },
       set(v: string) {
@@ -254,62 +273,44 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
+
+.svws-ui--text-input {
+    @apply svws-ui-overflow-visible;
+}
+
 .wrapper {
-  position: relative;
+  @apply svws-ui-relative;
 }
 
 .tags {
   @apply svws-ui-flex svws-ui-items-center svws-ui-justify-between;
-  @apply svws-ui-relative svws-ui-z-10;
+  @apply svws-ui-relative svws-ui-z-30;
+  @apply svws-ui-overflow-hidden svws-ui-h-auto;
+}
+
+.dropdown-icon {
+  @apply svws-ui-flex-shrink-0 svws-ui-absolute svws-ui-right-0 svws-ui-bg-white svws-ui-py-1 svws-ui-px-1;
 }
 
 .tag-list {
-  @apply svws-ui-flex svws-ui-items-center svws-ui-gap-2;
+  @apply svws-ui-flex svws-ui-flex-wrap svws-ui-gap-1 svws-ui-pr-4;
 }
 
 .svws-ui--multiselect--input--open {
   @apply svws-ui-rounded-b-none svws-ui-border-gray;
 }
-/*
-.items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  z-index: 99;
-  top: 100%;
-  left: 0;
-  right: 0;
-  max-height: 80vh;
-  overflow: auto;
-}
-.items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  border-bottom: 1px solid #d4d4d4;
-}
-.items div:hover {
-  background-color: #e9e9e9;
-}
-.selected-item-list {
-  background-color: green !important;
-}
-.active {
-  background-color: DodgerBlue !important;
-  color: #ffffff;
-}
-*/
 
 .input {
-    @apply svws-ui-relative svws-ui-z-10;
+  @apply svws-ui-relative svws-ui-z-30;
 }
 
 .svws-ui--multiselect--items-wrapper {
-  @apply svws-ui-absolute svws-ui-w-full svws-ui-z-20;
+  @apply svws-ui-absolute svws-ui-w-full svws-ui-max-h-64 svws-ui-z-20;
   @apply svws-ui-divide-y svws-ui-divide-light;
   @apply svws-ui-border svws-ui-border-t-0 svws-ui-border-gray svws-ui-rounded;
   @apply svws-ui-pt-2 svws-ui--mt-2;
-  @apply svws-ui-overflow-hidden;
+  @apply svws-ui-overflow-y-auto svws-ui-overflow-x-hidden;
   @apply svws-ui-shadow;
 }
 
@@ -334,5 +335,9 @@ export default defineComponent({
 
 .svws-ui--multiselect--input--open {
   @apply svws-ui-rounded-b-none;
+}
+
+.tag-list-wrapper {
+  @apply svws-ui-flex svws-ui-w-full svws-ui-items-center svws-ui-justify-between svws-ui-space-x-4 svws-ui-overflow-x-auto;
 }
 </style>
