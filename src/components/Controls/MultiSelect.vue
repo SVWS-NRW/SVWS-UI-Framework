@@ -340,4 +340,8 @@ export default defineComponent({
 .tag-list-wrapper {
   @apply svws-ui-flex svws-ui-w-full svws-ui-items-center svws-ui-justify-between svws-ui-space-x-4 svws-ui-overflow-x-auto;
 }
+
+.active {
+    @apply svws-ui-bg-light;
+}
 </style>
