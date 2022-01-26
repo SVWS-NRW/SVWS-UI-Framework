@@ -22,7 +22,7 @@ export default defineComponent({
 
 <style>
 .svws-ui--secondary-menu--headline {
-  @apply svws-ui-font-bold svws-ui-text-black svws-ui-text-headline-3 svws-ui-px-6;
+  @apply svws-ui-font-bold svws-ui-text-dark svws-ui-text-headline-3 svws-ui-px-6;
   @apply svws-ui-relative svws-ui-z-20;
 }
 .svws-ui--secondary-menu {
@@ -32,7 +32,7 @@ export default defineComponent({
   @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-shrink-0;
   @apply svws-ui-max-w-116 svws-ui-min-w-84 svws-ui-w-1/4 svws-ui-h-screen;
   @apply svws-ui-overflow-y-auto;
-  @apply svws-ui-pt-8;
+  @apply svws-ui-pt-4;
   @apply svws-ui-shadow;
 }
 

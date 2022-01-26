@@ -1,7 +1,7 @@
 <template>
   <div class="svws-ui--header--wrapper">
     <h5
-      class="svws-ui-headline-2 svws-ui-text-black svws-ui-flex svws-ui-items-center svws-ui-space-x-2"
+      class="svws-ui-headline-3 svws-ui-text-dark svws-ui-flex svws-ui-items-center svws-ui-space-x-2"
     >
       <slot />
     </h5>

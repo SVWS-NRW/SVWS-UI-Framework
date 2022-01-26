@@ -52,7 +52,7 @@ export default defineComponent({
 <style>
 .svws-ui--sidebar--menu {
   @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-1 svws-ui-min-h-full;
-  @apply svws-ui-w-64;
+  @apply svws-ui-w-56;
   @apply svws-ui-bg-dark;
 }
 
@@ -63,7 +63,7 @@ export default defineComponent({
 .svws-ui--sidebar--menu--header {
   @apply svws-ui-relative;
   @apply svws-ui-flex svws-ui-flex-col svws-ui-flex-shrink-0;
-  @apply svws-ui-px-4 svws-ui-py-8;
+  @apply svws-ui-px-4 svws-ui-py-4;
   @apply svws-ui-bg-white;
 }
 
