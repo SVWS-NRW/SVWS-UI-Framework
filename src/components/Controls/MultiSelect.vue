@@ -91,6 +91,7 @@
       <li
         v-for="(item, index) in filtered_list"
         :key="index"
+        ref="itemRefs"
         class="svws-ui--multiselect--item"
         :class="{
           active: selected_item_index === index + 1,
@@ -165,6 +166,7 @@ export default defineComponent({
       focused: false,
       input: !this.tags,
       search_text: '',
+      itemRefs: [],
     };
   },
   computed: {
@@ -284,14 +286,11 @@ export default defineComponent({
 
       this.scrollToActiveItem();
     },
-
-    // Ohne Timeout hängt der DOM-Selector hinterher und wählt den vorherigen Eintrag aus.
     scrollToActiveItem() {
-      setTimeout(() => {
-        document
-          .getElementsByClassName('svws-ui--multiselect--item active')[0]
-          .scrollIntoView({ block: 'center', inline: 'nearest' });
-      }, 1);
+      this.$refs.itemRefs[this.selected_item_index]?.scrollIntoView({
+        block: 'center',
+        inline: 'nearest',
+      });
     },
   },
 });
@@ -349,7 +348,7 @@ export default defineComponent({
 }
 
 .svws-ui--multiselect--item.selected {
-  @apply svws-ui-bg-dark svws-ui-text-white;
+  @apply svws-ui-bg-primary svws-ui-text-white;
 }
 
 .svws-ui--multiselect--input--open {
