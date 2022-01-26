@@ -16,7 +16,7 @@
       @click.self="onClickTags"
     >
       <div class="tag-list-wrapper" @click.self="onClickTags">
-        <div class="tag-list"  @click.self="onClickTags">
+        <div class="tag-list" @click.self="onClickTags">
           <slot v-if="!selected_item_list.length" name="no-content"
             ><span class="svws-ui-py-1">Keine Auswahl</span></slot
           >
@@ -32,11 +32,10 @@
               class="svws-ui-inline-flex svws-ui-items-center"
             >
               <span>{{ itemText(item) }}</span>
-              <span
-                class="tag-remove svws-ui-ml-1"
-                @click="tag_remove(index)"
-              >
-                <svws-ui-icon class="-svws-ui-mt-1"><i-ri-close-line /></svws-ui-icon>
+              <span class="tag-remove svws-ui-ml-1" @click="tag_remove(index)">
+                <svws-ui-icon class="-svws-ui-mt-1"
+                  ><i-ri-close-line
+                /></svws-ui-icon>
               </span>
             </svws-ui-badge>
           </div>
@@ -44,7 +43,10 @@
         <svws-ui-icon
           class="svws-ui--dropdown--icon dropdown-icon"
           @click.self="onClickTags"
-          ><i-ri-arrow-up-s-line class="svws-ui-pointer-events-none" v-if="focused" /><i-ri-arrow-down-s-line class="svws-ui-pointer-events-none"
+          ><i-ri-arrow-up-s-line
+            class="svws-ui-pointer-events-none"
+            v-if="focused" /><i-ri-arrow-down-s-line
+            class="svws-ui-pointer-events-none"
             v-else
         /></svws-ui-icon>
       </div>
@@ -85,7 +87,7 @@
         /></svws-ui-icon>
       </label>
     </div>
-    <ul v-if="list" class="svws-ui--multiselect--items-wrapper">
+    <ul v-show="list" class="svws-ui--multiselect--items-wrapper">
       <li
         v-for="(item, index) in filtered_list"
         :key="index"
@@ -257,26 +259,47 @@ export default defineComponent({
     onBlur() {
       if (!this.tags) this.focused = false;
       this.search = '';
+      
+      // Entferne die 'active' Klasse vom aktiven Element
+      Array.from(
+        document.getElementsByClassName('svws-ui--multiselect--item active')
+      ).forEach((element) => {
+        element.classList.remove('active');
+      });
+      // Setze den aktiven Index auf 0 um wieder oben in der Liste zu beginnen
+      this.selected_item_index = 0;
     },
     onArrowDown() {
       const list = this.filtered_list.length;
       if (this.selected_item_index < list) this.selected_item_index++;
       else if (this.selected_item_index === list) this.selected_item_index = 1;
+
+      this.scrollToActiveItem();
     },
     onArrowUp() {
       const list = this.filtered_list.length;
       if (this.selected_item_index === 0 || this.selected_item_index === 1)
         this.selected_item_index = list;
       else if (this.selected_item_index > 1) this.selected_item_index--;
+
+      this.scrollToActiveItem();
+    },
+
+    // Ohne Timeout hängt der DOM-Selector hinterher und wählt den vorherigen Eintrag aus.
+    scrollToActiveItem() {
+      setTimeout(() => {
+        document
+          .getElementsByClassName('svws-ui--multiselect--item active')[0]
+          .scrollIntoView({ block: 'center', inline: 'nearest' });
+      }, 1);
     },
   },
 });
 </script>
 
 <style scoped>
-
 .svws-ui--text-input {
-    @apply svws-ui-overflow-visible;
+  @apply svws-ui-overflow-visible;
 }
 
 .wrapper {
@@ -325,12 +348,8 @@ export default defineComponent({
   @apply svws-ui-cursor-pointer;
 }
 
-.svws-ui--multiselect--item .active {
-  @apply svws-ui-bg-primary svws-ui-text-white;
-}
-
 .svws-ui--multiselect--item.selected {
-  @apply svws-ui-bg-primary svws-ui-text-white;
+  @apply svws-ui-bg-dark svws-ui-text-white;
 }
 
 .svws-ui--multiselect--input--open {
@@ -342,6 +361,6 @@ export default defineComponent({
 }
 
 .active {
-    @apply svws-ui-bg-light;
+  @apply svws-ui-bg-dark-20;
 }
 </style>
