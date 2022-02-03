@@ -105,6 +105,10 @@ module.exports = {
       minWidth: {
         84: '21rem',
       },
+      boxShadow: {
+        'border-t': '0 -2px 0 0 rgba(0, 0, 0, 1)',
+        'border-b': '0 2px 0 0 rgba(0, 0, 0, 1)',
+      }
     },
   },
   variants: {

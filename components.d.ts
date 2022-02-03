@@ -43,6 +43,8 @@ declare module 'vue' {
     TabBar: typeof import('./src/components/Controls/TabBar.vue')['default']
     TabButton: typeof import('./src/components/Controls/TabButton.vue')['default']
     Table: typeof import('./src/components/Layout/Table.vue')['default']
+    TableInput: typeof import('./src/components/Layout/TableInput.vue')['default']
+    'TableInput copy': typeof import('./src/components/Layout/TableInput copy.vue')['default']
     TextareaInput: typeof import('./src/components/Controls/TextareaInput.vue')['default']
     TextInput: typeof import('./src/components/Controls/TextInput.vue')['default']
     Toggle: typeof import('./src/components/Controls/Toggle.vue')['default']

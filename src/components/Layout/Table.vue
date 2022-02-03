@@ -196,17 +196,15 @@ export default defineComponent({
       if (this.sorting.column) {
         if (this.sorting.asc) {
           this.items.sort((a, b) =>
-            b.data[this.sorting.column].localeCompare(
-              a.data[this.sorting.column],
-              'de-DE'
-            )
+            b.data[this.sorting.column]
+              .toString()
+              .localeCompare(a.data[this.sorting.column].toString(), 'de-DE')
           );
         } else {
           this.items.sort((a, b) =>
-            a.data[this.sorting.column].localeCompare(
-              b.data[this.sorting.column],
-              'de-DE'
-            )
+            a.data[this.sorting.column]
+              .toString()
+              .localeCompare(b.data[this.sorting.column].toString(), 'de-DE')
           );
         }
       }
@@ -336,8 +334,8 @@ export default defineComponent({
 
 <style>
 .svws-ui--table--header {
-  @apply svws-ui-sticky svws-ui-top-0 svws-ui--top-px svws-ui-left-0 svws-ui-z-10;
-
+  @apply svws-ui-sticky svws-ui--top-px svws-ui-left-0 svws-ui-z-10 svws-ui-bg-white;
+  @apply svws-ui-shadow-border-b svws-ui-shadow-dark-20;
   position: -webkit-sticky;
 }
 
@@ -423,8 +421,8 @@ export default defineComponent({
 }
 
 .svws-ui--table--footer-wrapper {
-  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0 svws-ui-z-10;
-
+  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0 svws-ui-z-10  svws-ui-bg-white;
+  @apply svws-ui-shadow-border-t svws-ui-shadow-dark-20;
   position: -webkit-sticky;
 }
 
