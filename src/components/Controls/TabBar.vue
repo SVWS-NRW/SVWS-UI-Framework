@@ -100,6 +100,8 @@ export default defineComponent({
   @apply svws-ui-relative;
   @apply svws-ui-rounded-full;
   @apply svws-ui-w-full;
+  @apply svws-ui-flex-shrink-0;
+  @apply svws-ui-px-4 svws-ui-pb-4;
 }
 
 .svws-ui--tab-bar {

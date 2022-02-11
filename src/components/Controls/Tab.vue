@@ -37,6 +37,6 @@ export default defineComponent({
 
 <style>
 .svws-ui--tab-container {
-  @apply svws-ui-mt-0;
+  @apply svws-ui-mt-0 svws-ui-mb-8 svws-ui-px-4 svws-ui-flex-grow svws-ui-overflow-y-auto;
 }
 </style>
