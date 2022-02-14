@@ -232,8 +232,9 @@ export default defineComponent({
 .svws-ui--text-input-filled .svws-ui--text-input--placeholder {
   @apply svws-ui--translate-y-1/2;
   @apply svws-ui-bg-white;
+  @apply svws-ui-rounded;
   @apply svws-ui-px-1;
-  @apply svws-ui-text-caption;
+  @apply svws-ui-text-button;
 
   top: 0;
   left: theme('spacing.1');
