@@ -41,4 +41,8 @@ export default defineComponent({
 .svws-ui--content-card--header {
   @apply svws-ui-flex svws-ui-items-center svws-ui-justify-between;
 }
+
+.svws-ui--content-card--actions {
+    @apply svws-ui-flex svws-ui-items-center svws-ui-space-x-2;
+}
 </style>

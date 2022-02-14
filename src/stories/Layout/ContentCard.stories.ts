@@ -14,7 +14,8 @@ const Template = (args, { argTypes }) => ({
   template: `
       <svws-ui-content-card v-bind="args">
         <template #actions>
-            test
+            <svws-ui-button>Test</svws-ui-button>
+            <svws-ui-button>Test</svws-ui-button>
         </template>
         <div class="svws-ui-flex svws-ui-flex-row svws-ui-items-start svws-ui-space-x-4">
           <div class="svws-ui-flex-shrink-0">
