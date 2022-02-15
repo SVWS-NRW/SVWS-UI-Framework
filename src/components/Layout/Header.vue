@@ -32,8 +32,9 @@ export default defineComponent({
 
 <style>
 .svws-ui--header--wrapper {
-  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center svws-ui-flex-grow;
-  @apply svws-ui-py-4;
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center;
+  @apply svws-ui-py-4 svws-ui-px-4;
   @apply svws-ui-space-x-2;
+  @apply svws-ui-flex-shrink-0;
 }
 </style>
