@@ -145,7 +145,7 @@ export default defineComponent({
     modelValue: {
       type: [String, Array, Object, Number],
       default: () => {
-        return { text: '' };
+        return null;
       },
     },
     // der Filter für die Auswahl
