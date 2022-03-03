@@ -13,9 +13,11 @@ export default defineComponent({
 
 <style>
 .svws-ui--overlay {
-  @apply svws-ui-backdrop-filter svws-ui-backdrop-blur-sm;
+  @apply svws-ui-backdrop-filter svws-ui-backdrop-blur;
   @apply svws-ui-bg-dark-80 svws-ui-bg-opacity-50;
-  @apply svws-ui-fixed svws-ui-inset-0;
-  @apply svws-ui-z-10;
+  @apply svws-ui-absolute svws-ui-top-0 svws-ui-left-0;
+  @apply svws-ui-h-full svws-ui-w-full;
+  @apply svws-ui-z-50;
 }
 </style>
+
