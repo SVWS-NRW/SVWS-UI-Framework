@@ -67,12 +67,6 @@ html {
   font-size: 13px;
 }
 
-@screen lg {
-  html {
-    font-size: 16px;
-  }
-}
-
 .svws-ui-headline-1 {
   @apply svws-ui-text-headline-1 svws-ui-font-bold;
 }
