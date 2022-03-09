@@ -9,8 +9,8 @@
           :width="col.width"
           @click="changeSort(col)"
         >
-          <div>
-            <span>
+          <div class="svws-ui--table--header-col">
+            <span class="svws-ui--table--header-col--text">
               {{ col.title }}
             </span>
             <span v-if="col.sortable">
@@ -51,13 +51,13 @@
           :width="col.width"
           @click="mousePressed(item)"
         >
-          <input
+          <svws-ui-checkbox
             v-if="col.type === 'checkbox'"
-            type="checkbox"
             :id="tableId + '_' + 'item.data.id'"
             :name="tableId + '_' + 'item.data.id'"
-            :checked="item.data[col.id]"
-          />
+            v-model="item.data[col.id]"
+          ></svws-ui-checkbox>
+
           <input
             v-else-if="col.type === 'number'"
             type="number"
@@ -66,6 +66,7 @@
             :value="item.data[col.id]"
             :placeholder="col.placeholder"
           />
+
           <input
             v-else-if="col.type === 'text'"
             type="text"
@@ -74,6 +75,16 @@
             :value="item.data[col.id]"
             :placeholder="col.placeholder"
           />
+
+          <!-- TODO: V-MODEL, FILTER, SORT -->
+          <svws-ui-multi-select
+            v-else-if="col.type === 'multiselect'"
+            :modelValue="item.data[col.id]"
+            :id="tableId + '_' + item.data.id"
+            :items="col.args.items"
+            :item-text="col.args.itemText"
+          />
+
           <p v-else>{{ item.data[col.id] }}</p>
         </td>
       </tr>
@@ -103,7 +114,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'SvwsUiTableInput',
   props: {
-      tableId: {
+    tableId: {
       type: String,
       default: 'table' + Date.now(),
     },
@@ -157,6 +168,9 @@ export default defineComponent({
     };
   },
   methods: {
+    log(item) {
+      console.log(item);
+    },
     changeSort(column) {
       if (column.sortable) {
         if (this.sorting.column === column.id) {
@@ -179,10 +193,16 @@ export default defineComponent({
               .localeCompare(a.data[this.sorting.column].toString(), 'de-DE')
           );
         } else {
-          this.items.sort((a, b) =>
-            a.data[this.sorting.column]
-              .toString()
-              .localeCompare(b.data[this.sorting.column].toString(), 'de-DE')
+          this.items.sort(
+            this.items.sort(
+              (a, b) =>
+                -a.data[this.sorting.column]
+                  .toString()
+                  .localeCompare(
+                    b.data[this.sorting.column].toString(),
+                    'de-DE'
+                  )
+            )
           );
         }
       }
@@ -254,7 +274,9 @@ export default defineComponent({
       const index = this.items.indexOf(this.current);
       if (index === 0) {
         this.changeCurrent(this.items[this.items.length - 1]);
-        element = document.getElementById(this.tableId + '_row_' + this.items.length);
+        element = document.getElementById(
+          this.tableId + '_row_' + this.items.length
+        );
       } else {
         this.changeCurrent(this.items[index - 1]);
         element = document.getElementById(this.tableId + '_row_' + index);

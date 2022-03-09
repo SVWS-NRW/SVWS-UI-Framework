@@ -1,7 +1,7 @@
 <template>
   <div class="svws-ui--header--wrapper">
     <h5
-      class="svws-ui-headline-3 svws-ui-text-dark svws-ui-flex svws-ui-items-center svws-ui-space-x-2"
+      class="svws-ui-headline-2 svws-ui-text-black svws-ui-flex svws-ui-items-center svws-ui-space-x-2"
     >
       <slot />
     </h5>
@@ -33,7 +33,7 @@ export default defineComponent({
 <style>
 .svws-ui--header--wrapper {
   @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center;
-  @apply svws-ui-py-4 svws-ui-px-4;
+  @apply svws-ui-py-4;
   @apply svws-ui-space-x-2;
   @apply svws-ui-flex-shrink-0;
 }
