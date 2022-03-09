@@ -81,6 +81,7 @@
             v-else-if="col.type === 'multiselect'"
             :modelValue="item.data[col.id]"
             :id="tableId + '_' + item.data.id"
+            :inline="true"
             :items="col.args.items"
             :item-text="col.args.itemText"
           />

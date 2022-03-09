@@ -10,6 +10,7 @@
       class="svws-ui--text-input--control tags"
       :class="{
         'svws-ui--multiselect--input--open': list,
+        'svws-ui--text-input--control': !inline,
       }"
       tabindex="1"
       @blur="blur"
@@ -69,6 +70,7 @@
           :readonly="!autocomplete"
           :placeholder="title"
           :statistics="statistics"
+          :inline="inline"
           @update:model-value="onUpdate"
           @focus="onFocus"
           @blur="onBlur"
@@ -125,6 +127,7 @@ export default defineComponent({
     autocomplete: { type: Boolean, default: false },
     // Das Select ist nicht wählbar
     disabled: { type: Boolean, default: false },
+    inline: { type: Boolean, default: false },
     // Das Select ist notwendig für die Statistik
     statistics: { type: Boolean, default: false },
     // Array mit den übergebenen Auswahlmöglichkeiten

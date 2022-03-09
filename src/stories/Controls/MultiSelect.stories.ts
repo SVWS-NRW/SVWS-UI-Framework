@@ -6,7 +6,11 @@ export default {
   title: 'SVWS UI/Controls/Multiselect',
   component: SvwsUiMultiSelect,
 };
-const items = [{id:1,text:"item1"},{id:2,text:"item2"},{id:3,text:"item3"}]
+const items = [
+  { id: 1, text: 'item1' },
+  { id: 2, text: 'item2' },
+  { id: 3, text: 'item3' },
+];
 const Template = (args, { argTypes }) => ({
   components: { SvwsUiMultiSelect },
   setup() {
@@ -23,11 +27,12 @@ Simple.args = {
   autocomplete: false,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: undefined,
   itemSort: undefined,
   itemFilter: undefined,
-  title: 'Simple'
+  title: 'Simple',
 };
 export const SimpleSort = Template.bind({});
 SimpleSort.args = {
@@ -35,11 +40,12 @@ SimpleSort.args = {
   autocomplete: false,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: undefined,
-  itemSort: (a:any,b:any) => a.text+b.text,
+  itemSort: (a: any, b: any) => a.text + b.text,
   itemFilter: undefined,
-  title: 'Simple'
+  title: 'Simple',
 };
 export const SimpleText = Template.bind({});
 SimpleText.args = {
@@ -47,11 +53,12 @@ SimpleText.args = {
   autocomplete: false,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: (item) => item.id,
-  itemSort: (a,b) => a.id-b.id,
+  itemSort: (a, b) => a.id - b.id,
   itemFilter: undefined,
-  title: 'Simple'
+  title: 'Simple',
 };
 export const SimpleFilter = Template.bind({});
 SimpleText.args = {
@@ -59,11 +66,13 @@ SimpleText.args = {
   autocomplete: false,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: (item) => item.id,
   itemSort: undefined,
-  itemFilter: (items: any,search: string) => items.filter(i=>i.id===search),
-  title: 'Simple'
+  itemFilter: (items: any, search: string) =>
+    items.filter((i) => i.id === search),
+  title: 'Simple',
 };
 export const SimpleAutocomplete = Template.bind({});
 SimpleAutocomplete.args = {
@@ -71,11 +80,12 @@ SimpleAutocomplete.args = {
   autocomplete: true,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: undefined,
   itemSort: undefined,
   itemFilter: undefined,
-  title: 'SimpleAutocomplete'
+  title: 'SimpleAutocomplete',
 };
 
 export const Tags = Template.bind({});
@@ -84,11 +94,12 @@ Tags.args = {
   autocomplete: false,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: undefined,
   itemSort: undefined,
   itemFilter: undefined,
-  title: 'Tags'
+  title: 'Tags',
 };
 
 export const TagsAutocomplete = Template.bind({});
@@ -97,9 +108,38 @@ TagsAutocomplete.args = {
   autocomplete: true,
   disabled: false,
   statistics: false,
+  inline: false,
   items,
   itemText: undefined,
   itemSort: undefined,
   itemFilter: undefined,
-  title: 'TagsAutocomplete'
+  title: 'TagsAutocomplete',
+};
+
+export const SimpleInline = Template.bind({});
+SimpleInline.args = {
+  tags: false,
+  autocomplete: false,
+  disabled: false,
+  statistics: false,
+  inline: true,
+  items,
+  itemText: undefined,
+  itemSort: undefined,
+  itemFilter: undefined,
+  title: 'Simple',
+};
+
+export const TagsInline = Template.bind({});
+TagsInline.args = {
+  tags: true,
+  autocomplete: true,
+  disabled: false,
+  statistics: false,
+  inline: true,
+  items,
+  itemText: undefined,
+  itemSort: undefined,
+  itemFilter: undefined,
+  title: 'TagsAutocomplete',
 };

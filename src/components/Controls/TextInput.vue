@@ -12,7 +12,10 @@
     }"
   >
     <input
-      class="svws-ui--text-input--control"
+      :class="{
+        'svws-ui--text-input--control': !inline,
+        'svws-ui--text-input--control--inline': inline,
+      }"
       :type="type"
       :value="modelValue"
       :disabled="disabled"
@@ -27,7 +30,7 @@
       ref="input"
     />
     <span
-      v-if="placeholder"
+      v-if="placeholder && !inline"
       class="svws-ui--text-input--placeholder"
       :class="{
         'svws-ui--text-input--placeholder--required': required,
@@ -63,6 +66,10 @@ export default defineComponent({
     valid: {
       type: Boolean,
       default: true,
+    },
+    inline: {
+      type: Boolean,
+      default: false,
     },
     disabled: {
       type: Boolean,
@@ -274,5 +281,13 @@ export default defineComponent({
 
 .svws-ui--text-input--icon .svws-ui--text-input--control {
   @apply svws-ui-pr-8;
+}
+
+.svws-ui--text-input--control--inline {
+  @apply svws-ui-bg-white;
+  @apply svws-ui-h-9 svws-ui-w-full;
+  @apply svws-ui-text-input svws-ui-text-black;
+  @apply svws-ui-whitespace-nowrap;
+  @apply svws-ui-outline-none;
 }
 </style>
