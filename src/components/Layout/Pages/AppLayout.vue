@@ -10,6 +10,7 @@
         <div class="svws-ui--app-layout--pattern"></div>
       </div>
     </slot>
+    <slot name="contentSidebar" />
   </div>
 </template>
 
