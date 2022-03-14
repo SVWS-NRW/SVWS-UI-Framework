@@ -42,11 +42,11 @@
     "tailwindcss": "^3.0.2",
     "typescript": "^4.3.2",
     "unplugin-icons": "^0.13.0",
-    "unplugin-vue-components": "^0.17.11",
+    "unplugin-vue-components": "^0.18.0",
     "vite": "^2.2.1",
     "vue": "^3.2",
     "vue-loader": "^17.0.0",
-    "vue-tsc": "^0.32.1",
+    "vue-tsc": "^0.33.1",
     "vue3-popper": "^1.4.1"
   },
   "peerDependencies": {
