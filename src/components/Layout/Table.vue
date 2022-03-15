@@ -37,67 +37,82 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="item in items"
-        :key="item.data.id"
-        :tabindex="this.items.indexOf(item) + 1"
-        :id="'row_' + (this.items.indexOf(item) + 1)"
-        @keydown.space="onKeyDownSpace"
-        @keydown.down="onKeyDown"
-        @keydown.up="onKeyUp"
-        class="svws-ui--table--row"
-        v-bind:class="{ 'svws-ui--table--row-selected': current === item }"
-      >
-        <td
-          class="svws-ui--table--cell svws-ui--table--cell-padded"
-          :class="{ 'svws-ui--table--border': border }"
-          v-if="multiSelect"
+      <template v-for="item in items" :key="item.data.id">
+        <tr
+          :tabindex="this.items.indexOf(item) + 1"
+          :id="'row_' + (this.items.indexOf(item) + 1)"
+          @keydown.space="onKeyDownSpace"
+          @keydown.down="onKeyDown"
+          @keydown.up="onKeyUp"
+          class="svws-ui--table--row"
+          v-bind:class="{ 'svws-ui--table--row-selected': current === item }"
         >
-          <svws-ui-checkbox
-            :modelValue="item.selected"
-            @change="toggleSelect(item)"
-          />
-        </td>
-        <td
-          class="svws-ui--table--cell svws-ui--table--cell-padded"
-          :class="{ 'svws-ui--table--border': border }"
-          v-for="col in cols"
-          :key="item.data[col.id]"
-          @click="mousePressed(item)"
-          :width="col.width"
-        >
-          {{ item.data[col.id] }}
-        </td>
-        <td
-          class="svws-ui--table--cell"
-          :class="{ 'svws-ui--table--border': border }"
-          v-if="actions && actions.length > 0"
-        >
-          <svws-ui-popover
-            :hover="false"
-            placement="left-end"
-            :disableClickAway="false"
+          <td
+            class="svws-ui--table--cell svws-ui--table--cell-padded"
+            :class="{ 'svws-ui--table--border': border }"
+            v-if="multiSelect"
           >
-            <template #trigger>
-              <button class="svws-ui--table--action-button">
-                <svws-ui-icon><i-ri-more--2-fill /></svws-ui-icon>
-              </button>
-            </template>
-            <template #content>
-              <div class="svws-ui--table--action-items">
-                <div v-for="action in actions" :key="action">
-                  <svws-ui-button
-                    class="svws-ui--table--action-item"
-                    type="transparent"
-                    @click="this.$emit('action', [action.action, item])"
-                    >{{ action.label }}</svws-ui-button
-                  >
+            <svws-ui-checkbox
+              :modelValue="item.selected"
+              @change="toggleSelect(item)"
+            />
+          </td>
+          <td
+            class="svws-ui--table--cell svws-ui--table--cell-padded"
+            :class="{ 'svws-ui--table--border': border }"
+            v-for="col in cols"
+            :key="item.data[col.id]"
+            @click="mousePressed(item)"
+            :width="col.width"
+          >
+            <div class="flex">
+              <template v-if="current === item && tr_slot && col === cols[0]">
+                <i-ri-arrow-down-s-line
+                  class="inline-flex"
+                  v-if="slot_open"
+                  @click="open_slot"
+                ></i-ri-arrow-down-s-line>
+                <i-ri-arrow-right-s-line
+                  class="inline-flex"
+                  v-else
+                  @click="open_slot"
+                ></i-ri-arrow-right-s-line>
+              </template>
+              {{ item.data[col.id] }}
+            </div>
+          </td>
+          <td
+            class="svws-ui--table--cell"
+            :class="{ 'svws-ui--table--border': border }"
+            v-if="actions && actions.length > 0"
+          >
+            <svws-ui-popover
+              :hover="false"
+              placement="left-end"
+              :disableClickAway="false"
+            >
+              <template #trigger>
+                <button class="svws-ui--table--action-button">
+                  <svws-ui-icon><i-ri-more--2-fill /></svws-ui-icon>
+                </button>
+              </template>
+              <template #content>
+                <div class="svws-ui--table--action-items">
+                  <div v-for="action in actions" :key="action">
+                    <svws-ui-button
+                      class="svws-ui--table--action-item"
+                      type="transparent"
+                      @click="this.$emit('action', [action.action, item])"
+                      >{{ action.label }}</svws-ui-button
+                    >
+                  </div>
                 </div>
-              </div>
-            </template>
-          </svws-ui-popover>
-        </td>
-      </tr>
+              </template>
+            </svws-ui-popover>
+          </td>
+        </tr>
+        <slot name="tr" v-if="current === item && slot_open"> </slot>
+      </template>
     </tbody>
     <tfoot>
       <tr class="svws-ui--table--footer-wrapper" v-if="multiSelect || footer">
@@ -176,9 +191,18 @@ export default defineComponent({
         selected: false,
       },
       selectedItems: [],
+      slot_open: false,
     };
   },
+  computed: {
+    tr_slot() {
+      return this.$slots.tr;
+    },
+  },
   methods: {
+    open_slot() {
+      this.slot_open = !this.slot_open;
+    },
     changeSort(column) {
       if (column.sortable) {
         if (this.sorting.column === column.id) {
