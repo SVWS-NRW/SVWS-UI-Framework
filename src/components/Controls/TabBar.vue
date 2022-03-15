@@ -2,10 +2,7 @@
   <div class="svws-ui--tab-bar--wrapper">
     <div
       v-if="scrolled"
-      class="
-        svws-ui--tab-bar--scroll-button-background
-        svws-ui--tab-bar--scroll-button-background-left
-      "
+      class="svws-ui--tab-bar--scroll-button-background svws-ui--tab-bar--scroll-button-background-left"
     >
       <button class="svws-ui--tab-bar--scroll-button" @click="scroll('left')">
         <svws-ui-icon><i-ri-arrow-left-line /></svws-ui-icon>
@@ -26,10 +23,7 @@
     </div>
     <div
       v-if="!scrolledMax"
-      class="
-        svws-ui--tab-bar--scroll-button-background
-        svws-ui--tab-bar--scroll-button-background-right
-      "
+      class="svws-ui--tab-bar--scroll-button-background svws-ui--tab-bar--scroll-button-background-right"
     >
       <button class="svws-ui--tab-bar--scroll-button" @click="scroll('right')">
         <svws-ui-icon><i-ri-arrow-right-line /></svws-ui-icon>
@@ -51,8 +45,6 @@ export default defineComponent({
       scrolled: false,
       scrolledMax: false,
       element: null,
-      sidebar: null,
-      sidebarWidth: 0,
       scrollFactor: 4,
       maxScrollLeft: null,
       selectedIndex: 0,
@@ -62,10 +54,6 @@ export default defineComponent({
   mounted() {
     this.selectTab(this.selectedIndex);
     this.element = document.querySelector('#content');
-    this.sidebar = document.querySelector('#sidebar');
-    if (this.sidebar) {
-      this.sidebarWidth = this.sidebar.clientWidth;
-    }
     this.maxScrollLeft = this.element.scrollWidth - this.element.clientWidth;
     this.scrolledMax = this.element.scrollLeft >= this.maxScrollLeft;
     this.element.addEventListener('scroll', this.handleScroll);
@@ -90,9 +78,6 @@ export default defineComponent({
     },
     handleScroll() {
       this.scrolled = this.element.scrollLeft > 0;
-      if (this.sidebar) {
-        this.sidebarWidth = this.sidebar.clientWidth;
-      }
       this.maxScrollLeft = this.element.scrollWidth - this.element.clientWidth;
       this.scrolledMax = this.element.scrollLeft >= this.maxScrollLeft;
     },
