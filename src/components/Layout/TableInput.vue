@@ -2,8 +2,9 @@
   <table class="svws-ui--table" :id="tableId">
     <thead class="svws-ui--table--header">
       <tr>
-        <td v-if="multiSelect"></td>
+        <td class="svws-ui--table--cell svws-ui-w-1" v-if="multiSelect"></td>
         <td
+          class="svws-ui--table--cell"
           v-for="col in cols"
           :key="col.id"
           :width="col.width"
@@ -39,13 +40,21 @@
         @keydown.up="onKeyUp"
         v-bind:class="{ 'svws-ui--table--row-selected': current === item }"
       >
-        <td v-if="multiSelect">
+        <td
+          class="svws-ui--table--cell"
+          :class="{ 'svws-ui--table--border': border }"
+          v-if="multiSelect"
+        >
           <svws-ui-checkbox
             :modelValue="item.selected"
             @change="toggleSelect(item)"
           />
         </td>
         <td
+          class="svws-ui--table--cell"
+          :class="{
+            'svws-ui--table--border': border,
+          }"
           v-for="col in cols"
           :key="item.data[col.id]"
           :width="col.width"
@@ -342,19 +351,108 @@ export default defineComponent({
 </script>
 
 <style>
-td {
-  @apply svws-ui-border svws-ui-border-dark-20 svws-ui-py-1 svws-ui-px-2;
+.svws-ui--table--header {
+  @apply svws-ui-sticky svws-ui--top-px svws-ui-left-0 svws-ui-z-10 svws-ui-bg-white svws-ui-text-black;
+  @apply svws-ui-shadow-border-b svws-ui-shadow-dark-20;
+  position: -webkit-sticky;
+}
+
+.svws-ui--table--header-col {
+  @apply svws-ui-inline-flex svws-ui-flex-row svws-ui-items-center;
+  @apply svws-ui-select-none;
+  @apply svws-ui-space-x-2;
+  @apply svws-ui-text-black svws-ui-text-button svws-ui-font-bold;
+}
+
+.svws-ui--table--row {
+  @apply svws-ui-text-black svws-ui-text-button;
+}
+
+.svws-ui--table--row:hover {
+  @apply svws-ui-cursor-pointer;
+}
+
+.svws-ui--table--row:focus {
+  @apply svws-ui-outline-none;
+}
+
+.svws-ui--table--row-selected {
+  @apply svws-ui-text-primary svws-ui-font-bold;
+}
+
+.svws-ui--table--row-selected .svws-ui--checkbox {
+  @apply svws-ui-font-normal;
+}
+
+.svws-ui--table--row-selected .svws-ui--checkbox .svws-ui--checkbox--indicator {
+  @apply svws-ui-border-primary;
+}
+
+.svws-ui--table--cell {
+  @apply svws-ui-bg-white;
+  @apply svws-ui-border-dark-20;
+}
+
+.svws-ui--table--border {
+  @apply svws-ui-border;
+}
+
+.svws-ui--table {
+  width: calc(100% - 1px);
+}
+
+.svws-ui--table--action-button {
+  @apply svws-ui-h-6 svws-ui-w-6;
+}
+
+.svws-ui--table--action-items {
+  @apply svws-ui-bg-white svws-ui-text-black;
+  @apply svws-ui-flex svws-ui-flex-col;
+  @apply svws-ui-px-2 svws-ui-py-1;
+  @apply svws-ui-ring-1;
+  @apply svws-ui-ring-black svws-ui-ring-opacity-5;
+  @apply svws-ui-rounded-md;
+  @apply svws-ui-shadow-lg;
+  @apply svws-ui-w-48;
+}
+
+.svws-ui--table--action-item {
+  @apply svws-ui-block;
+  @apply svws-ui-w-full;
+}
+
+.svws-ui--table--action-items:focus {
+  @apply svws-ui-outline-none;
+}
+
+.svws-ui--table--action-button:focus {
+  @apply svws-ui-outline-none svws-ui-ring-inset svws-ui-ring-primary svws-ui-ring-2;
+}
+
+.svws-ui--table--footer {
+  @apply svws-ui-flex svws-ui-justify-between;
+  @apply svws-ui-w-full;
+}
+
+.svws-ui--table--footer-wrapper {
+  @apply svws-ui-sticky svws-ui-bottom-0 svws-ui-left-0 svws-ui-z-10  svws-ui-bg-white svws-ui-text-black;
+  @apply svws-ui-shadow-border-t svws-ui-shadow-dark-20;
+  position: -webkit-sticky;
+}
+
+.svws-ui--table--footer-row {
+  @apply svws-ui-bg-white svws-ui-text-black;
+  @apply svws-ui-py-2 svws-ui-px-3;
+}
+
+.svws-ui--table--footer--actions {
+  @apply svws-ui-flex svws-ui-flex-row svws-ui-items-center svws-ui-space-x-2;
+}
+.current {
+  @apply svws-ui-bg-light;
 }
 
 tr:focus {
   @apply svws-ui-outline-none;
-}
-
-thead {
-  @apply svws-ui-font-bold svws-ui-cursor-pointer svws-ui-select-none;
-}
-
-.current {
-  @apply svws-ui-bg-light;
 }
 </style>
