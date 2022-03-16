@@ -1,7 +1,13 @@
 <template>
-  <div class="svws-ui-px-4 svws-ui-py-4" id="contentSidebar">
+  <div class="svws-ui-px-8 svws-ui-py-6" id="contentSidebar">
     <h5
-      class="svws-ui-headline-2 svws-ui-text-black svws-ui-flex svws-ui-items-center svws-ui-space-x-2"
+      class="
+        svws-ui-headline-2
+        svws-ui-text-black
+        svws-ui-flex
+        svws-ui-items-center
+        svws-ui-space-x-2
+      "
     >
       <slot name="header" />
     </h5>
@@ -59,16 +65,17 @@ export default defineComponent({
     window.removeEventListener('resize', this.handleWidth);
   },
   updated() {
-    this.handleWidth();
+    //this.handleWidth();
   },
   methods: {
     handleWidth() {
       this.mainWidth = this.main.clientWidth;
       // Die Breite der Sidebar wird errechnet durch die Breite des Main-Bereichs multipliziert mit dem Faktor der Size-Prop.
       this.sidebarWidth = Math.floor(this.mainWidth * this.sizeMultiplier);
-      // Die Sidebar sollte eine Mindestbreite von 256px haben damit eine vernünftige Nutzung gewährleistet wird.
-      if (this.sidebarWidth < 256) {
-        this.sidebarWidth = 256;
+      // Die Sidebar sollte eine Mindestbreite von 17.5rem haben damit eine vernünftige Nutzung gewährleistet wird.
+      let minWidth = 17.5 * 13;
+      if (this.sidebarWidth < minWidth) {
+        this.sidebarWidth = minWidth;
       }
       this.sidebar.style.width = this.sidebarWidth + 'px';
     },

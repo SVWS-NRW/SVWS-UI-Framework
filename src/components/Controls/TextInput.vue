@@ -3,7 +3,8 @@
     class="svws-ui--text-input"
     :class="{
       'svws-ui--text-input-focus': focused,
-      'svws-ui--text-input-filled': !!modelValue,
+      'svws-ui--text-input-filled':
+        !!modelValue || (this.type === 'number' && modelValue === 0),
       'svws-ui--text-input-invalid': !valid || !emailValid,
       'svws-ui--text-input-disabled': disabled,
       'svws-ui--text-input-readonly': readonly,

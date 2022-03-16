@@ -119,6 +119,10 @@ export default defineComponent({
       type: String,
       default: 'table' + Date.now(),
     },
+    autofocus: {
+      type: Boolean,
+      default: true,
+    },
     border: {
       type: Boolean,
       default: true,
@@ -297,7 +301,9 @@ export default defineComponent({
     this.updateData();
   },
   mounted() {
-    document.getElementById(this.tableId + '_row_1')?.focus();
+    if (this.autofocus) {
+      document.getElementById(this.tableId + '_row_1')?.focus();
+    }
   },
   watch: {
     current() {
@@ -313,7 +319,9 @@ export default defineComponent({
       deep: true,
       handler() {
         if (this.current.data.id === undefined && this.items[0] !== undefined) {
-          this.changeCurrent(this.items[0]);
+          if (this.autofocus) {
+            this.changeCurrent(this.items[0]);
+          }
         }
       },
     },
