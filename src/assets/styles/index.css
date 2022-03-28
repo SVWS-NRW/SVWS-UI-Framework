@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --svws-ui-color-white: 255, 255, 255; /* #ffffff */
+    --svws-ui-color-black: 36, 36, 36; /* #242424 */
+    --svws-ui-color-gray: 102, 102, 102; /* #666666 */
+    --svws-ui-color-primary: 50, 156, 213; /* #329cd5 */
+    --svws-ui-color-light: 240, 244, 247; /* #f0f4f7 */
+    --svws-ui-color-dark-20: 200, 208, 214; /* #c8d0d6 */
+    --svws-ui-color-dark-80: 66, 85, 97; /* #425561 */
+    --svws-ui-color-dark: 43, 68, 82; /* #2b4452 */
+    --svws-ui-color-error: 235, 97, 97; /* #eb6161 */
+    --svws-ui-color-success: 182, 230, 92; /* #b6e65c */
+    --svws-ui-color-highlight: 255, 246, 147; /* #fff693 */
+
+    --svws-ui-color-brown: 155, 132, 88; /* #9b8458 */
+    --svws-ui-color-brown-light: 214, 205, 188; /* #d6cdbc */
+    --svws-ui-color-brown-dark: 98, 83, 55; /* #625337 */
+    --svws-ui-color-orange: 253, 179, 78; /* #fdb34e */
+    --svws-ui-color-orange-light: 255, 225, 185; /* #ffe1b9 */
+    --svws-ui-color-orange-dark: 178, 103, 1; /* #b26701 */
+    --svws-ui-color-purple: 180, 114, 237; /* #b472ed */
+    --svws-ui-color-purple-light: 224, 210, 237; /* #e0d2ed */
+    --svws-ui-color-purple-dark: 70, 28, 106; /* #461c6a */
+    --svws-ui-color-blue: 109, 136, 229; /* #6d88e5 */
+    --svws-ui-color-blue-light: 203, 211, 239; /* #cbd3ef */
+    --svws-ui-color-blue-dark: 24, 45, 116; /* #182d74 */
+    --svws-ui-color-green: 137, 237, 202; /* #89edca */
+    --svws-ui-color-green-light: 190, 232, 218; /* #bee8da */
+    --svws-ui-color-green-dark: 15, 93, 66; /* #0f5d42 */
+  }
+  .theme-dark {
+    --svws-ui-color-white: 36, 36, 36; /* #242424 */
+    --svws-ui-color-black: 255, 255, 255; /* #ffffff */
+    --svws-ui-color-gray: 102, 102, 102; /* #666666 */
+    --svws-ui-color-primary: 107, 203, 255; /* #6bcbff */
+    --svws-ui-color-light: 36, 50, 59; /* #24323b */
+    --svws-ui-color-dark-20: 66, 85, 97; /* #425561 */
+    --svws-ui-color-dark-80: 200, 208, 214; /* #c8d0d6 */
+    --svws-ui-color-dark: 240, 244, 247; /* #f0f4f7 */
+    --svws-ui-color-error: 179, 84, 84; /* #b35454 */
+    --svws-ui-color-success: 143, 173, 87; /* #8fad57 */
+    --svws-ui-color-highlight: 204, 197, 124; /* #ccc57c */
+
+    --svws-ui-color-brown: 155, 132, 88; /* #9b8458 */
+    --svws-ui-color-brown-light: 214, 205, 188; /* #d6cdbc */
+    --svws-ui-color-brown-dark: 98, 83, 55; /* #625337 */
+    --svws-ui-color-orange: 253, 179, 78; /* #fdb34e */
+    --svws-ui-color-orange-light: 255, 225, 185; /* #ffe1b9 */
+    --svws-ui-color-orange-dark: 178, 103, 1; /* #b26701 */
+    --svws-ui-color-purple: 180, 114, 237; /* #b472ed */
+    --svws-ui-color-purple-light: 224, 210, 237; /* #e0d2ed */
+    --svws-ui-color-purple-dark: 33, 15, 48; /* #210f30 */
+    --svws-ui-color-blue: 109, 136, 229; /* #6d88e5 */
+    --svws-ui-color-blue-light: 203, 211, 239; /* #cbd3ef */
+    --svws-ui-color-blue-dark: 13, 27, 71; /* #0d1b47 */
+    --svws-ui-color-green: 137, 237, 202; /* #89edca */
+    --svws-ui-color-green-light: 190, 232, 218; /* #bee8da */
+    --svws-ui-color-green-dark: 15, 93, 66; /* #0f5d42 */
+  }
+}
+
+html {
+  font-size: 13px;
+}
+
+.svws-ui-headline-1 {
+  @apply svws-ui-text-headline-1 svws-ui-font-bold;
+}
+
+.svws-ui-headline-2 {
+  @apply svws-ui-text-headline-2 svws-ui-font-bold;
+}
+
+.svws-ui-headline-3 {
+  @apply svws-ui-text-headline-3 svws-ui-font-bold;
+}
+
+.svws-ui-headline-4 {
+  @apply svws-ui-text-headline-4 svws-ui-font-bold;
+}
+
+.svws-ui-headline-5 {
+  @apply svws-ui-text-headline-5 svws-ui-font-bold;
+}
+
+.popper {
+  @apply svws-ui-z-50;
+}
